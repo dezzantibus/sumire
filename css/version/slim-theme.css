@@ -1,0 +1,271 @@
+/* Slim Version
+----------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3em;
+  font-weight: 500;
+  color: #111111;
+}
+
+h1,
+.h1 {
+  font-size: 32px;
+}
+
+h2,
+.h2 {
+  font-size: 25px;
+}
+
+h3,
+.h3 {
+  font-size: 23px;
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+}
+
+h5,
+.h5 {
+  font-size: 13px;
+}
+
+h6,
+.h6 {
+  font-size: 12px;
+}
+
+body.default_slim.boxed  {
+  background: url(../img/slim_bg.jpg) fixed;
+}
+
+.default_slim .container {
+  max-width: 1100px;
+}
+
+.default_slim .header-wrapper {
+  background: transparent;
+  padding: 27px 0 24px;
+}
+
+@media (min-width: 1600px) {
+  .default_slim .header-wrapper h1.logo {
+    margin: 7px 0 0;
+  }
+}
+
+.default_slim  .container-box {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 767px) {
+  .default_slim  .container-box {
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .default_slim  .container-box {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 992px) {
+  .default_slim  .container-box {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .default_slim  .container-box {
+    max-width: 1130px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .default_slim  .container-box {
+    max-width: 1130px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .default_slim  .container-box {
+	margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-form {
+    display: none;
+  }
+}
+
+.headline-wrapper {
+  background: #273041;
+}
+
+.headline-title {
+  background: #fd7d1e;
+}
+
+.headline-title h5 {
+  font-size: 14px;
+}
+
+.default_slim .headline-wrapper .fa-icon-wrap {
+  margin-right: 25px;
+}
+
+.default_slim  .navbar-default {
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+
+.default_slim .navbar-collapse {
+  background: #273041;
+}
+
+.default_slim .navbar-form {
+  margin: 6px 6px 0 0;
+}
+
+.navbar-form.dark input[type="text"] {
+  background: #2e394d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbar-default .navbar-nav > li > a {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navbar-default .navbar-nav > li.home > a {
+  border-left: 0;
+}
+
+.navbar-default .navbar-nav > li.active >a {
+  color: #ffffff;
+  background: #fd7d1e;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background: #fd7d1e;
+}
+
+.navbar-default .navbar-nav > li.active >a:active,
+.navbar-default .navbar-nav > li.active >a:hover {
+  color: #ffffff;
+  background: #fd7d1e;
+}
+
+@media (max-width: 768px) {
+  .default_slim .navbar-default {
+    background-color: #222222;
+  }
+  
+  .default_slim .navbar-default .navbar-nav > li > a {
+    color: #333333;
+  }
+}
+
+.mega-item h3 {
+  font-size: 14px;
+}
+
+.feuture-posts .small-section .first h3 {
+  font-size: 18px;
+}
+
+.feuture-posts .small-section h3 {
+  font-size: 15px;
+}
+
+.fbt-vc-inner .post-content h3 {
+  font-size: 17px;
+}
+
+.fbt-vc-inner .small .post-content h3 {
+  font-size: 14px;
+}
+
+.gallery-img .img-thumb .img-credits h3 {
+  font-size: 14px;
+}
+
+.fbt-vc-inner .img-thumb .img-credits h3 {
+  font-size: 16px;
+}
+
+.fbt-hr-crs .post-item h3 {
+  font-size: 14px;
+}
+
+.gallery-img .img-thumb .img-credits h3 {
+  font-size: 14px;
+}
+
+.fbt-vc-inner.nude.large .post-content h3 {
+  font-size: 18px;
+}
+
+.bgallery .img-thumb .img-credits h3 {
+  font-size: 17px;
+}
+
+.sidebar-carousel .fbt-hr-crs .post-item h3,
+.biography-carousel .fbt-hr-crs .post-item h3 {
+  font-size: 18px;
+}
+
+.fbt-vc-inner.nude .post-content h3 {
+  font-size: 16px;
+}
+
+.post-left-sidebar .post-item h3, .left-sidebar .post-item h3 {
+  font-size: 14px;
+}
+
+.title-wrapper h2 {
+  font-size: 14px;
+}
+
+.title-wrapper h2 span {
+  padding: 7px 20px 5px;
+}
+
+.nav-tabs > li > a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer-wrapper .widget-title h2 {
+  font-size: 14px;
+}
+
+
