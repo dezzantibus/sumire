@@ -14,15 +14,12 @@ class class_finder
             case 'handler': self::getHandlerClass( $name, $frags ); break;
             case 'action':  self::getActionClass( $name, $frags );  break;
 
-            case 'html':     require_once __DIR__ . '/../layout/html/'     . $name . '.php'; break;
-            case 'elements': require_once __DIR__ . '/../layout/elements/' . $name . '.php'; break;
-
-            case 'banner':   require_once __DIR__ . '/banner.php';        break;
-            case 'constant': require_once __DIR__ . '/constant.php';      break;
-            case 'message':  require_once __DIR__ . '/message.php';       break;
-            case 'security': require_once __DIR__ . '/security.php';      break;
-            case 'weather':  require_once __DIR__ . '/weather.php';       break;
-            case 'exchange': require_once __DIR__ . '/exchange.php';      break;
+            case 'banner':   require_once __DIR__ . '/banner.php';   break;
+            case 'constant': require_once __DIR__ . '/constant.php'; break;
+            case 'message':  require_once __DIR__ . '/message.php';  break;
+            case 'security': require_once __DIR__ . '/security.php'; break;
+            case 'weather':  require_once __DIR__ . '/weather.php';  break;
+            case 'exchange': require_once __DIR__ . '/exchange.php'; break;
             default: require_once __DIR__ . '/../' . $frags[0] . '/' . $name . '.php';
         }
 
@@ -35,12 +32,14 @@ class class_finder
         {
             switch( $frags[1] )
             {
-                case 'base':   require_once __DIR__ . '/../layout/base/'   . $name . '.php'; break;
-                case 'blog':   require_once __DIR__ . '/../layout/blog/'   . $name . '.php'; break;
-                case 'events': require_once __DIR__ . '/../layout/events/' . $name . '.php'; break;
-                case 'market': require_once __DIR__ . '/../layout/market/' . $name . '.php'; break;
-                case 'news':   require_once __DIR__ . '/../layout/news/'   . $name . '.php'; break;
-                default:       require_once __DIR__ . '/../layout/' . $name . '.php';
+                case 'base':     require_once __DIR__ . '/../layout/base/'     . $name . '.php'; break;
+                case 'blog':     require_once __DIR__ . '/../layout/blog/'     . $name . '.php'; break;
+                case 'events':   require_once __DIR__ . '/../layout/events/'   . $name . '.php'; break;
+                case 'market':   require_once __DIR__ . '/../layout/market/'   . $name . '.php'; break;
+                case 'news':     require_once __DIR__ . '/../layout/news/'     . $name . '.php'; break;
+                case 'html':     require_once __DIR__ . '/../layout/html/'     . $name . '.php'; break;
+                case 'elements': require_once __DIR__ . '/../layout/elements/' . $name . '.php'; break;
+                default:         require_once __DIR__ . '/../layout/' . $name . '.php';
                 /*
                                 case 'homepage':  require_once __DIR__ . '/../layout/article/' . $name . '.php';  break;
                                 case 'admin':    require_once __DIR__ . '/../layout/admin/' . $name . '.php';    break;
