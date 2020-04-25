@@ -5,7 +5,12 @@ class router_admin
 
     static function run()
     {
-        return null;
+
+        switch( $_GET['category'] )
+        {
+            default: return new handler_admin_homepage();
+        }
+
     }
 
 }

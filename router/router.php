@@ -15,6 +15,7 @@ class router
             case 'blog.sumire.it':    return self::blog();
             case 'mercato.sumire.it': return self::market();
             case 'eventi.sumire.it':  return self::events();
+            case 'utente.sumire.it':  return self::user();
             case 'admin.sumire.it':   return router_admin::run();
 
             default: return router_custom::run();
@@ -46,6 +47,11 @@ class router
     static function events()
     {
         return new handler_events_homepage();
+    }
+
+    static function user()
+    {
+        return new handler_user_homepage();
     }
 
 }

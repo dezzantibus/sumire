@@ -45,13 +45,13 @@ abstract class layout_page extends layout
     {
         echo
             '<!-- JAVASCRIPTS -->',
-            '<script type="text/javascript" src="js/plugins/jquery-1.12.3.min.js"></script>',
-            '<script type="text/javascript" src="js/plugins/owl.carousel.min.js"></script>',
-            '<script type="text/javascript" src="js/plugins/cycle.all.js"></script>',
-            '<script type="text/javascript" src="js/plugins/bootstrap.min.js"></script>',
-            '<script type="text/javascript" src="js/plugins/resizesensor.min.js"></script>',
-            '<script type="text/javascript" src="js/plugins/theia-sticky-sidebar.js"></script>',
-            '<script type="text/javascript" src="js/functions/main.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/jquery-1.12.3.min.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/owl.carousel.min.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/cycle.all.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/bootstrap.min.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/resizesensor.min.js"></script>',
+            '<script type="text/javascript" src="/js/plugins/theia-sticky-sidebar.js"></script>',
+            '<script type="text/javascript" src="/js/functions/main.js"></script>',
         '</body></html>';
     }
 
