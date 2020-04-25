@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+#    RewriteRule ^m$ / [QSA]
+#    RewriteRule ^m/(.*)$ $1 [QSA]
+#    RewriteRule ^mobile$ / [QSA]
+#    RewriteRule ^mobile/(.*)$ $1 [QSA]
+
+#    RewriteRule ^ajax/(.*)$ index.php?handler=handler_ajax_$1 [QSA,L]
+
+	RewriteRule ^(.*)demo/(.*)x(.*)\.gif$ image.php?width=$2&height=$3&file=filler.jpg [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.JPEG$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/articles/(.*)/(.*)/(.*)/(.*)\.jpeg$ image.php?width=$1&height=$2&file=$6&path=articles/$3/$4/$5 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.jpg$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.JPG$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.JPEG$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+	RewriteRule ^(.*)/(.*)/journalists/(.*)/(.*)\.jpeg$ image.php?width=$1&height=$2&file=$4&path=journalists/$3 [QSA,L]
+
+#	RewriteRule ^(.*)/(.*)\.action$ index.php?handler=action_$1_$2 [QSA,L]
+#	RewriteRule ^(.*)\.action$ index.php?handler=action_$1 [QSA,L]
+
+#	RewriteRule ^(.*)/(.*)/(.*)\.form$ index.php?handler=handler_$1_$2_$3 [QSA,L]
+#	RewriteRule ^(.*)/(.*)\.form$ index.php?handler=handler_$1_$2 [QSA,L]
+#	RewriteRule ^(.*)\.form$ index.php?handler=handler_$1 [QSA,L]
+
+#	RewriteRule ^admin/(.*)/(.*)$ index.php?handler=handler_admin_$1_$2 [QSA,L]
+#	RewriteRule ^admin/(.*)$ index.php?handler=handler_admin_$1 [QSA,L]
+#	RewriteRule ^admin$ index.php?handler=handler_admin [QSA,L]
+
+#	RewriteRule ^([0-9]+)/(.*)/(.*)\.html$ index.php?handler=handler_article&parent=$1&routing=$2&page=$3 [QSA,L]
+#	RewriteRule ^([0-9]+)/(.*)\.html$ index.php?handler=handler_category&routing=$2&page=$1 [QSA,L]
+#	RewriteRule ^(.*)/(.*)\.html$ index.php?handler=handler_article&parent=$1&routing=$2 [QSA,L]
+#	RewriteRule ^(.*)\.html$ index.php?handler=handler_category&routing=$1 [QSA,L]
+
+</IfModule>
+
+

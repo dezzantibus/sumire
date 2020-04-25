@@ -31,20 +31,35 @@ class class_finder
         {
             switch( $frags[1] )
             {
-                case 'homepage':  require_once __DIR__ . '/../layout/article/' . $name . '.php';  break;
-                case 'admin':    require_once __DIR__ . '/../layout/admin/' . $name . '.php';    break;
-                case 'news': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                case 'blog': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                case 'market': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                case 'static': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                case 'basic':    require_once __DIR__ . '/../layout/basic/' . $name . '.php';    break;
-                case 'form':     require_once __DIR__ . '/../layout/form/' . $name . '.php';     break;
-                default:         require_once __DIR__ . '/../layout/' . $name . '.php';
+                case 'base': self::getLayoutBaseClass( $name, $frags );  break;
+                default:     require_once __DIR__ . '/../layout/' . $name . '.php';
+                /*
+                                case 'homepage':  require_once __DIR__ . '/../layout/article/' . $name . '.php';  break;
+                                case 'admin':    require_once __DIR__ . '/../layout/admin/' . $name . '.php';    break;
+                                case 'news': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
+                                case 'blog': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
+                                case 'market': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
+                                case 'static': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
+                                case 'basic':    require_once __DIR__ . '/../layout/basic/' . $name . '.php';    break;
+                                case 'form':     require_once __DIR__ . '/../layout/form/' . $name . '.php';     break;
+                                default:         require_once __DIR__ . '/../layout/' . $name . '.php';
+                */
             }
         }
         else
         {
             require_once __DIR__ . '/../layout/layout.php';
+        }
+
+    }
+
+    private static function getLayoutBaseClass( $name, $frags )
+    {
+
+        switch( $frags[2] )
+        {
+            case 'homepage': require_once __DIR__ . '/../layout/base/homepage/' . $name . '.php';  break;
+            default:         require_once __DIR__ . '/../layout/base/' . $name . '.php';
         }
 
     }
@@ -56,9 +71,8 @@ class class_finder
         {
             switch( $frags[1] )
             {
-                case 'admin': require_once __DIR__ . '/../handler/admin/' . $name . '.php'; break;
-                case 'ajax':  require_once __DIR__ . '/../handler/ajax/' . $name . '.php';  break;
-                default:      require_once __DIR__ . '/../handler/' . $name . '.php';
+                case 'base': require_once __DIR__ . '/../layout/base/' . $name . '.php'; break;
+                default:     require_once __DIR__ . '/../handler/' . $name . '.php';
             }
         }
         else

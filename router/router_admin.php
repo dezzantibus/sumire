@@ -1,6 +1,6 @@
 <?php
 
-class router_news
+class router_admin
 {
 
     static function run()
