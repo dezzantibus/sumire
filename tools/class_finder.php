@@ -71,7 +71,7 @@ class class_finder
         {
             switch( $frags[1] )
             {
-                case 'base': require_once __DIR__ . '/../layout/base/' . $name . '.php'; break;
+                case 'base': require_once __DIR__ . '/../handler/base/' . $name . '.php'; break;
                 default:     require_once __DIR__ . '/../handler/' . $name . '.php';
             }
         }
