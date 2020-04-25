@@ -6,4 +6,4 @@ spl_autoload_register( 'class_finder::getClassFile' );
 
 /** @var handler $page */
 $page = router::run();
-//$page->run();
+$page->run();
