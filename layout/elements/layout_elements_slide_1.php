@@ -1,6 +1,6 @@
 <?php
 
-class layout_slide_1 extends layout
+class layout_elements_slide_1 extends layout
 {
 
     function __construct()
