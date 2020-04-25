@@ -8,6 +8,9 @@ class layout_base_homepage extends layout_page
 
         $this->title = 'すみれ';
 
+        $this->addChild( new layout_header() );
+        $this->addChild( new layout_slide_1() );
+
     }
 
 }
