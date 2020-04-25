@@ -23,7 +23,7 @@ class layout_slide_1 extends layout
 						</div>
 						<div class="fp-slides">
 							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-2.jpg\')"></div></a>
+								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 								<div class="img-credits">
 									<a class="post-category" href="#">Cooking</a>
 									<a href="single.html"><h3>Ei his graeci option officiis, no oratio vocent efficiendi vix.</h3></a>
@@ -34,7 +34,7 @@ class layout_slide_1 extends layout
 								</div>
 							</div>
 							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-10.jpg\')"></div></a>
+								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 								<div class="img-credits">
 									<a class="post-category" href="#">Travel</a>
 									<a href="single.html"><h3>Nam iusto delicata ne, eam dolore singulis maiestatis ex.</h3></a>
@@ -45,7 +45,7 @@ class layout_slide_1 extends layout
 								</div>
 							</div>
 							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-3.jpg\')"></div></a>
+								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 								<div class="img-credits">
 									<a class="post-category" href="#">Computing</a>
 									<a href="single.html"><h3>Women in Hollywood, according to new study with Apple.</h3></a>
@@ -66,7 +66,7 @@ class layout_slide_1 extends layout
 					<!-- Slide Small Start -->
 					<div class="col-sm-6 small-section">
 						<div class="img-thumb first">
-							<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-9.jpg\')"></div></a>
+							<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 							<div class="img-credits">
 								<a class="post-category" href="#">Computing</a>
 								<a href="single.html"><h3>How can Build a Better Connection Between the Mind and Body</h3></a>
@@ -79,7 +79,7 @@ class layout_slide_1 extends layout
 							<div class="fp-small">
 								<div class="col-xs-6 last-small">
 									<div class="img-thumb">
-										<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-5.jpg\')"></div></a>
+										<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 										<div class="img-credits">
 											<a class="post-category" href="#">Fashion</a>
 											<a href="single.html"><h3>Baby brain doesn\'t exist say scientists</h3></a>
@@ -91,7 +91,7 @@ class layout_slide_1 extends layout
 								</div>
 								<div class="col-xs-6 last-small">
 									<div class="img-thumb">
-										<a href="single.html"><div class="fbt-resize" style="background-image: url(\'img/img-8.jpg\')"></div></a>
+										<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 										<div class="img-credits">
 											<a class="post-category" href="#">CityLife</a>
 											<a href="single.html"><h3>Orci in aliquam diam, felis pede, wisi diam mollis.</h3></a>

@@ -106,7 +106,7 @@ class layout_header extends layout
 										<div class="row">
 											<div class="col-md-3 col-sm-6 mega-item">
 												<div class="img-thumb">
-													<a href="#"><div class="fbt-resize" style="background-image: url(\'img/img-1.jpg\')"></div></a>
+													<a href="#"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 													<div class="img-credits">
 														<h3>Fringilla pellentesque leo sed dolor quam velit.</h3>
 														<div class="post-info">
@@ -117,7 +117,7 @@ class layout_header extends layout
 											</div>
 											<div class="col-md-3 col-sm-6 mega-item">
 												<div class="img-thumb">
-													<a href="#"><div class="fbt-resize" style="background-image: url(\'img/img-2.jpg\')"></div></a>
+													<a href="#"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 													<div class="img-credits">
 														<h3>Orci in aliquam diam, felis pede, wisi diam mollis, sit lobortis eget.</h3>
 														<div class="post-info">
@@ -128,7 +128,7 @@ class layout_header extends layout
 											</div>
 											<div class="col-md-3 col-sm-6 mega-item">
 												<div class="img-thumb">
-													<a href="#"><div class="fbt-resize" style="background-image: url(\'img/img-3.jpg\')"></div></a>
+													<a href="#"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 													<div class="img-credits">
 														<h3>Pellentesque feugiat neque a placerat nec et.</h3>
 														<div class="post-info">

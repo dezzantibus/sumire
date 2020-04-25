@@ -142,42 +142,42 @@ class layout_footer extends layout
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-10.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-2.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-5.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-8.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-3.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
 									<div class="col-xs-4 padding-1">
 										<div class="post-item clearfix">
 											<div class="img-thumb">
-												<a href="single.html"><div class="fbt-resize" style="background-image: url(img/img-28.jpg)"></div></a>
+												<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640x427)"></div></a>
 											</div>
 										</div>
 									</div>
