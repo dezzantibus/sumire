@@ -17,7 +17,7 @@ class layout_admin_news_list extends layout_admin_page
         $page_wrapper = $this->addChild( new layout_html_div( $params ) );
 
 
-        $page_wrapper->addChild( new layout_admin_header() );
+        $page_wrapper->addChild( new layout_admin_header( 'News' ) );
 
 
 
