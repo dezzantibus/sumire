@@ -16,7 +16,7 @@ abstract class layout_admin_page extends layout
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard v.2</title>
+    <title>', $this->title ,'</title>
 
     <link href="/css_admin/bootstrap.min.css" rel="stylesheet">
     <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -34,7 +34,7 @@ abstract class layout_admin_page extends layout
     protected function renderBottom()
     {
         echo
-            '
+            '</div>
     <!-- Mainly scripts -->
     <script src="/js_admin/jquery-2.1.1.js"></script>
     <script src="/js_admin/bootstrap.min.js"></script>
