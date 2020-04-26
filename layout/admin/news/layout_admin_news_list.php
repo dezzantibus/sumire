@@ -8,7 +8,7 @@ class layout_admin_news_list extends layout_admin_page
 
         $this->title = 'Sumire - admin - News';
 
-        $this->addChild( new layout_admin_menu() );
+        $this->addChild( new layout_admin_menu( 'news' ) );
 
         $params = array(
             'id'    => 'page-wrapper',

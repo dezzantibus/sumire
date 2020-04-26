@@ -8,7 +8,7 @@ class layout_admin_homepage extends layout_admin_page
 
         $this->title = 'Sumire - admin';
 
-        $this->addChild( new layout_admin_menu() );
+        $this->addChild( new layout_admin_menu( 'home' ) );
 
         $params = array(
             'id'    => 'page-wrapper',
