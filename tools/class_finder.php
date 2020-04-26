@@ -38,6 +38,7 @@ class class_finder
                 case 'market':   require_once __DIR__ . '/../layout/market/'   . $name . '.php'; break;
                 case 'news':     require_once __DIR__ . '/../layout/news/'     . $name . '.php'; break;
                 case 'html':     require_once __DIR__ . '/../layout/html/'     . $name . '.php'; break;
+                case 'form':     require_once __DIR__ . '/../layout/form/'     . $name . '.php'; break;
                 case 'elements': require_once __DIR__ . '/../layout/elements/' . $name . '.php'; break;
                 case 'admin':    require_once __DIR__ . '/../layout/admin/'    . $name . '.php'; break;
                 default:         require_once __DIR__ . '/../layout/' . $name . '.php';
