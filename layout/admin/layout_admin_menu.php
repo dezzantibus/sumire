@@ -64,7 +64,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/news.html"><i class="fa fa-files-o"></i> <span class="nav-label">News</span></a>',
+                        '<a href="/news"><i class="fa fa-files-o"></i> <span class="nav-label">News</span></a>',
                     '</li>';
 
                     //************************************************************
@@ -79,7 +79,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/blog.html"><i class="fa fa-edit"></i> <span class="nav-label">Blog</span></a>',
+                        '<a href="/blog"><i class="fa fa-edit"></i> <span class="nav-label">Blog</span></a>',
                     '</li>';
 
                     //************************************************************
@@ -94,7 +94,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/market.html"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Market</span></a>',
+                        '<a href="/market"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Market</span></a>',
                     '</li>';
 
                     //************************************************************
@@ -109,7 +109,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/events.html"><i class="fa fa-table"></i> <span class="nav-label">Events</span></a>',
+                        '<a href="/events"><i class="fa fa-table"></i> <span class="nav-label">Events</span></a>',
                     '</li>';
 
                     //************************************************************

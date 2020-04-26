@@ -43,9 +43,10 @@
     RewriteRule ^js_admin/(.*)$ js_admin/$1 [QSA,L]
     RewriteRule ^css/(.*)$ css/$1 [QSA,L]
     RewriteRule ^css_admin/(.*)$ css_admin/$1 [QSA,L]
-    RewriteRule ^font-awesome/(.*)$ font-awesome/$1 [QSA,L]
     RewriteRule ^img/(.*)$ img/$1 [QSA,L]
-
+    RewriteRule ^img_admin/(.*)$ img_admin/$1 [QSA,L]
+    RewriteRule ^font/(.*)$ font/$1 [QSA,L]
+    RewriteRule ^font-awesome/(.*)$ font-awesome/$1 [QSA,L]
 
     ################################################
     #
@@ -53,13 +54,13 @@
     #
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
- 	RewriteRule ^(.*)/(.*)/(.*)\.html$ index.php?page=$1&action=$2&id=$3 [QSA,L]
+ 	RewriteRule ^(.*)/(.*)/(.*)$ index.php?page=$1&action=$2&id=$3 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
- 	RewriteRule ^(.*)/(.*)\.html$ index.php?page=$1&action=$2 [QSA,L]
+ 	RewriteRule ^(.*)/(.*)$ index.php?page=$1&action=$2 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
- 	RewriteRule ^(.*)\.html$ index.php?page=$1 [QSA,L]
+ 	RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
 
 #    RewriteCond %{HTTP_HOST} ^sumire.it$
 #    RewriteCond %{HTTP_HOST} ^www.sumire.it$
