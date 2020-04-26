@@ -60,7 +60,7 @@ class class_finder
         {
             switch( $frags[2] )
             {
-                case 'news': require_once __DIR__ . '/../layout/admin/news' . $name . '.php'; break;
+                case 'news': require_once __DIR__ . '/../layout/admin/news/' . $name . '.php'; break;
                 default    : require_once __DIR__ . '/../layout/admin/'     . $name . '.php';
 
             }
