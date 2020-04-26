@@ -32,6 +32,9 @@ class class_finder
         {
             switch( $frags[1] )
             {
+
+                case 'admin':    self::getLayoutAdminClass( $name, $frags ); break;
+
                 case 'base':     require_once __DIR__ . '/../layout/base/'     . $name . '.php'; break;
                 case 'blog':     require_once __DIR__ . '/../layout/blog/'     . $name . '.php'; break;
                 case 'events':   require_once __DIR__ . '/../layout/events/'   . $name . '.php'; break;
@@ -40,24 +43,29 @@ class class_finder
                 case 'html':     require_once __DIR__ . '/../layout/html/'     . $name . '.php'; break;
                 case 'form':     require_once __DIR__ . '/../layout/form/'     . $name . '.php'; break;
                 case 'elements': require_once __DIR__ . '/../layout/elements/' . $name . '.php'; break;
-                case 'admin':    require_once __DIR__ . '/../layout/admin/'    . $name . '.php'; break;
-                default:         require_once __DIR__ . '/../layout/' . $name . '.php';
-                /*
-                                case 'homepage':  require_once __DIR__ . '/../layout/article/' . $name . '.php';  break;
-                                case 'admin':    require_once __DIR__ . '/../layout/admin/' . $name . '.php';    break;
-                                case 'news': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                                case 'blog': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                                case 'market': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                                case 'static': require_once __DIR__ . '/../layout/homepage/' . $name . '.php'; break;
-                                case 'basic':    require_once __DIR__ . '/../layout/basic/' . $name . '.php';    break;
-                                case 'form':     require_once __DIR__ . '/../layout/form/' . $name . '.php';     break;
-                                default:         require_once __DIR__ . '/../layout/' . $name . '.php';
-                */
+                default:         require_once __DIR__ . '/../layout/'          . $name . '.php';
             }
         }
         else
         {
             require_once __DIR__ . '/../layout/layout.php';
+        }
+
+    }
+
+    private static function getLayoutAdminClass( $name, $frags )
+    {
+
+        if( isset( $frags[2] ) )
+        {
+            switch( $frags[2] )
+            {
+                case 'news':     require_once __DIR__ . '/../layout/admin/news' . $name . '.php'; break;
+            }
+        }
+        else
+        {
+            require_once __DIR__ . '/../layout/admin/' . $name . '.php';
         }
 
     }
@@ -69,18 +77,36 @@ class class_finder
         {
             switch( $frags[1] )
             {
+                case 'admin':  self::getHandlerAdminClass( $name, $frags ); break;
+
                 case 'base':   require_once __DIR__ . '/../handler/base/'   . $name . '.php'; break;
                 case 'blog':   require_once __DIR__ . '/../handler/blog/'   . $name . '.php'; break;
                 case 'events': require_once __DIR__ . '/../handler/events/' . $name . '.php'; break;
                 case 'market': require_once __DIR__ . '/../handler/market/' . $name . '.php'; break;
                 case 'news':   require_once __DIR__ . '/../handler/news/'   . $name . '.php'; break;
-                case 'admin':  require_once __DIR__ . '/../handler/admin/'  . $name . '.php'; break;
-                default:       require_once __DIR__ . '/../handler/' . $name . '.php';
+                default:       require_once __DIR__ . '/../handler/'        . $name . '.php';
             }
         }
         else
         {
             require_once __DIR__ . '/../handler/handler.php';
+        }
+
+    }
+
+    private static function getHandlerAdminClass( $name, $frags )
+    {
+
+        if( isset( $frags[2] ) )
+        {
+            switch( $frags[2] )
+            {
+                case 'news': require_once __DIR__ . '/../handler/admin/news/'  . $name . '.php'; break;
+            }
+        }
+        else
+        {
+            require_once __DIR__ . '/../handler/admin/' . $name . '.php';
         }
 
     }
