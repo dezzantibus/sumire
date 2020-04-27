@@ -40,7 +40,7 @@ abstract class layout_admin_page extends layout
                 // <!-- Mainly scripts -->
                 '<script src="/js/jquery-2.1.1.js"></script>',
                 '<script src="/js/bootstrap.min.js"></script>',
-                '<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>',
+//                '<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>',
                 '<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>',
 
                 //<!-- Flot -->
@@ -53,8 +53,8 @@ abstract class layout_admin_page extends layout
                 '<script src="/js/plugins/flot/jquery.flot.time.js"></script>',
 
                 //<!-- Peity -->
-    //            '<script src="/js/plugins/peity/jquery.peity.min.js"></script>',
-    //            '<script src="/js/demo/peity-demo.js"></script>',
+                '<script src="/js/plugins/peity/jquery.peity.min.js"></script>',
+                '<script src="/js/demo/peity-demo.js"></script>',
 
                 //<!-- Custom and plugin javascript -->
                 '<script src="/js/inspinia.js"></script>',
