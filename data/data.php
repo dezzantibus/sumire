@@ -33,7 +33,19 @@ abstract class data
 	
 	public static function dateForDisplay( $in )
 	{
-		return date( 'D j M, Y', strtotime( $in ) );
+		switch( date( 'D', strtotime( $in ) ) )
+        {
+            case 'Mon': $day = '月曜日 '; break;
+            case 'Tue': $day = '火曜日 '; break;
+            case 'Wed': $day = '水曜日 '; break;
+            case 'Thu': $day = '木曜日 '; break;
+            case 'Fri': $day = '金曜日 '; break;
+            case 'Sat': $day = '土曜日 '; break;
+            case 'Sun': $day = '日曜日 '; break;
+            default: $day = '';
+        }
+
+        return $day . date( 'Y年 M月 j日', strtotime( $in ) );
 	}
 
 }

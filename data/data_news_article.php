@@ -17,6 +17,8 @@ class data_news_article extends data
 
     public $text;
 
+    public $date;
+
     function __construct( $data=null )
     {
 
@@ -29,6 +31,7 @@ class data_news_article extends data
             if( isset( $data['title'] ) )            $this->title            = $data['title'];
             if( isset( $data['short'] ) )            $this->short            = $data['short'];
             if( isset( $data['text'] ) )             $this->text             = $data['text'];
+            if( isset( $data['date'] ) )             $this->date             = $data['date'];
         }
 
     }
