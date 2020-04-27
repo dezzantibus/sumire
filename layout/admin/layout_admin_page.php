@@ -18,11 +18,11 @@ abstract class layout_admin_page extends layout
 
     <title>', $this->title ,'</title>
 
-    <link href="/css_admin/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <link href="/css_admin/animate.css" rel="stylesheet">
-    <link href="/css_admin/style.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
 </head>
 
