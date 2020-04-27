@@ -64,7 +64,11 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/news"><i class="fa fa-files-o"></i> <span class="nav-label">News</span></a>',
+                        '<a href="/news"><i class="fa fa-files-o"></i> <span class="nav-label">News</span> <span class="fa arrow"></span></a>',
+                        '<ul class="nav nav-second-level">',
+                            '<li><a href="/news/category">Categories</a></li>',
+                            '<li><a href="/news/article">Articles</a></li>',
+                        '</ul>',
                     '</li>';
 
                     //************************************************************
