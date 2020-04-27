@@ -1,6 +1,6 @@
 <?php
 
-class layout_admin_news_list extends layout_admin_page
+class layout_admin_news_dashboard extends layout_admin_page
 {
 
     public function __construct()

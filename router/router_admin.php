@@ -16,11 +16,27 @@ class router_admin
 
     static function news()
     {
-        switch( $_GET['action'] )
+        switch( $_GET['sub'] )
         {
-            case 'new'  : return new handler_admin_news_new();
-            case 'edit' : return new handler_admin_news_edit();
-            default     : return new handler_admin_news_list();
+            case 'article'  :
+
+                switch( $_GET['action'] )
+                {
+                    case 'new'  : return new handler_admin_news_article_new();
+                    case 'edit' : return new handler_admin_news_article_edit();
+                    default     : return new handler_admin_news_article_list();
+                }
+
+            case 'category' :
+
+                switch( $_GET['action'] )
+                {
+                    case 'new'  : return new handler_admin_news_category_new();
+                    case 'edit' : return new handler_admin_news_category_edit();
+                    default     : return new handler_admin_news_category_list();
+                }
+
+            default         : return new handler_admin_news_dashboard();
         }
     }
 

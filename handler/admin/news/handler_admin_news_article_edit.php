@@ -1,6 +1,6 @@
 <?php
 
-class handler_admin_news_new extends handler
+class handler_admin_news_article_edit extends handler
 {
 
     public function run()
@@ -31,7 +31,7 @@ class handler_admin_news_new extends handler
         */
 
         // Render page
-        $page = new layout_admin_news_form();
+        $page = new layout_admin_news_article_form();
         $page->render();
 
     }

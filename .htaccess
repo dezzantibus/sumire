@@ -54,10 +54,13 @@
     #
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
- 	RewriteRule ^(.*)/(.*)/(.*)\.html$ index.php?page=$1&action=$2&id=$3 [QSA,L]
+ 	RewriteRule ^(.*)/(.*)/(.*)/(.*)\.html$ index.php?page=$1&sub=$2&action=$3&id=$4 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
- 	RewriteRule ^(.*)/(.*)\.html$ index.php?page=$1&action=$2 [QSA,L]
+ 	RewriteRule ^(.*)/(.*)/(.*)\.html$ index.php?page=$1&sub=$2&action=$3 [QSA,L]
+
+    RewriteCond %{HTTP_HOST} ^admin.sumire.it$
+ 	RewriteRule ^(.*)/(.*)\.html$ index.php?page=$1&sub=$2 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
  	RewriteRule ^(.*)\.html$ index.php?page=$1 [QSA,L]
