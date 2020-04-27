@@ -6,19 +6,19 @@ class db
     /** @var $connection PDO  */
     static protected $connection = null;
 
-    const HOST = '127.0.0.1';
+    const HOST = 'myservices.rds.firmstep.com';
 
-    public static $schema; // = 'hermes2';
+    const SCHEMA = 'test';
 
-    const USER = 'root';
+    const USER = 'devtest1';
 
-    const PASS = 'antani75';
+    const PASS = 'devtest1';
 
     public static function connect()
     {
         if( is_null( self::$connection ) )
         {
-            self::$connection = new PDO( 'mysql:host=' . self::HOST . ';dbname=' . self::$schema, self::USER, self::PASS );
+            self::$connection = new PDO( 'mysql:host=' . self::HOST . ';dbname=' . self::SCHEMA, self::USER, self::PASS );
         }
     }
 
