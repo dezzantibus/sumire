@@ -33,6 +33,7 @@ abstract class layout_admin_page extends layout
 
     protected function renderBottom()
     {
+        /*
         echo
             '</div>
     <!-- Mainly scripts -->
@@ -72,13 +73,9 @@ abstract class layout_admin_page extends layout
     <script src="/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
     <!-- Sparkline demo data  -->
-    <script src="/js/demo/sparkline-demo.js"></script>
+    <script src="/js/demo/sparkline-demo.js"></script>';*/
 
-</body>
-</html>
-
-
-            ';
+echo '</body></html>';
     }
 
 }
