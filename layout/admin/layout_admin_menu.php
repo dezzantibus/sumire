@@ -63,19 +63,20 @@ class layout_admin_menu extends layout
                         echo '<li>';
                     }
 
+        /*
                         echo
                         '<a href="/news.html"><i class="fa  fa-files-o"></i> <span class="nav-label">News</span></a>',
                     '</li>';
 
-/*
+/*/
                         echo
                         '<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">News</span> <span class="fa arrow"></span></a>',
                         '<ul class="nav nav-second-level">',
-                            '<li><a href="/news/category">Categories</a></li>',
-                            '<li><a href="/news/article">Articles</a></li>',
+                            '<li><a href="/news/category.html">Categories</a></li>',
+                            '<li><a href="/news/article.html">Articles</a></li>',
                         '</ul>',
                     '</li>';
-*/
+//*/
                     //************************************************************
 
                     if( $this->active == 'blog' )
