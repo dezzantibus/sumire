@@ -32,10 +32,10 @@ class layout_admin_list_element extends layout
             }
 
             echo '<a href="', $this->edit_link, '" class="search-link">Edit</a>';
-        
+
             if( !empty( $this->delete_link ) )
             {
-                echo '<a href="', $this->delete_link, '" class="search-link" onclick="return confirm(\'Are you you want to delete?\')">Delete</a>';
+                echo '&nbsp;&nbsp;-&nbsp;&nbsp;<a href="', $this->delete_link, '" class="search-link" onclick="return confirm(\'Are you you want to delete?\')">Delete</a>';
             }
 
         echo '</div>';
