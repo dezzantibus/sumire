@@ -5,14 +5,14 @@ class message
 
     static private $list;
 
-    private static function addMessage( $type, $message )
+    private static function addMessage( $type, $message, $label )
     {
         if( ! is_array( self::$list ) )
         {
             self::$list = array();
         }
 
-        self::$list[] = array(
+        self::$list[ $label ] = array(
             'type'      => $type,
             'message'   => $message,
             'timestamp' => time(),
