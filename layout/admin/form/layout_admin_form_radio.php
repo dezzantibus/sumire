@@ -56,7 +56,7 @@ class layout_admin_form_radio extends layout
                     }
 
                     echo
-                    '><i></i>', $item['label'], '</label></div>';
+                    '> <i></i>', $item['label'], '</label></div>';
 
                 }
 
