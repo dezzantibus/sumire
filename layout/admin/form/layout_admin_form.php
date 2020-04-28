@@ -1,6 +1,6 @@
 <?php
 
-class layout_form extends layout
+class layout_admin_form extends layout
 {
 
     private $action;

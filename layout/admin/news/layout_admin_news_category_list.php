@@ -18,32 +18,17 @@ class layout_admin_news_category_list extends layout_admin_page
 
         $page_wrapper->addChild( new layout_admin_header( 'News - Categories' ) );
 
-        $params = array(
-            'class' => 'wrapper wrapper-content animated fadeInRight'
-        );
-        $wrapper = $page_wrapper->addChild( new layout_html_div( $params ) );
+        $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
-        $params = array(
-            'class' => 'row'
-        );
-        $row = $wrapper->addChild( new layout_html_div( $params ) );
+        $page_box->addChild( new layout_admin_new_button( 'New category', '/news/category/new.html' ) );
 
-        $params = array(
-            'class' => 'col-lg-12'
-        );
-        $col = $row->addChild( new layout_html_div( $params ) );
 
-        $params = array(
-            'class' => 'ibox float-e-margins'
-        );
-        $ibox = $col->addChild( new layout_html_div( $params ) );
+        /**
+         *
+         * HERE STILL NEEDS TO GO THE ACTUAL CATEGORY LIST
+         *
+         */
 
-        $params = array(
-            'class' => 'ibox-content'
-        );
-        $ibox_content = $ibox->addChild( new layout_html_div( $params ) );
-
-        $ibox_content->addChild( new layout_admin_new_button( 'New category', '/news/category/new.html' ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
 
