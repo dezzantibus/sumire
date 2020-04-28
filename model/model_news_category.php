@@ -30,10 +30,10 @@ class model_news_category extends model
 
         $sql = '
             UPDATE news_category
-            SET `category`       = :category,
-                `order`      = :order,
-                `homepage` = :home_order,
-                `homepage_box` = :home_block
+            SET `category`     = :category,
+                `order`        = :order,
+                `homepage`     = :homepage,
+                `homepage_box` = :homepage_box
             WHERE id = :id
         ';
 
