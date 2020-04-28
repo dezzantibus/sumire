@@ -40,7 +40,7 @@ class layout_admin_news_category_form extends layout_admin_page
         $homepage_layout->add( array( 'label' => 'Stacked elements', 'value' => 'layout_elements_homebox_rows_of_1' ) );
         $homepage_layout->add( array( 'label' => '2 rows of 3 elements', 'value' => 'layout_elements_homebox_rows_of_3' ) );
 
-        $form->addChild( new layout_admin_form_dropdown( 'homepage_box', 'Homepage layout', $homepage_layout) );
+        $form->addChild( new layout_admin_form_radio( 'homepage_box', 'Homepage layout', $homepage_layout) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
 
