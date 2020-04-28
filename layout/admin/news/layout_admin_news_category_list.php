@@ -20,7 +20,7 @@ class layout_admin_news_category_list extends layout_admin_page
 
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
-        $page_box->addChild( new layout_admin_new_button( 'New category', '/news/category/new.html' ) );
+        $page_box->addChild( new layout_admin_new_button( 'New category', '/news/category/new' ) );
 
 
         /**

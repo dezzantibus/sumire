@@ -26,13 +26,36 @@ class layout_admin_news_category_form extends layout_admin_page
             'news_category'
         ) );
 
+        $messages = message::getMessages();
+
         $form->addChild( new layout_admin_form_hidden( 'id', $category->id ) );
 
-        $form->addChild( new layout_admin_form_text( 'category', 'Category name', $category->category ) );
+        $form->addChild( new layout_admin_form_text(
+            'category',
+            'Category name',
+            $category->category,
+            null,
+            null,
+            $messages[ 'category' ]
+        ) );
 
-        $form->addChild( new layout_admin_form_text( 'order', 'Menu order', $category->order ) );
+        $form->addChild( new layout_admin_form_text(
+            'order',
+            'Menu order',
+            $category->order,
+            null,
+            null,
+            $messages[ 'order' ]
+        ) );
 
-        $form->addChild( new layout_admin_form_text( 'homepage', 'Homepage order', $category->homepage ) );
+        $form->addChild( new layout_admin_form_text(
+            'homepage',
+            'Homepage order',
+            $category->homepage,
+            null,
+            null,
+            $messages[ 'homepage' ]
+        ) );
 
         $homepage_layout = new data_array();
         $homepage_layout->add( array( 'label' => '1 large element and 4 small on the side', 'value' => 'layout_elements_homebox_1big_4side' ) );
@@ -42,7 +65,15 @@ class layout_admin_news_category_form extends layout_admin_page
         $homepage_layout->add( array( 'label' => 'Stacked elements', 'value' => 'layout_elements_homebox_rows_of_1' ) );
         $homepage_layout->add( array( 'label' => '2 rows of 3 elements', 'value' => 'layout_elements_homebox_rows_of_3' ) );
 
-        $form->addChild( new layout_admin_form_radio( 'homepage_box', 'Homepage layout', $homepage_layout, $category->homepage_box ) );
+        $form->addChild( new layout_admin_form_radio(
+            'homepage_box',
+            'Homepage layout',
+            $homepage_layout,
+            $category->homepage_box,
+            null,
+            null,
+            $messages[ 'homepage_box' ]
+        ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
 
