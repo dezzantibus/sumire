@@ -13,7 +13,7 @@ class layout_admin_form_text extends layout
 
     private $errorMessage;
 
-    function __construct( $name, $label, $value=null, $placeholder=null, $errorMessage=null )
+    function __construct( $name, $label, $value=null, $errorMessage=null, $placeholder=null )
     {
         $this->name         = $name;
         $this->label        = $label;

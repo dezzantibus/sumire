@@ -17,7 +17,7 @@ class layout_admin_form_radio extends layout
 
     private $errorMessage;
 
-    function __construct( $name, $label, data_array $list, $value=null, $placeholder=null, $class=null, $errorMessage=null )
+    function __construct( $name, $label, data_array $list, $value=null, $errorMessage=null, $placeholder=null, $class=null )
     {
         $this->name         = $name;
         $this->label        = $label;

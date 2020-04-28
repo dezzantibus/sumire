@@ -34,27 +34,21 @@ class layout_admin_news_category_form extends layout_admin_page
             'category',
             'Category name',
             $category->category,
-            null,
-            null,
-            $messages[ 'category' ]
+            $messages['category']['message']
         ) );
 
         $form->addChild( new layout_admin_form_text(
             'order',
             'Menu order',
             $category->order,
-            null,
-            null,
-            $messages[ 'order' ]
+            $messages['order']['message']
         ) );
 
         $form->addChild( new layout_admin_form_text(
             'homepage',
             'Homepage order',
             $category->homepage,
-            null,
-            null,
-            $messages[ 'homepage' ]
+            $messages['homepage']['message']
         ) );
 
         $homepage_layout = new data_array();
@@ -70,9 +64,7 @@ class layout_admin_news_category_form extends layout_admin_page
             'Homepage layout',
             $homepage_layout,
             $category->homepage_box,
-            null,
-            null,
-            $messages[ 'homepage_box' ]
+            $messages['homepage_box']['message']
         ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
