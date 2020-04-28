@@ -22,13 +22,17 @@ class layout_admin_news_category_list extends layout_admin_page
 
         $page_box->addChild( new layout_admin_new_button( 'New category', '/news/category/new' ) );
 
+        $categories = model_news_category::getFullList();
 
-        /**
-         *
-         * HERE STILL NEEDS TO GO THE ACTUAL CATEGORY LIST
-         *
-         */
-
+        while( !$categories->isEmpty() )
+        {
+            $category = $categories->first();
+            $page_box->addChild( new layout_admin_list_element(
+                $category->category,
+                '/news/category/edit/' . $category->id,
+                '/news/category/delete/' . $category->id
+            ) );
+        }
 
         $page_wrapper->addChild( new layout_admin_footer() );
 

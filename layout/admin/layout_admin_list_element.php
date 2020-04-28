@@ -25,10 +25,20 @@ class layout_admin_list_element extends layout
         echo
         '<div class="hr-line-dashed"></div>',
         '<div class="search-result">',
-            '<h3>INSPINIA IN+ Admin Theme</h3>',
-            '<a href="#" class="search-link">www.inspinia.com/inspinia</a>',
-            '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p>',
-        '</div>';
+            '<h3>', $this->name, '</h3>';
+            if( !empty( $this->delete_link ) )
+            {
+                echo '<p>', $this->text, '</p>';
+            }
+
+            echo '<a href="', $this->edit_link, '" class="search-link">Edit</a>';
+        
+            if( !empty( $this->delete_link ) )
+            {
+                echo '<a href="', $this->delete_link, '" class="search-link" onclick="return confirm(\'Are you you want to delete?\')">Delete</a>';
+            }
+
+        echo '</div>';
 
     }
 
