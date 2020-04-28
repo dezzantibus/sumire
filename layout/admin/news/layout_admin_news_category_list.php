@@ -3,10 +3,10 @@
 class layout_admin_news_category_list extends layout_admin_page
 {
 
-    public function __construct()
+    public function __construct( data_array $categories )
     {
 
-        $this->title = 'Sumire - admin - News';
+        $this->title = 'Sumire - News category admin';
 
         $this->addChild( new layout_admin_menu( 'news', 'categories' ) );
 
@@ -22,8 +22,6 @@ class layout_admin_news_category_list extends layout_admin_page
 
         $page_box->addChild( new layout_admin_new_button( 'New category', '/news/category/new' ) );
 
-        $categories = model_news_category::getFullList();
-
         while( !$categories->isEmpty() )
         {
             $category = $categories->first();
@@ -35,7 +33,6 @@ class layout_admin_news_category_list extends layout_admin_page
         }
 
         $page_wrapper->addChild( new layout_admin_footer() );
-
 
     }
 

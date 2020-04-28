@@ -52,19 +52,6 @@ class image
 
             imagecopyresampled( $image, $temp, 0, 0, $x, $y, $width, $height, $width, $height );
 
-            /* this is PHP 5.5
-            $image = imagescale( $image, $new_width, $new_height );
-
-            $cropping_array = array(
-                'x'      => ( $new_width - $width ) / 2,
-                'y'      => ( $new_height - $height ) / 2,
-                'width'  => $width,
-                'height' => $height,
-            );
-
-            $image = imagecrop( $image, $cropping_array );
-            */
-
             imagejpeg( $image, $processed_filename );
 
         }
@@ -74,44 +61,6 @@ class image
 
     }
 
-}
-
-if( $_GET['file'] == 'filler.jpg' )
-{
-
-    header('Content-Type: image/jpeg');
-
-//    switch( rand(1, 13) )
-//    {
-//        case 1:  $category = '/cats/';      break;
-//        case 2:  $category = '/abstract/';  break;
-//        case 3:  $category = '/animals/';   break;
-//        case 4:  $category = '/business/';  break;
-//        case 5:  $category = '/city/';      break;
-//        case 6:  $category = '/food/';      break;
-//        case 7:  $category = '/nightlife/'; break;
-//        case 8:  $category = '/fashion/';   break;
-//        case 9:  $category = '/people/';    break;
-//        case 10: $category = '/nature/';    break;
-//        case 11: $category = '/sports/';    break;
-//        case 12: $category = '/technics/';  break;
-//        case 13: $category = '/transport/'; break;
-//    }
-
-//    switch( rand( 1,2 ) )
-//    {
-//        case 1: imagejpeg( imagecreatefromjpeg( '//lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) ); break;
-//        case 2: imagejpeg( imagecreatefromjpeg( '//fillmurray.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
-//        case 3: imagejpeg( imagecreatefromjpeg( '//nicenicejpg.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
-//        case 3: imagejpeg( imagecreatefromjpeg( '//placecage.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
-//        case 3: imagejpeg( imagecreatefromjpeg( '//placebear.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
-//        case 3: imagejpeg( imagecreatefromjpeg( '//placekitten.com/' . $_GET['width'] . '/' . $_GET['height'] ) ); break;
-//    }
-    //imagejpeg( imagecreatefromjpeg( 'http://lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) );
-    //imagejpeg( imagecreatefromjpeg( 'http://lorempixel.com/' . $_GET['width'] . '/' . $_GET['height'] . $category  ) );
-
-    imagejpeg( imagecreatefromjpeg( 'http://placekitten.com/' . $_GET['width'] . '/' . $_GET['height']));
-    die();
 }
 
 image::retrieve( $_GET['file'], $_GET['path'], $_GET['width'], $_GET['height'] );

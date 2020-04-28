@@ -22,9 +22,11 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'  : return new handler_admin_news_article_new();
-                    case 'edit' : return new handler_admin_news_article_edit();
-                    default     : return new handler_admin_news_article_list();
+                    case 'new'    : return new handler_admin_news_article_new();
+                    case 'edit'   : return new handler_admin_news_article_edit();
+                    case 'save'   : return new handler_admin_news_article_save();
+                    case 'delete' : return new handler_admin_news_article_delete();
+                    default       : return new handler_admin_news_article_list();
                 }
 
             case 'category' :
