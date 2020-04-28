@@ -41,7 +41,7 @@ class layout_admin_form_dropdown extends layout
         '<div class="form-group', $errorClass, '">',
             '<label class="col-sm-2 control-label">', $this->label ,'</label>',
             '<div class="col-sm-10">',
-                '<select class="form-control m-b" name="', $this->name, '">',
+                '<select class="form-control m-b" name="', $this->name, '">';
 
                     foreach( $this->list->getData() as $item )
                     {

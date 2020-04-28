@@ -16,7 +16,6 @@ class layout_admin_news_article_form extends layout_admin_page
         );
         $page_wrapper = $this->addChild( new layout_html_div( $params ) );
 
-
         if( empty( $category->id ) )
         {
             $message = 'News - New article';
@@ -35,6 +34,8 @@ class layout_admin_news_article_form extends layout_admin_page
             'news_article'
         ) );
 
+        $messages = message::getMessages();
+
         $category_dropdown = new data_array();
         while( !$categories->isEmpty() )
         {
@@ -49,7 +50,6 @@ class layout_admin_news_article_form extends layout_admin_page
             $article->news_category_id,
             $messages['news_category_id']['message']
         ) );
-
 
         $page_wrapper->addChild( new layout_admin_footer() );
 

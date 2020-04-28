@@ -26,7 +26,6 @@ class layout_admin_news_category_form extends layout_admin_page
         }
         $page_wrapper->addChild( new layout_admin_header( $message ) );
 
-
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $page_box->addChild( new layout_admin_form(
