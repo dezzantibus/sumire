@@ -21,16 +21,18 @@ class layout_admin_news_category_form extends layout_admin_page
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $page_box->addChild( new layout_admin_form(
-            '/admin/news/category/save',
+            '/news/category/save',
             'form-horizontal',
             'news_category'
         ) );
 
-        $form->addChild( new layout_admin_form_text( 'category', 'Category name') );
+        $form->addChild( new layout_admin_form_hidden( 'id', $category->id ) );
 
-        $form->addChild( new layout_admin_form_text( 'order', 'Menu order') );
+        $form->addChild( new layout_admin_form_text( 'category', 'Category name', $category->category ) );
 
-        $form->addChild( new layout_admin_form_text( 'homepage', 'Homepage order') );
+        $form->addChild( new layout_admin_form_text( 'order', 'Menu order', $category->order ) );
+
+        $form->addChild( new layout_admin_form_text( 'homepage', 'Homepage order', $category->homepage ) );
 
         $homepage_layout = new data_array();
         $homepage_layout->add( array( 'label' => '1 large element and 4 small on the side', 'value' => 'layout_elements_homebox_1big_4side' ) );
@@ -40,10 +42,9 @@ class layout_admin_news_category_form extends layout_admin_page
         $homepage_layout->add( array( 'label' => 'Stacked elements', 'value' => 'layout_elements_homebox_rows_of_1' ) );
         $homepage_layout->add( array( 'label' => '2 rows of 3 elements', 'value' => 'layout_elements_homebox_rows_of_3' ) );
 
-        $form->addChild( new layout_admin_form_radio( 'homepage_box', 'Homepage layout', $homepage_layout) );
+        $form->addChild( new layout_admin_form_radio( 'homepage_box', 'Homepage layout', $homepage_layout, $category->homepage_box ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
-
 
     }
 

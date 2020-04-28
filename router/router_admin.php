@@ -33,6 +33,7 @@ class router_admin
                 {
                     case 'new'  : return new handler_admin_news_category_new();
                     case 'edit' : return new handler_admin_news_category_edit();
+                    case 'save' : return new handler_admin_news_category_save();
                     default     : return new handler_admin_news_category_list();
                 }
 

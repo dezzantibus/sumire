@@ -84,10 +84,10 @@ class layout_admin_menu extends layout
 
                     echo
                     '<li', $classNews ,'>',
-                        '<a href="/news.html"><i class="fa fa-files-o"></i> <span class="nav-label">News</span> <span class="fa arrow"></span></a>',
+                        '<a href="/news"><i class="fa fa-files-o"></i> <span class="nav-label">News</span> <span class="fa arrow"></span></a>',
                         '<ul class="nav nav-second-level">',
-                            '<li', $classCategory ,'><a href="/news/category.html">Categories</a></li>',
-                            '<li', $classArticle ,'><a href="/news/article.html">Articles</a></li>',
+                            '<li', $classCategory ,'><a href="/news/category">Categories</a></li>',
+                            '<li', $classArticle ,'><a href="/news/article">Articles</a></li>',
                         '</ul>',
                     '</li>';
 
@@ -103,7 +103,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/blog.html"><i class="fa fa-edit"></i> <span class="nav-label">Blog</span></a>',
+                        '<a href="/blog"><i class="fa fa-edit"></i> <span class="nav-label">Blog</span></a>',
                     '</li>';
 
                     //************************************************************
@@ -118,7 +118,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/market.html"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Market</span></a>',
+                        '<a href="/market"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Market</span></a>',
                     '</li>';
 
                     //************************************************************
@@ -133,7 +133,7 @@ class layout_admin_menu extends layout
                     }
 
                         echo
-                        '<a href="/events.html"><i class="fa fa-table"></i> <span class="nav-label">Events</span></a>',
+                        '<a href="/events"><i class="fa fa-table"></i> <span class="nav-label">Events</span></a>',
                     '</li>';
 
                     //************************************************************
