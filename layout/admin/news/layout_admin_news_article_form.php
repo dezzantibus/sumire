@@ -42,7 +42,7 @@ class layout_admin_news_article_form extends layout_admin_page
             $category_dropdown->add( array( 'label' => $category->category, 'value' => $category->id ) );
         }
 
-        $form->addChild( new layout_admin_form_radio(
+        $form->addChild( new layout_admin_form_dropdown(
             'news_category_id',
             'Category',
             $category_dropdown,
