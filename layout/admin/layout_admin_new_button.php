@@ -21,7 +21,6 @@ class layout_admin_new_button extends layout
         '<div class="search-form">',
             '<form action="', $this->link, '" method="get">',
                 '<div class="input-group">',
-                    '<input type="text" placeholder="Admin Theme" name="search" class="form-control input-lg">',
                     '<div class="input-group-btn">',
                         '<button class="btn btn-lg btn-primary" type="submit">',
                             $this->text,
