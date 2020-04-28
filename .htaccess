@@ -39,15 +39,9 @@
     #  Exceptions for JS and CSS and shit
     #
 
-#    RewriteCond %{HTTP_HOST} ^admin.sumire.it$
     RewriteRule ^js_admin/(.*)$ js_admin/$1 [QSA,L]
-
-#    RewriteCond %{HTTP_HOST} ^admin.sumire.it$
-#    RewriteRule ^css/(.*)$ css_admin/$1 [QSA,L]
-
-#    RewriteCond %{HTTP_HOST} ^admin.sumire.it$
-#    RewriteRule ^img/(.*)$ img_admin/$1 [QSA,L]
-
+    RewriteRule ^css_admin/(.*)$ css_admin/$1 [QSA,L]
+    RewriteRule ^img_admin/(.*)$ img_admin/$1 [QSA,L]
     RewriteRule ^js/(.*)$ js/$1 [QSA,L]
     RewriteRule ^css/(.*)$ css/$1 [QSA,L]
     RewriteRule ^img/(.*)$ img/$1 [QSA,L]
