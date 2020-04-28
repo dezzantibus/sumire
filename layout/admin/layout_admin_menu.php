@@ -5,9 +5,12 @@ class layout_admin_menu extends layout
 
     private $active;
 
-    function __construct( $active )
+    private $active2;
+
+    function __construct( $active=null, $active2=null )
     {
-        $this->active = $active;
+        $this->active  = $active;
+        $this->active2 = $active2;
     }
 
     public function render()
@@ -56,18 +59,35 @@ class layout_admin_menu extends layout
 
                     if( $this->active == 'news' )
                     {
-                        echo '<li class="active">';
+                        $classNews = ' class="active"';
+                        switch( $this->active2 )
+                        {
+                            case 'category' :
+                                $classCategory = ' class="active"';
+                                $classArticle  = '';
+                                break;
+                            case 'article' :
+                                $classCategory = '';
+                                $classArticle  = ' class="active"';
+                                break;
+                            default :
+                                $classCategory = '';
+                                $classArticle  = '';
+                        }
                     }
                     else
                     {
-                        echo '<li>';
+                        $classNews     = '';
+                        $classCategory = '';
+                        $classArticle  = '';
                     }
 
-                        echo
+                    echo
+                    '<li', $classNews ,'>',
                         '<a href="/news.html"><i class="fa fa-files-o"></i> <span class="nav-label">News</span> <span class="fa arrow"></span></a>',
                         '<ul class="nav nav-second-level">',
-                            '<li><a href="/news/category.html">Categories</a></li>',
-                            '<li><a href="/news/article.html">Articles</a></li>',
+                            '<li', $classCategory ,'><a href="/news/category.html">Categories</a></li>',
+                            '<li', $classArticle ,'><a href="/news/article.html">Articles</a></li>',
                         '</ul>',
                     '</li>';
 

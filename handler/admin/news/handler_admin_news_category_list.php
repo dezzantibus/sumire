@@ -30,8 +30,10 @@ class handler_admin_news_category_list extends handler
 
         */
 
+        $categories = model_news_category::getFullList();
+
         // Render page
-        $page = new layout_admin_news_category_list();
+        $page = new layout_admin_news_category_list( $categories );
         $page->render();
 
     }
