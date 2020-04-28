@@ -43,7 +43,7 @@ class layout_admin_news_category_list extends layout_admin_page
         );
         $ibox_content = $ibox->addChild( new layout_html_div( $params ) );
 
-        $ibox_content->addChild( new layout_admin_new_button( 'New category', '/news/category/new' ) );
+        $ibox_content->addChild( new layout_admin_new_button( 'New category', '/news/category/new.html' ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
 

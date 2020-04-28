@@ -62,7 +62,7 @@ class layout_admin_menu extends layout
                         $classNews = ' class="active"';
                         switch( $this->active2 )
                         {
-                            case 'category' :
+                            case 'categories' :
                                 $classCategory = ' class="active"';
                                 $classArticle  = '';
                                 break;

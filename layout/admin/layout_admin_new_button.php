@@ -7,8 +7,7 @@ class layout_admin_new_button extends layout
 
     private $link;
 
-    function __construct
-    ( $text, $link )
+    function __construct ( $text, $link )
     {
         $this->text  = $text;
         $this->link  = $link;
@@ -19,7 +18,7 @@ class layout_admin_new_button extends layout
 
         echo
         '<div class="search-form">',
-            '<form action="', $this->link, '" method="get">',
+            '<form action="', $this->link, '" method="post">',
                 '<div class="input-group">',
                     '<div class="input-group-btn">',
                         '<button class="btn btn-lg btn-primary" type="submit">',
@@ -29,8 +28,7 @@ class layout_admin_new_button extends layout
                 '</div>',
 
             '</form>',
-        '</div>',
-        '<div class="hr-line-dashed"></div>';
+        '</div>';
 
     }
 
