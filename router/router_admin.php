@@ -31,10 +31,11 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'  : return new handler_admin_news_category_new();
-                    case 'edit' : return new handler_admin_news_category_edit();
-                    case 'save' : return new handler_admin_news_category_save();
-                    default     : return new handler_admin_news_category_list();
+                    case 'new'    : return new handler_admin_news_category_new();
+                    case 'edit'   : return new handler_admin_news_category_edit();
+                    case 'save'   : return new handler_admin_news_category_save();
+                    case 'delete' : return new handler_admin_news_category_delete();
+                    default       : return new handler_admin_news_category_list();
                 }
 
             default         : return new handler_admin_news_dashboard();
