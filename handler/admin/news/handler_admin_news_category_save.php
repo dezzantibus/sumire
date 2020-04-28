@@ -11,21 +11,20 @@ class handler_admin_news_category_save extends handler_action
             message::addError( 'Category name is required', 'category' );
         }
 
-        if( !$this->checkRequired( $this->data->order ) )
+        if( !$this->checkNumeric( $this->data->order ) )
         {
             $this->data->order = 0;
         }
 
-        if( !$this->checkRequired( $this->data->homepage ) )
+        if( !$this->checkNumeric( $this->data->homepage ) )
         {
             $this->data->homepage = 0;
         }
 
-        if( !$this->checkRequired( $this->data->category ) )
+        if( !$this->checkRequired( $this->data->homepage_box ) )
         {
             message::addError( 'Homepage layout is required', 'homepage_box' );
         }
-
 
         $category = new data_news_category( $this->data );
 
