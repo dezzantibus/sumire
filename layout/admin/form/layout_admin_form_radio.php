@@ -21,7 +21,7 @@ class layout_admin_form_radio extends layout
     {
         $this->name         = $name;
         $this->label        = $label;
-        $this->list        = $list;
+        $this->list         = $list;
         $this->value        = $value;
         $this->placeholder  = $placeholder;
         $this->class        = $class;

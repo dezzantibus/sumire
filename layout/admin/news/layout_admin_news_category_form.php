@@ -16,7 +16,16 @@ class layout_admin_news_category_form extends layout_admin_page
         );
         $page_wrapper = $this->addChild( new layout_html_div( $params ) );
 
-        $page_wrapper->addChild( new layout_admin_header( 'News - New category' ) );
+        if( empty( $category->id ) )
+        {
+            $message = 'News - New category';
+        }
+        else
+        {
+            $message= 'News - Edit category ' . $category->category;
+        }
+        $page_wrapper->addChild( new layout_admin_header( $message ) );
+
 
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 

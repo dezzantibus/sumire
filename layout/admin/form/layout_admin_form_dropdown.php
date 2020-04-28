@@ -17,7 +17,7 @@ class layout_admin_form_dropdown extends layout
 
     private $errorMessage;
 
-    function __construct( $name, $label, data_array $list, $value=null, $placeholder=null, $class=null, $errorMessage=null )
+    function __construct( $name, $label, data_array $list, $value=null, $errorMessage=null, $placeholder=null, $class=null )
     {
         $this->name         = $name;
         $this->label        = $label;
@@ -30,23 +30,29 @@ class layout_admin_form_dropdown extends layout
 
     public function render()
     {
-		
-		 echo
-        '<div class="form-group">',
-            '<label>', $this->label ,'</label>',
 
-            '<select name="', $this->name, '" class="', $this->class, '">';
+        $errorClass = '';
+        if( !is_null( $this->errorMessage ) )
+        {
+            $errorClass = ' has-error';
+        }
 
-                foreach( $this->list->getData() as $item )
-                {
-                    echo '<option value="' . $item['value'] . '"';
-                    if( $item['value'] == $this->value ) echo ' selected="selected"';
-                    echo '>' . $item['label'] . '</option>';
-                }
+        echo
+        '<div class="form-group', $errorClass, '">',
+            '<label class="col-sm-2 control-label">', $this->label ,'</label>',
+            '<div class="col-sm-10">',
+                '<select class="form-control m-b" name="', $this->name, '">',
 
-            echo
-            '</select>',
+                    foreach( $this->list->getData() as $item )
+                    {
+                        echo '<option value="' . $item['value'] . '"';
+                        if( $item['value'] == $this->value ) echo ' selected="selected"';
+                        echo '>' . $item['label'] . '</option>';
+                    }
 
+                echo
+                '</select>',
+            '</div>',
         '</div>';
 	
     }
