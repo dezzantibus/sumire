@@ -18,6 +18,16 @@ class router
             case 'utente.sumire.it':  return self::user();
             case 'admin.sumire.it':   return router_admin::run();
 
+            // development
+            case 'www.sumire.local':
+            case 'sumire.local':         return self::base();
+            case 'news.sumire.local':    return self::news();
+            case 'blog.sumire.local':    return self::blog();
+            case 'mercato.sumire.local': return self::market();
+            case 'eventi.sumire.local':  return self::events();
+            case 'utente.sumire.local':  return self::user();
+            case 'admin.sumire.local':   return router_admin::run();
+
             default: return router_custom::run();
 
         }

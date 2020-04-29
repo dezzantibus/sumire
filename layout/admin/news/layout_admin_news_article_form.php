@@ -51,6 +51,60 @@ class layout_admin_news_article_form extends layout_admin_page
             $messages['news_category_id']['message']
         ) );
 
+        $carousel = new data_array();
+        $carousel->add( array( 'label' => '', 'value' => '1' ) );
+
+        $form->addChild( new layout_admin_form_checkbox(
+            'carousel',
+            'Carousel',
+            $carousel,
+            $article->carousel,
+            $messages['carousel']['message']
+        ) );
+
+        $homepage = new data_array();
+        $homepage->add( array( 'label' => '', 'value' => '1' ) );
+
+        $form->addChild( new layout_admin_form_checkbox(
+            'homepage',
+            'Homepage',
+            $homepage,
+            $article->homepage,
+            $messages['homepage']['message']
+        ) );
+
+        $form->addChild( new layout_admin_form_text(
+            'title',
+            'Title',
+            $article->title,
+            $messages['title']['message']
+        ) );
+
+        $form->addChild( new layout_admin_form_text(
+            'subtitle',
+            'Subtitle',
+            $article->subtitle,
+            $messages['subtitle']['message']
+        ) );
+
+        $form->addChild( new layout_admin_form_textarea(
+            'short',
+            'Short',
+            $article->short,
+            $messages['short']['message']
+        ) );
+
+        $form->addChild( new layout_admin_form_textarea(
+            'text',
+            'Text',
+            $article->text,
+            $messages['text']['message']
+        ) );
+
+// images
+
+
+
         $page_wrapper->addChild( new layout_admin_footer() );
 
 
