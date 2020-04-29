@@ -42,7 +42,7 @@ class layout_admin_form_textarea extends layout
             '<label class="col-sm-2 control-label">', $this->label ,'</label>',
             '<div class="col-sm-10">',
 
-                '<textarea name="', $this->name, '" class="form-control" type="text" ';
+                '<textarea name="', $this->name, '" class="form-control" rows="', $this->rows, '"';
 
                 if( !is_null( $this->placeholder ) )
                 {

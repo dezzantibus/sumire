@@ -98,7 +98,8 @@ class layout_admin_news_article_form extends layout_admin_page
             'text',
             'Text',
             $article->text,
-            $messages['text']['message']
+            $messages['text']['message'],
+            50
         ) );
 
 // images
