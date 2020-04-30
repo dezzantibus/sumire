@@ -36,7 +36,9 @@ class router
 
     static function base()
     {
-        return new handler_base_homepage();
+        //return new handler_base_homepage();
+        // Using the news homepage while there's only news
+        return new handler_news_homepage();
     }
 
     static function news()
