@@ -17,17 +17,14 @@ class file
             return false;
         }
 
-        $localFile  = constant::TEMP_DIR .  $_FILES[ $input ]['name'];
-
-        move_uploaded_file( $_FILES[ $input ]['tmp_name'], $localFile );
+        $localFile  = $_FILES[ $input ]['tmp_name'];
+        $remoteFile = $path . '/' . $_FILES[ $input ]['name'];
 
         $s3 = new S3( constant::KEY, constant::SECRET );
 
-        $s3->putObjectFile( $localFile, constant::BUCKET, baseName( $localFile ), S3::ACL_PUBLIC_READ );
+        $s3->putObjectFile( $localFile, constant::BUCKET, $remoteFile, S3::ACL_PUBLIC_READ );
 
-        unlink( $localFile );
-
-        return 'images.sumire.it/'. $path . '/' . $_FILES[ $input ]['name'];
+        return 'images.sumire.it/'. $remoteFile;
 
     }
 

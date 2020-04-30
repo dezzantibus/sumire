@@ -8,9 +8,17 @@ class model_news_article extends model
 
         $sql = '
             INSERT INTO news_article
-                ( `news_category_id`, `carousel`, `homepage`, `title`, `subtitle`, `short`, `text` )
+                (
+                `news_category_id`, `carousel`, `homepage`, `title`, `subtitle`, `short`, `text`,
+                `image1`, `image2`, `image3`, `image4`,
+                `caption1`, `caption2`, `caption3`, `caption4`
+                )
             VALUES
-                ( :news_category_id,  :carousel,  :homepage,  :title,  :subtitle,  :short,  :text )
+                (
+                :news_category_id,  :carousel,  :homepage,  :title,  :subtitle,  :short,  :text,
+                :image1,  :image2, :image3,  :image4,
+                :caption1,  :caption2,  :caption3,  :caption4
+                )
         ';
 
         $query = db::prepare( $sql );
@@ -22,6 +30,14 @@ class model_news_article extends model
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':short',            $data->short )
             ->bindString( ':text',             $data->text )
+            ->bindString( ':image1',           $data->image1 )
+            ->bindString( ':image2',           $data->image2 )
+            ->bindString( ':image3',           $data->image3 )
+            ->bindString( ':image4',           $data->image4 )
+            ->bindString( ':caption1',         $data->caption1 )
+            ->bindString( ':caption2',         $data->caption2 )
+            ->bindString( ':caption3',         $data->caption3 )
+            ->bindString( ':caption4',         $data->caption4 )
             ->execute();
 
         return db::lastInsertId();

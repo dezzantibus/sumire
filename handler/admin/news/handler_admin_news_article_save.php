@@ -43,7 +43,9 @@ class handler_admin_news_article_save extends handler_action
         else
         {
 
-            $path = 'news/' . $article->news_category_id . '/' . date('Y-m-d') . '/' . $article->id;
+            $category = model_news_category::getById( $article->news_category_id );
+
+            $path = 'news/' . $category->category . '/' . date('Y-m-d') . '/' . $article->title;
 
             $article->image1 = file::saveFromPost( 'image1', $path );
 
