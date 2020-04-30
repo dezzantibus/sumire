@@ -23,7 +23,7 @@ class constant
 
     const SECRET = 'kV/mIcNcqk34UlWGSLs4H/0HO5jUcJU1mSKllwNn';
 
-    const BUCKET = 'testing-php-transfer';
+    const BUCKET = 'images.sumire.it';
 
     const IMAGES_DOMAIN = 'images.sumire.it';
 
