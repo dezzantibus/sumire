@@ -22,7 +22,7 @@ class file
 
         $s3 = new S3( constant::KEY, constant::SECRET );
 
-        $s3->putObjectFile( $localFile, constant::BUCKET, $remoteFile, S3::ACL_PUBLIC_READ );
+        $s3->putObjectFile( $localFile, constant::BUCKET, $remoteFile, S3::ACL_PUBLIC_READ, array(), 'image/jpeg' );
 
         return 'images.sumire.it/'. $remoteFile;
 
