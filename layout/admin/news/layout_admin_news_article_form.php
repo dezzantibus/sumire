@@ -91,7 +91,8 @@ class layout_admin_news_article_form extends layout_admin_page
             'short',
             'Short',
             $article->short,
-            $messages['short']['message']
+            $messages['short']['message'],
+            5
         ) );
 
         $form->addChild( new layout_admin_form_textarea(
@@ -99,12 +100,15 @@ class layout_admin_news_article_form extends layout_admin_page
             'Text',
             $article->text,
             $messages['text']['message'],
-            50
+            20
         ) );
 
-// images
-
-
+        $form->addChild( new layout_admin_form_file(
+            'image1',
+            'Image',
+            null,
+            $messages['image1']['message']
+        ) );
 
         $page_wrapper->addChild( new layout_admin_footer() );
 
