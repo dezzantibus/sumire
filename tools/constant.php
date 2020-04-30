@@ -23,9 +23,9 @@ class constant
 
     const SECRET = 'kV/mIcNcqk34UlWGSLs4H/0HO5jUcJU1mSKllwNn';
 
-    const BUCKET = 'images.sumire.it';
+    const BUCKET = 'testing-php-transfer';
 
-    const IMAGES_DOMAIN = 'images.sumire.it';
+    const IMAGES_DOMAIN = 'https://testing-php-transfer.s3-eu-west-1.amazonaws.com/';
 
     /**** SYSTEM ****/
 
