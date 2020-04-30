@@ -114,7 +114,7 @@ class model_news_article extends model
         if( empty( $result ) )
         {
 
-            $sql = "SELECT * FROM news_article ORDER BY `{$order}` LIMIT {$start}, {$end}";
+            $sql = "SELECT * FROM news_article ORDER BY {$order} LIMIT {$start}, {$end}";
 
             $query = db::prepare( $sql );
             $query->execute();
