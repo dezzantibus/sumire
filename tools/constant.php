@@ -17,4 +17,18 @@ class constant
 
     const ADMIN_ARTICLES_PER_PAGE = 40;
 
+    /**** IMAGES ****/
+
+    const KEY = 'AKIA2J7FVMO3AWZ34BZP';
+
+    const SECRET = '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';
+
+    const BUCKET = 'testing-php-transfer';
+
+    const IMAGES_DOMAIN = 'images.sumire.it';
+
+    /**** SYSTEM ****/
+
+    const TEMP_DIR = '/var/www/temp/';
+
 }

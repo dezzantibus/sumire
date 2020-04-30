@@ -20,7 +20,8 @@ class class_finder
             case 'security': require_once __DIR__ . '/security.php'; break;
             case 'weather' : require_once __DIR__ . '/weather.php';  break;
             case 'exchange': require_once __DIR__ . '/exchange.php'; break;
-            case 'S3'      : require_once __DIR__ . '/s3.php';       break;
+            case 'S3'      : require_once __DIR__ . '/S3.php';       break;
+            case 'file'    : require_once __DIR__ . '/file.php';     break;
             default: require_once __DIR__ . '/../' . $frags[0] . '/' . $name . '.php';
         }
 
