@@ -39,6 +39,7 @@ class handler_admin_news_article_save extends handler_action
                 model_news_category::getFullList( 'category' )
             );
             $page->render();
+            
         }
         else
         {
@@ -47,7 +48,10 @@ class handler_admin_news_article_save extends handler_action
 
             $path = 'news/' . $category->category . '/' . date('Y-m-d') . '/' . $article->title;
 
-            $article->image1 = file::saveFromPost( 'image1', $path );
+            if( !empty( $this->files['image1'] ) ) $article->image1 = file::saveFromPost( $this->files['image1'], $path );
+            if( !empty( $this->files['image2'] ) ) $article->image1 = file::saveFromPost( $this->files['image2'], $path );
+            if( !empty( $this->files['image3'] ) ) $article->image1 = file::saveFromPost( $this->files['image3'], $path );
+            if( !empty( $this->files['image4'] ) ) $article->image1 = file::saveFromPost( $this->files['image4'], $path );
 
             if( empty( $article->id ) )
             {

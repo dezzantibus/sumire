@@ -5,10 +5,13 @@ abstract class handler_action
 
     protected $data;
 
+    protected $files;
+
     function __construct()
     {
 
-        $this->data = $_POST;
+        $this->data  = $_POST;
+        $this->files = $_FILES;
 
     }
 

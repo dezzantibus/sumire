@@ -37,13 +37,13 @@ class file
     static public function saveFromPost( $input, $path )
     {
 
-        if( empty( $_FILES[ $input ]['tmp_name'] ) )
+        if( empty( $input['tmp_name'] ) )
         {
             return false;
         }
 
-        $localFile  = $_FILES[ $input ]['tmp_name'];
-        $remoteFile = $path . '/' . $_FILES[ $input ]['name'];
+        $localFile  = $input['tmp_name'];
+        $remoteFile = $path . '/' . $input['name'];
 
         $s3 = new S3( constant::KEY, constant::SECRET );
 
