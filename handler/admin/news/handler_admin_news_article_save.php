@@ -39,7 +39,7 @@ class handler_admin_news_article_save extends handler_action
                 model_news_category::getFullList( 'category' )
             );
             $page->render();
-            
+
         }
         else
         {

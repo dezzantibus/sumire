@@ -19,9 +19,9 @@ class constant
 
     /**** IMAGES ****/
 
-    const KEY = 'AKIA2J7FVMO3AWZ34BZP';
+    const KEY = '#';
 
-    const SECRET = 'kV/mIcNcqk34UlWGSLs4H/0HO5jUcJU1mSKllwNn';
+    const SECRET = '#';
 
     const BUCKET = 'testing-php-transfer';
 
