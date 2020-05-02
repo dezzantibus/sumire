@@ -25,7 +25,7 @@ class constant
 
     const BUCKET = 'testing-php-transfer';
 
-    const IMAGES_DOMAIN = 'https://testing-php-transfer.s3-eu-west-1.amazonaws.com/';
+    const IMAGES_DOMAIN = 'http://img.sumire.it.s3-eu-central-1.amazonaws.com/';
 
     /**** SYSTEM ****/
 

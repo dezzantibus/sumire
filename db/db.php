@@ -6,13 +6,13 @@ class db
     /** @var $connection PDO  */
     static protected $connection = null;
 
-    const HOST = 'myservices.rds.firmstep.com';
+    const HOST = 'database.sumire.it';
 
-    const SCHEMA = 'test';
+    const SCHEMA = 'sumire';
 
-    const USER = 'devtest1';
+    const USER = 'admin';
 
-    const PASS = 'devtest1';
+    const PASS = 'antani75';
 
     public static function connect()
     {
