@@ -215,7 +215,7 @@ class S3
 	 * @acess public
 	 * @static
 	 */
-	public static $signVer = 'v2';
+	public static $signVer = 'v4';
 
 	/**
 	* Constructor - if you're not using the class statically
@@ -277,7 +277,7 @@ class S3
 			}		
 		}
 
-		return empty($region) ? 'us-east-1' : $region;
+		return empty($region) ? 'eu-central-1' : $region;
 	}
 
 
@@ -410,7 +410,7 @@ class S3
 	* @param string $version of signature ('v4' or 'v2')
 	* @return void
 	*/
-	public static function setSignatureVersion($version = 'v2')
+	public static function setSignatureVersion($version = 'v4')
 	{
 		self::$signVer = $version;
 	}
@@ -605,7 +605,7 @@ class S3
 
 		if ($location === false) $location = self::getRegion();
 
-		if ($location !== false && $location !== "us-east-1")
+		if ($location !== false && $location !== "eu-central-1")
 		{
 			$dom = new DOMDocument;
 			$createBucketConfiguration = $dom->createElement('CreateBucketConfiguration');
