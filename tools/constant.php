@@ -19,13 +19,9 @@ class constant
 
     /**** IMAGES ****/
 
-    const KEY = '#';
+    const BUCKET = 'img.sumire.it';
 
-    const SECRET = '#';
-
-    const BUCKET = 'testing-php-transfer';
-
-    const IMAGES_DOMAIN = 'http://img.sumire.it.s3-eu-central-1.amazonaws.com/';
+    const IMAGES_DOMAIN = 'http://img.sumire.it/';
 
     /**** SYSTEM ****/
 

@@ -45,7 +45,7 @@ class file
         $localFile  = $input['tmp_name'];
         $remoteFile = $path . '/' . $input['name'];
 
-        $s3 = new S3( constant::KEY, constant::SECRET );
+        $s3 = new S3( environment::AWS_KEY, environment::AWS_SECRET );
 
         $s3->putObjectFile( $localFile, constant::BUCKET, $remoteFile, S3::ACL_PUBLIC_READ, array(), 'image/jpeg' );
 

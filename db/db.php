@@ -6,19 +6,11 @@ class db
     /** @var $connection PDO  */
     static protected $connection = null;
 
-    const HOST = 'database.sumire.it';
-
-    const SCHEMA = 'sumire';
-
-    const USER = 'admin';
-
-    const PASS = 'antani75';
-
     public static function connect()
     {
         if( is_null( self::$connection ) )
         {
-            self::$connection = new PDO( 'mysql:host=' . self::HOST . ';dbname=' . self::SCHEMA, self::USER, self::PASS );
+            self::$connection = new PDO( 'mysql:host=' . environment::DB_HOST . ';dbname=' . environment::DB_SCHEMA, environment::DB_USER, environment::DB_PASS );
         }
     }
 

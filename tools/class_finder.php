@@ -14,14 +14,15 @@ class class_finder
             case 'handler': self::getHandlerClass( $name, $frags ); break;
             case 'action' : self::getActionClass( $name, $frags );  break;
 
-            case 'banner'  : require_once __DIR__ . '/banner.php';   break;
-            case 'constant': require_once __DIR__ . '/constant.php'; break;
-            case 'message' : require_once __DIR__ . '/message.php';  break;
-            case 'security': require_once __DIR__ . '/security.php'; break;
-            case 'weather' : require_once __DIR__ . '/weather.php';  break;
-            case 'exchange': require_once __DIR__ . '/exchange.php'; break;
-            case 'S3'      : require_once __DIR__ . '/S3.php';       break;
-            case 'file'    : require_once __DIR__ . '/file.php';     break;
+            case 'banner'      : require_once __DIR__ . '/banner.php';      break;
+            case 'constant'    : require_once __DIR__ . '/constant.php';    break;
+            case 'message'     : require_once __DIR__ . '/message.php';     break;
+            case 'security'    : require_once __DIR__ . '/security.php';    break;
+            case 'weather'     : require_once __DIR__ . '/weather.php';     break;
+            case 'exchange'    : require_once __DIR__ . '/exchange.php';    break;
+            case 'S3'          : require_once __DIR__ . '/S3.php';          break;
+            case 'file'        : require_once __DIR__ . '/file.php';        break;
+            case 'environment' : require_once __DIR__ . '/environment.php'; break;
             default: require_once __DIR__ . '/../' . $frags[0] . '/' . $name . '.php';
         }
 
