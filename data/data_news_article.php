@@ -7,6 +7,8 @@ class data_news_article extends data
 
     public $news_category_id;
 
+    public $user_id;
+
     public $carousel;
 
     public $homepage;
@@ -38,6 +40,7 @@ class data_news_article extends data
         {
             if( isset( $data['id'] ) )               $this->id               = $data['id'];
             if( isset( $data['news_category_id'] ) ) $this->news_category_id = $data['news_category_id'];
+            if( isset( $data['user_id'] ) )          $this->user_id          = $data['user_id'];
             if( isset( $data['carousel'] ) )         $this->carousel         = $data['carousel'];
             if( isset( $data['homepage'] ) )         $this->homepage         = $data['homepage'];
             if( isset( $data['title'] ) )            $this->title            = $data['title'];

@@ -9,13 +9,13 @@ class model_news_article extends model
         $sql = '
             INSERT INTO news_article
                 (
-                `news_category_id`, `carousel`, `homepage`, `title`, `subtitle`, `short`, `text`,
+                `news_category_id`, `user_id`, `carousel`, `homepage`, `title`, `subtitle`, `short`, `text`,
                 `image1`, `image2`, `image3`, `image4`,
                 `caption1`, `caption2`, `caption3`, `caption4`
                 )
             VALUES
                 (
-                :news_category_id,  :carousel,  :homepage,  :title,  :subtitle,  :short,  :text,
+                :news_category_id,  :user_id,  :carousel,  :homepage,  :title,  :subtitle,  :short,  :text,
                 :image1,  :image2, :image3,  :image4,
                 :caption1,  :caption2,  :caption3,  :caption4
                 )
@@ -23,7 +23,8 @@ class model_news_article extends model
 
         $query = db::prepare( $sql );
         $query
-            ->bindString( ':news_category_id', $data->news_category_id )
+            ->bindInt   ( ':news_category_id', $data->news_category_id )
+            ->bindInt   ( ':user_id',          $data->user_id )
             ->bindInt   ( ':carousel',         $data->carousel )
             ->bindInt   ( ':homepage',         $data->homepage )
             ->bindString( ':title',            $data->title )
@@ -61,7 +62,7 @@ class model_news_article extends model
 
         $query = db::prepare( $sql );
         $query
-            ->bindString( ':news_category_id', $data->news_category_id )
+            ->bindInt   ( ':news_category_id', $data->news_category_id )
             ->bindInt   ( ':carousel',         $data->carousel )
             ->bindInt   ( ':homepage',         $data->homepage )
             ->bindString( ':title',            $data->title )

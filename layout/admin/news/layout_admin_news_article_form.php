@@ -36,7 +36,8 @@ class layout_admin_news_article_form extends layout_admin_page
 
         $messages = message::getMessages();
 
-        $form->addChild( new layout_admin_form_hidden( 'id', $article->id ) );
+        $form->addChild( new layout_admin_form_hidden( 'id',      $article->id ) );
+        $form->addChild( new layout_admin_form_hidden( 'user_id', session::$user->id ) );
 
         $category_dropdown = new data_array();
         while( !$categories->isEmpty() )
