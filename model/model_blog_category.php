@@ -1,13 +1,13 @@
 <?php
 
-class model_news_category extends model
+class model_blog_category extends model
 {
 
-    static public function create( data_news_category $data )
+    static public function create( data_blog_category $data )
     {
 
         $sql = '
-            INSERT INTO news_category
+            INSERT INTO blog_category
                 ( `category`, `order`, `homepage`, `homepage_box` )
             VALUES
                 ( :category,  :order,  :homepage,  :homepage_box )
@@ -25,11 +25,11 @@ class model_news_category extends model
 
     }
 
-    static public function update( data_news_category $data )
+    static public function update( data_blog_category $data )
     {
 
         $sql = '
-            UPDATE news_category
+            UPDATE blog_category
             SET `category`     = :category,
                 `order`        = :order,
                 `homepage`     = :homepage,
@@ -51,7 +51,7 @@ class model_news_category extends model
     static public function delete( $id )
     {
 
-        $sql = 'DELETE FROM news_category WHERE id = :id';
+        $sql = 'DELETE FROM blog_category WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id', $id )->execute();
@@ -61,14 +61,14 @@ class model_news_category extends model
     static public function getById( $id )
     {
 
-        $sql = 'SELECT * FROM news_category WHERE id = :id';
+        $sql = 'SELECT * FROM blog_category WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id', $id )->execute();
 
         $row = $query->fetch();
 
-        return new data_news_category( $row );
+        return new data_blog_category( $row );
 
     }
 
@@ -80,7 +80,7 @@ class model_news_category extends model
         if( empty( $result ) )
         {
 
-            $sql = "SELECT * FROM news_category ORDER BY `$order` ASC";
+            $sql = "SELECT * FROM blog_category ORDER BY `$order` ASC";
 
             $query = db::prepare( $sql );
             $query->execute();
@@ -90,7 +90,7 @@ class model_news_category extends model
             {
                 if( !is_numeric($row[ $order ]) OR $row[ $order ] > 0 )
                 {
-                    $result->add( new data_news_category( $row ) );
+                    $result->add( new data_blog_category( $row ) );
                 }
             }
 
@@ -110,7 +110,7 @@ class model_news_category extends model
         if( empty( $result ) )
         {
 
-            $sql = 'SELECT * FROM news_category WHERE homepage > 0 ORDER BY `homepage` ASC';
+            $sql = 'SELECT * FROM blog_category WHERE homepage > 0 ORDER BY `homepage` ASC';
 
             $query = db::prepare( $sql );
             $query->execute();
@@ -118,7 +118,7 @@ class model_news_category extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_news_category( $row ) );
+                $result->add( new data_blog_category( $row ) );
             }
 
             //cache_category::saveHomeCategories( $result );

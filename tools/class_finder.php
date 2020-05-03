@@ -64,6 +64,7 @@ class class_finder
             switch( $frags[2] )
             {
                 case 'news': require_once __DIR__ . '/../layout/admin/news/' . $name . '.php'; break;
+                case 'blog': require_once __DIR__ . '/../layout/admin/blog/' . $name . '.php'; break;
                 case 'form': require_once __DIR__ . '/../layout/admin/form/' . $name . '.php'; break;
                 default    : require_once __DIR__ . '/../layout/admin/'      . $name . '.php';
 
@@ -108,6 +109,7 @@ class class_finder
             switch( $frags[2] )
             {
                 case 'news': require_once __DIR__ . '/../handler/admin/news/' . $name . '.php'; break;
+                case 'blog': require_once __DIR__ . '/../handler/admin/blog/' . $name . '.php'; break;
                 default    : require_once __DIR__ . '/../handler/admin/'      . $name . '.php';
             }
         }

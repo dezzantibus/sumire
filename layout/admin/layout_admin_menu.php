@@ -95,15 +95,36 @@ class layout_admin_menu extends layout
 
                     if( $this->active == 'blog' )
                     {
-                        echo '<li class="active">';
+                        $classNews = ' class="active"';
+                        switch( $this->active2 )
+                        {
+                            case 'categories' :
+                                $classCategory = ' class="active"';
+                                $classArticle  = '';
+                                break;
+                            case 'article' :
+                                $classCategory = '';
+                                $classArticle  = ' class="active"';
+                                break;
+                            default :
+                                $classCategory = '';
+                                $classArticle  = '';
+                        }
                     }
                     else
                     {
-                        echo '<li>';
+                        $classNews     = '';
+                        $classCategory = '';
+                        $classArticle  = '';
                     }
 
-                        echo
-                        '<a href="/blog"><i class="fa fa-edit"></i> <span class="nav-label">Blog</span></a>',
+                    echo
+                    '<li', $classNews ,'>',
+                        '<a href="/blog"><i class="fa fa-files-o"></i> <span class="nav-label">Blog</span> <span class="fa arrow"></span></a>',
+                        '<ul class="nav nav-second-level">',
+                            '<li', $classCategory ,'><a href="/blog/category">Categories</a></li>',
+                            '<li', $classArticle ,'><a href="/blog/article">Articles</a></li>',
+                        '</ul>',
                     '</li>';
 
                     //************************************************************
