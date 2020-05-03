@@ -53,8 +53,8 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'    : return new handler_admin_blog_article_new();
-                    case 'edit'   : return new handler_admin_blog_article_edit();
+                    case 'new'    :
+                    case 'edit'   : return new handler_admin_blog_article_form();
                     case 'save'   : return new handler_admin_blog_article_save();
                     case 'delete' : return new handler_admin_blog_article_delete();
                     default       : return new handler_admin_blog_article_list();

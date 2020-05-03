@@ -1,14 +1,14 @@
 <?php
 
-class layout_admin_news_article_form extends layout_admin_page
+class layout_admin_blog_article_form extends layout_admin_page
 {
 
-    public function __construct( data_news_article $article, data_array $categories )
+    public function __construct( data_blog_article $article, data_array $categories )
     {
 
-        $this->title = 'Sumire - admin - News';
+        $this->title = 'Sumire - admin - Blog';
 
-        $this->addChild( new layout_admin_menu( 'news' ) );
+        $this->addChild( new layout_admin_menu( 'blog' ) );
 
         $params = array(
             'id'    => 'page-wrapper',
@@ -18,20 +18,20 @@ class layout_admin_news_article_form extends layout_admin_page
 
         if( empty( $article->id ) )
         {
-            $message = 'News - New article';
+            $message = 'Blog - New article';
         }
         else
         {
-            $message= 'News - Edit article ' . $article->title;
+            $message= 'Blog - Edit article ' . $article->title;
         }
         $page_wrapper->addChild( new layout_admin_header( $message ) );
 
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $page_box->addChild( new layout_admin_form(
-            '/news/article/save',
+            '/blog/article/save',
             'form-horizontal',
-            'news_article'
+            'blog_article'
         ) );
 
         $messages = message::getMessages();
@@ -47,22 +47,11 @@ class layout_admin_news_article_form extends layout_admin_page
         }
 
         $form->addChild( new layout_admin_form_dropdown(
-            'news_category_id',
+            'blog_category_id',
             'Category',
             $category_dropdown,
-            $article->news_category_id,
-            $messages['news_category_id']['message']
-        ) );
-
-        $carousel = new data_array();
-        $carousel->add( array( 'label' => '', 'value' => '1' ) );
-
-        $form->addChild( new layout_admin_form_checkbox(
-            'carousel',
-            'Carousel',
-            $carousel,
-            $article->carousel,
-            $messages['carousel']['message']
+            $article->blog_category_id,
+            $messages['blog_category_id']['message']
         ) );
 
         $homepage = new data_array();
@@ -88,14 +77,6 @@ class layout_admin_news_article_form extends layout_admin_page
             'Subtitle',
             $article->subtitle,
             $messages['subtitle']['message']
-        ) );
-
-        $form->addChild( new layout_admin_form_textarea(
-            'short',
-            'Short',
-            $article->short,
-            $messages['short']['message'],
-            5
         ) );
 
         $form->addChild( new layout_admin_form_textarea(
