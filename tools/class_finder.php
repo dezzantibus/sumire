@@ -44,6 +44,7 @@ class class_finder
                 case 'events':   require_once __DIR__ . '/../layout/events/'   . $name . '.php'; break;
                 case 'market':   require_once __DIR__ . '/../layout/market/'   . $name . '.php'; break;
                 case 'news':     require_once __DIR__ . '/../layout/news/'     . $name . '.php'; break;
+                case 'recipe':   require_once __DIR__ . '/../layout/recipe/'   . $name . '.php'; break;
                 case 'html':     require_once __DIR__ . '/../layout/html/'     . $name . '.php'; break;
                 case 'form':     require_once __DIR__ . '/../layout/form/'     . $name . '.php'; break;
                 case 'elements': require_once __DIR__ . '/../layout/elements/' . $name . '.php'; break;
@@ -92,6 +93,7 @@ class class_finder
                 case 'events': require_once __DIR__ . '/../handler/events/' . $name . '.php'; break;
                 case 'market': require_once __DIR__ . '/../handler/market/' . $name . '.php'; break;
                 case 'news':   require_once __DIR__ . '/../handler/news/'   . $name . '.php'; break;
+                case 'recipe': require_once __DIR__ . '/../handler/recipe/' . $name . '.php'; break;
                 default:       require_once __DIR__ . '/../handler/'        . $name . '.php';
             }
         }
@@ -120,7 +122,7 @@ class class_finder
         }
 
     }
-
+/*
     private static function getActionClass( $name, $frags )
     {
 
@@ -138,5 +140,5 @@ class class_finder
         }
 
     }
-
+*/
 }
