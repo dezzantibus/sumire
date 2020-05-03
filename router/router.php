@@ -16,6 +16,7 @@ class router
             case 'mercato.sumire.it': return self::market();
             case 'eventi.sumire.it':  return self::events();
             case 'utente.sumire.it':  return self::user();
+            case 'ricette.sumire.it': return self::recipe();
             case 'admin.sumire.it':   return router_admin::run();
 
             // development
@@ -64,6 +65,11 @@ class router
     static function user()
     {
         return new handler_user_homepage();
+    }
+
+    static function recipe()
+    {
+        return new handler_recipe_homepage();
     }
 
 }
