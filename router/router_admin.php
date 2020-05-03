@@ -23,8 +23,8 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'    : return new handler_admin_news_article_new();
-                    case 'edit'   : return new handler_admin_news_article_edit();
+                    case 'new'    :
+                    case 'edit'   : return new handler_admin_news_article_form();
                     case 'save'   : return new handler_admin_news_article_save();
                     case 'delete' : return new handler_admin_news_article_delete();
                     default       : return new handler_admin_news_article_list();
@@ -34,8 +34,8 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'    : return new handler_admin_news_category_new();
-                    case 'edit'   : return new handler_admin_news_category_edit();
+                    case 'new'    :
+                    case 'edit'   : return new handler_admin_news_category_form();
                     case 'save'   : return new handler_admin_news_category_save();
                     case 'delete' : return new handler_admin_news_category_delete();
                     default       : return new handler_admin_news_category_list();
@@ -64,7 +64,7 @@ class router_admin
 
                 switch( $_GET['action'] )
                 {
-                    case 'new'    : 
+                    case 'new'    :
                     case 'edit'   : return new handler_admin_blog_category_form();
                     case 'save'   : return new handler_admin_blog_category_save();
                     case 'delete' : return new handler_admin_blog_category_delete();
