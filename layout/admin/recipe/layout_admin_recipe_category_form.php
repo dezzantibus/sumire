@@ -1,14 +1,14 @@
 <?php
 
-class layout_admin_news_category_form extends layout_admin_page
+class layout_admin_recipe_category_form extends layout_admin_page
 {
 
-    public function __construct( data_news_category $category )
+    public function __construct( data_recipe_category $category )
     {
 
-        $this->title = 'Sumire - admin - News';
+        $this->title = 'Sumire - admin - Recipes';
 
-        $this->addChild( new layout_admin_menu( 'news', 'categories' ) );
+        $this->addChild( new layout_admin_menu( 'recipe', 'categories' ) );
 
         $params = array(
             'id'    => 'page-wrapper',
@@ -18,18 +18,18 @@ class layout_admin_news_category_form extends layout_admin_page
 
         if( empty( $category->id ) )
         {
-            $message = 'News - New category';
+            $message = 'Recipes - New category';
         }
         else
         {
-            $message= 'News - Edit category ' . $category->category;
+            $message= 'Recipes - Edit category ' . $category->category;
         }
         $page_wrapper->addChild( new layout_admin_header( $message ) );
 
         $page_box = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $page_box->addChild( new layout_admin_form(
-            '/news/category/save',
+            '/recipe/category/save',
             'form-horizontal',
             'news_category'
         ) );

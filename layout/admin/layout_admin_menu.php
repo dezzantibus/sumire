@@ -129,6 +129,42 @@ class layout_admin_menu extends layout
 
                     //************************************************************
 
+                    if( $this->active == 'recipe' )
+                    {
+                        $classNews = ' class="active"';
+                        switch( $this->active2 )
+                        {
+                            case 'categories' :
+                                $classCategory = ' class="active"';
+                                $classArticle  = '';
+                                break;
+                            case 'recipe' :
+                                $classCategory = '';
+                                $classArticle  = ' class="active"';
+                                break;
+                            default :
+                                $classCategory = '';
+                                $classArticle  = '';
+                        }
+                    }
+                    else
+                    {
+                        $classNews     = '';
+                        $classCategory = '';
+                        $classArticle  = '';
+                    }
+
+                    echo
+                    '<li', $classNews ,'>',
+                        '<a href="/blog"><i class="fa fa-files-o"></i> <span class="nav-label">Recipe</span> <span class="fa arrow"></span></a>',
+                        '<ul class="nav nav-second-level">',
+                            '<li', $classCategory ,'><a href="/recipe/category">Categories</a></li>',
+                            '<li', $classArticle ,'><a href="/recipe/recipe">Recipes</a></li>',
+                        '</ul>',
+                    '</li>';
+
+                    //************************************************************
+
                     if( $this->active == 'market' )
                     {
                         echo '<li class="active">';

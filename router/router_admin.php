@@ -8,8 +8,9 @@ class router_admin
 
         switch( $_GET['page'] )
         {
-            case 'news' : return self::news();
-            case 'blog' : return self::blog();
+            case 'news'   : return self::news();
+            case 'blog'   : return self::blog();
+            case 'recipe' : return self::recipe();
             default     : return new handler_admin_homepage();
         }
 
@@ -72,6 +73,36 @@ class router_admin
                 }
 
             default         : return new handler_admin_blog_dashboard();
+        }
+    }
+
+    static function recipe()
+    {
+        switch( $_GET['sub'] )
+        {
+            case 'recipe'  :
+
+                switch( $_GET['action'] )
+                {
+                    case 'new'    :
+                    case 'edit'   : return new handler_admin_recipe_article_form();
+                    case 'save'   : return new handler_admin_recipe_article_save();
+                    case 'delete' : return new handler_admin_recipe_article_delete();
+                    default       : return new handler_admin_recipe_article_list();
+                }
+
+            case 'category' :
+
+                switch( $_GET['action'] )
+                {
+                    case 'new'    :
+                    case 'edit'   : return new handler_admin_recipe_category_form();
+                    case 'save'   : return new handler_admin_recipe_category_save();
+                    case 'delete' : return new handler_admin_recipe_category_delete();
+                    default       : return new handler_admin_recipe_category_list();
+                }
+
+            default         : return new handler_admin_recipe_dashboard();
         }
     }
 
