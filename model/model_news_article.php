@@ -57,8 +57,14 @@ class model_news_article extends model
                 `subtitle`         = :subtitle,
                 `short`            = :short,
                 `text`             = :text
-            WHERE id = :id
         ';
+
+        if( !empty($data->image1) ) $sql .= ', `image1` = :image1';
+        if( !empty($data->image2) ) $sql .= ', `image2` = :image2';
+        if( !empty($data->image3) ) $sql .= ', `image3` = :image3';
+        if( !empty($data->image4) ) $sql .= ', `image4` = :image4';
+
+        $sql .= ' WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query
@@ -69,8 +75,16 @@ class model_news_article extends model
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':short',            $data->short )
             ->bindString( ':text',             $data->text )
-            ->bindInt   ( ':id',               $data->id )
-            ->execute();
+            ->bindInt   ( ':id',               $data->id );
+
+        if( !empty($data->image1) ) $query->bindString( ':image1', $data->image1 );
+        if( !empty($data->image2) ) $query->bindString( ':image2', $data->image2 );
+        if( !empty($data->image3) ) $query->bindString( ':image3', $data->image3 );
+        if( !empty($data->image4) ) $query->bindString( ':image4', $data->image4 );
+
+        $query->execute();
+
+
 
     }
 
