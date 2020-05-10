@@ -1,72 +1,62 @@
 <?php
 
-class model_blog_article extends model
+class model_recipe_entry extends model
 {
 
-    static public function create( data_blog_article $data )
+    static public function create( data_recipe_entry $data )
     {
 
         $sql = '
-            INSERT INTO blog_article
+            INSERT INTO recipe_entry
                 (
-                `blog_category_id`, `user_id`, `homepage`, `title`, `subtitle`, `text`,
-                `image1`, `image2`, `image3`, `image4`,
-                `caption1`, `caption2`, `caption3`, `caption4`
+                `recipe_category_id`, `user_id`, `homepage`,
+                `name`,  `description`, `notes`, `image`
                 )
             VALUES
                 (
-                :blog_category_id,  :user_id,  :homepage,  :title,  :subtitle,  :text,
-                :image1,  :image2, :image3,  :image4,
-                :caption1,  :caption2,  :caption3,  :caption4
+                :recipe_category_id,  :user_id,  :homepage,
+                :name,  :description,  :notes,  :image
                 )
         ';
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt   ( ':blog_category_id', $data->blog_category_id )
-            ->bindInt   ( ':user_id',          $data->user_id )
-            ->bindInt   ( ':homepage',         $data->homepage )
-            ->bindString( ':title',            $data->title )
-            ->bindString( ':subtitle',         $data->subtitle )
-            ->bindString( ':text',             $data->text )
-            ->bindString( ':image1',           $data->image1 )
-            ->bindString( ':image2',           $data->image2 )
-            ->bindString( ':image3',           $data->image3 )
-            ->bindString( ':image4',           $data->image4 )
-            ->bindString( ':caption1',         $data->caption1 )
-            ->bindString( ':caption2',         $data->caption2 )
-            ->bindString( ':caption3',         $data->caption3 )
-            ->bindString( ':caption4',         $data->caption4 )
+            ->bindInt   ( ':recipe_category_id', $data->recipe_category_id )
+            ->bindInt   ( ':user_id',            $data->user_id )
+            ->bindInt   ( ':homepage',           $data->homepage )
+            ->bindString( ':name',               $data->name )
+            ->bindString( ':description',        $data->description )
+            ->bindString( ':notes',              $data->notes )
+            ->bindString( ':image',              $data->image )
             ->execute();
 
         return db::lastInsertId();
 
     }
 
-    static public function update( data_blog_article $data )
+    static public function update( data_recipe_entry $data )
     {
 
         $sql = '
-            UPDATE blog_article
-            SET `blog_category_id` = :blog_category_id,
-                `carousel`         = :carousel,
-                `homepage`         = :homepage,
-                `title`            = :title,
-                `subtitle`         = :subtitle,
-                `short`            = :short,
-                `text`             = :text
+            UPDATE recipe_entry
+            SET `recipe_category_id` = :recipe_category_id,
+                `homepage`           = :homepage,
+                `name`               = :name,
+                `description`        = :description,
+                `notes`              = :notes,
+                `image`              = :image
             WHERE id = :id
         ';
 
         $query = db::prepare( $sql );
         $query
-            ->bindInt   ( ':blog_category_id', $data->blog_category_id )
-            ->bindInt   ( ':carousel',         $data->carousel )
-            ->bindInt   ( ':homepage',         $data->homepage )
-            ->bindString( ':title',            $data->title )
-            ->bindString( ':subtitle',         $data->subtitle )
-            ->bindString( ':text',             $data->text )
-            ->bindInt   ( ':id',               $data->id )
+            ->bindInt   ( ':recipe_category_id', $data->recipe_category_id )
+            ->bindInt   ( ':homepage',           $data->homepage )
+            ->bindString( ':name',               $data->name )
+            ->bindString( ':description',        $data->description )
+            ->bindString( ':notes',              $data->notes )
+            ->bindString( ':image',              $data->image )
+            ->bindInt   ( ':id',                 $data->id )
             ->execute();
 
     }
@@ -74,7 +64,7 @@ class model_blog_article extends model
     static public function delete( $id, $user_id )
     {
 
-        $sql = 'DELETE FROM blog_article WHERE id = :id AND user_id = :user_id';
+        $sql = 'DELETE FROM recipe_entry WHERE id = :id AND user_id = :user_id';
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id',      $id );
@@ -86,14 +76,14 @@ class model_blog_article extends model
     static public function getById( $id )
     {
 
-        $sql = 'SELECT * FROM blog_article WHERE id = :id';
+        $sql = 'SELECT * FROM recipe_entry WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id', $id )->execute();
 
         $row = $query->fetch();
 
-        return new data_blog_article( $row );
+        return new data_recipe_entry( $row );
 
     }
 
@@ -114,7 +104,7 @@ class model_blog_article extends model
         if( empty( $result ) )
         {
 
-            $sql = "SELECT * FROM blog_article ORDER BY {$order} LIMIT {$start}, {$end}";
+            $sql = "SELECT * FROM recipe_entry ORDER BY {$order} LIMIT {$start}, {$end}";
 
             $query = db::prepare( $sql );
             $query->execute();
@@ -122,7 +112,7 @@ class model_blog_article extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_blog_article( $row ) );
+                $result->add( new data_recipe_entry( $row, model_recipe_step::getByRecipeId( $row['id'] ) ) );
             }
 
             //cache_category::saveFullList( $result, $order );
