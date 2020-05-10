@@ -80,15 +80,15 @@ class router_admin
     {
         switch( $_GET['sub'] )
         {
-            case 'recipe'  :
+            case 'entry'  :
 
                 switch( $_GET['action'] )
                 {
                     case 'new'    :
-                    case 'edit'   : return new handler_admin_recipe_article_form();
-                    case 'save'   : return new handler_admin_recipe_article_save();
-                    case 'delete' : return new handler_admin_recipe_article_delete();
-                    default       : return new handler_admin_recipe_article_list();
+                    case 'edit'   : return new handler_admin_recipe_entry_form();
+                    case 'save'   : return new handler_admin_recipe_entrye_save();
+                    case 'delete' : return new handler_admin_recipe_entry_delete();
+                    default       : return new handler_admin_recipe_entry_list();
                 }
 
             case 'category' :

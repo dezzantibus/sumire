@@ -138,7 +138,7 @@ class layout_admin_menu extends layout
                                 $classCategory = ' class="active"';
                                 $classArticle  = '';
                                 break;
-                            case 'recipe' :
+                            case 'entry' :
                                 $classCategory = '';
                                 $classArticle  = ' class="active"';
                                 break;
@@ -159,7 +159,7 @@ class layout_admin_menu extends layout
                         '<a href="/blog"><i class="fa fa-files-o"></i> <span class="nav-label">Recipe</span> <span class="fa arrow"></span></a>',
                         '<ul class="nav nav-second-level">',
                             '<li', $classCategory ,'><a href="/recipe/category">Categories</a></li>',
-                            '<li', $classArticle ,'><a href="/recipe/recipe">Recipes</a></li>',
+                            '<li', $classArticle ,'><a href="/recipe/entry">Recipes</a></li>',
                         '</ul>',
                     '</li>';
 
