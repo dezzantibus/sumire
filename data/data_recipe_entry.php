@@ -21,6 +21,7 @@ class data_recipe_entry extends data
 
     public $image;
 
+    /** @var data_array  */
     public $steps;
 
     function __construct( $data=null, $steps=null )

@@ -71,26 +71,18 @@ class model_recipe_step extends model
 
     }
 
-    static public function getByRecipeId( $page, $order='id ASC' )
+    static public function getByRecipeId( $recipe_entry_id, $order='id ASC' )
     {
-
-        if( empty( $page ) )
-        {
-            $page = 1;
-        }
-
-        $start = ($page - 1) * constant::ADMIN_ARTICLES_PER_PAGE;
-        $end   = ($page * constant::ADMIN_ARTICLES_PER_PAGE) -1;
-
 
         //$result = cache_category::returnFullList( $order );
 
         if( empty( $result ) )
         {
 
-            $sql = "SELECT * FROM recipe_entry ORDER BY {$order} LIMIT {$start}, {$end}";
+            $sql = "SELECT * FROM recipe_step WHERE recipe_entry_id = :recipe_entry_id ORDER BY {$order}";
 
             $query = db::prepare( $sql );
+            $query->bindInt( ':recipe_entry_id', $recipe_entry_id );
             $query->execute();
 
             $result = new data_array();
