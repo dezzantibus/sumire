@@ -27,4 +27,9 @@ class data_news_category extends data
 
     }
 
+    public function link()
+    {
+        return "/{$this->category}";
+    }
+
 }

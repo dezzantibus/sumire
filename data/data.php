@@ -48,4 +48,9 @@ abstract class data
         return $day . date( 'Y年 M月 j日', strtotime( $in ) );
 	}
 
+	public static function dateForLink( $in )
+	{
+        return date( 'Y-M-j', strtotime( $in ) );
+	}
+
 }

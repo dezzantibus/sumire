@@ -3,14 +3,18 @@
 class layout_news_homepage extends layout_page
 {
 
-    public function __construct()
+    public function __construct
+    (
+        data_array $latest,
+        data_array $categories
+    )
     {
 
         $this->title = 'すみれ';
 
-        $this->addChild( new layout_header() );
-        $this->addChild( new layout_elements_slide_1() );
+        $this->addChild( new layout_header( $latest, $categories ) );
 
+        $this->addChild( new layout_elements_slide_1() );
 
         $params = array(
             'id'    => 'main-content',

@@ -33,6 +33,9 @@ class data_news_article extends data
     public $caption3;
     public $caption4;
 
+    /** @var data_news_category  */
+    public $category;
+
     function __construct( $data=null )
     {
 
@@ -58,6 +61,17 @@ class data_news_article extends data
             if( isset( $data['caption4'] ) )         $this->caption4         = $data['caption4'];
         }
 
+        if( !empty( $this->news_category_id ) )
+        {
+            $this->category = model_news_category::getById( $this->news_category_id );
+        }
+
+    }
+
+    public function link()
+    {
+
+        return '/'. $this->category->category . '/' . $this->dateForLink( $this->date ) . '/' . $this->title;
     }
 
 }

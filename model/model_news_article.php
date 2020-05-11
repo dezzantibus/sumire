@@ -147,8 +147,8 @@ class model_news_article extends model
         return $result;
 
     }
-/*
-    static public function getHomepageList()
+
+    static public function getLatest( $category=null )
     {
 
         //$result = cache_category::returnHomeCategories();
@@ -156,15 +156,27 @@ class model_news_article extends model
         if( empty( $result ) )
         {
 
-            $sql = 'SELECT * FROM news_category WHERE homepage > 0 ORDER BY `homepage` ASC';
+            $where = '';
+            if( !empty( $category ) )
+            {
+                $where = ' WHERE news_category_id = :category ';
+            }
+
+            $sql = "SELECT * FROM news_article $where ORDER BY id DESC LIMIT 10";
 
             $query = db::prepare( $sql );
+
+            if( !empty( $category ) )
+            {
+                $query->bindInt( ':category', $category );
+            }
+
             $query->execute();
 
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_news_category( $row ) );
+                $result->add( new data_news_article( $row ) );
             }
 
             //cache_category::saveHomeCategories( $result );
@@ -177,32 +189,61 @@ class model_news_article extends model
 
 
     /*
-    static public function getByRouting( $routing, $parent )
-    {
+        static public function getHomepageList()
+        {
 
-        $category = model_category::getByRouting( $parent );
+            //$result = cache_category::returnHomeCategories();
 
-        $sql = '
-            SELECT *
-            FROM article
-            WHERE routing = :routing
-                AND category_id = :category_id
-        ';
+            if( empty( $result ) )
+            {
 
-        $query = db::prepare( $sql );
-        $query
-            ->bindString( ':routing',     $routing )
-            ->bindInt   ( ':category_id', $category->id )
-            ->execute();
+                $sql = 'SELECT * FROM news_category WHERE homepage > 0 ORDER BY `homepage` ASC';
 
-        $row = $query->fetch();
+                $query = db::prepare( $sql );
+                $query->execute();
 
-        $journalist = model_journalist::getById( $row['id'] );
+                $result = new data_array();
+                while( $row = $query->fetch() )
+                {
+                    $result->add( new data_news_category( $row ) );
+                }
 
-        return new data_article( $row, $category, $journalist );
+                //cache_category::saveHomeCategories( $result );
 
-    }
+            }
 
-    */
+            return $result;
+
+        }
+
+
+        /*
+        static public function getByRouting( $routing, $parent )
+        {
+
+            $category = model_category::getByRouting( $parent );
+
+            $sql = '
+                SELECT *
+                FROM article
+                WHERE routing = :routing
+                    AND category_id = :category_id
+            ';
+
+            $query = db::prepare( $sql );
+            $query
+                ->bindString( ':routing',     $routing )
+                ->bindInt   ( ':category_id', $category->id )
+                ->execute();
+
+            $row = $query->fetch();
+
+            $journalist = model_journalist::getById( $row['id'] );
+
+            return new data_article( $row, $category, $journalist );
+
+        }
+
+        */
 
 }
