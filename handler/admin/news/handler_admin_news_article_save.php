@@ -47,6 +47,7 @@ class handler_admin_news_article_save extends handler_action
             $category = model_news_category::getById( $article->news_category_id );
 
             $path = 'news/' . $category->category . '/' . date('Y-m-d') . '/' . $article->title;
+            $path = str_replace( ' ', '', $path );
 
             if( !empty( $this->files['image1'] ) ) $article->image1 = file::saveFromPost( $this->files['image1'], $path );
             if( !empty( $this->files['image2'] ) ) $article->image1 = file::saveFromPost( $this->files['image2'], $path );
