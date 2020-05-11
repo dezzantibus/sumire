@@ -123,7 +123,7 @@ class layout_header extends layout
                         <div id="mainmenu" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">';
 
-                            $data = $this->ticker->getData();
+                            $data = $this->categories->getData();
 
                             /** var $item data_news_category */
                             foreach( $data as $item )
