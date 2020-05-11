@@ -6,7 +6,8 @@ class layout_news_homepage extends layout_page
     public function __construct
     (
         data_array $latest,
-        data_array $categories
+        data_array $categories,
+        data_array $carousel
     )
     {
 
@@ -14,7 +15,7 @@ class layout_news_homepage extends layout_page
 
         $this->addChild( new layout_header( $latest, $categories ) );
 
-        $this->addChild( new layout_elements_slide_1() );
+        $this->addChild( new layout_elements_slide_1( $carousel ) );
 
         $params = array(
             'id'    => 'main-content',

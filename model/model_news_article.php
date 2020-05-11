@@ -187,6 +187,34 @@ class model_news_article extends model
 
     }
 
+    static public function getCarouselList()
+    {
+
+        //$result = cache_category::returnHomeCategories();
+
+        if( empty( $result ) )
+        {
+
+            $sql = "SELECT * FROM news_article WHERE carousel = 1 ORDER BY id DESC LIMIT 6";
+
+            $query = db::prepare( $sql );
+
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $result->add( new data_news_article( $row ) );
+            }
+
+            //cache_category::saveHomeCategories( $result );
+
+        }
+
+        return $result;
+
+    }
+
 
     /*
         static public function getHomepageList()

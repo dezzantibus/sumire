@@ -3,8 +3,12 @@
 class layout_elements_slide_1 extends layout
 {
 
-    function __construct()
+    private $carousel;
+
+    function __construct( data_array $carousel )
     {
+
+        $this->carousel = $carousel;
 
     }
 
@@ -21,96 +25,113 @@ class layout_elements_slide_1 extends layout
 						<div class="fbt-slide-nav">
 							<span class="fbt-slide-pager"></span>
 						</div>
-						<div class="fp-slides">
-							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-								<div class="img-credits">
-									<a class="post-category" href="#">Cooking</a>
-									<a href="single.html"><h3>Ei his graeci option officiis, no oratio vocent efficiendi vix.</h3></a>
-									<div class="post-info">
-										<span>Oct 14, 2016</span>
-										<span><a href="#">Mark Spenser</a></span>
-									</div>
-								</div>
-							</div>
-							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-								<div class="img-credits">
-									<a class="post-category" href="#">Travel</a>
-									<a href="single.html"><h3>Nam iusto delicata ne, eam dolore singulis maiestatis ex.</h3></a>
-									<div class="post-info">
-										<span>Sep 26, 2016</span>
-										<span><a href="#">John Doe</a></span>
-									</div>
-								</div>
-							</div>
-							<div class="img-thumb">
-								<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-								<div class="img-credits">
-									<a class="post-category" href="#">Computing</a>
-									<a href="single.html"><h3>Women in Hollywood, according to new study with Apple.</h3></a>
-									<div class="post-info">
-										<span>Aug 11, 2016</span>
-										<span><a href="#">Nick Nam</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<nav class="nav-growpop">
-							<div>
-								<a class="fp-prev" href="#fp-prev"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-								<a class="fp-next" href="#fp-next"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
-							</div>
-						</nav>
-					</div><!-- Slider End -->
-					<!-- Slide Small Start -->
-					<div class="col-sm-6 small-section">
-						<div class="img-thumb first">
-							<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-							<div class="img-credits">
-								<a class="post-category" href="#">Computing</a>
-								<a href="single.html"><h3>How can Build a Better Connection Between the Mind and Body</h3></a>
-								<div class="post-info">
-									<span>Sep 23, 2016</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="fp-small">
-								<div class="col-xs-6 last-small">
-									<div class="img-thumb">
-										<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-										<div class="img-credits">
-											<a class="post-category" href="#">Fashion</a>
-											<a href="single.html"><h3>Baby brain doesn\'t exist say scientists</h3></a>
-											<div class="post-info">
-												<span>Sep 19, 2016</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-xs-6 last-small">
-									<div class="img-thumb">
-										<a href="single.html"><div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div></a>
-										<div class="img-credits">
-											<a class="post-category" href="#">CityLife</a>
-											<a href="single.html"><h3>Orci in aliquam diam, felis pede, wisi diam mollis.</h3></a>
-											<div class="post-info">
-												<span>Sep 17, 2016</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!-- Slide Small End -->
-				</div>
-			</div>
-		</div>
-	</section><!-- Featured Slide End -->
+						<div class="fp-slides">';
 
+                            $item = $this->carousel->first();
+                            if( $item ) $this->largerBox( $item );
 
-        ';
+                            $item = $this->carousel->first();
+                            if( $item ) $this->largerBox( $item );
+
+                            $item = $this->carousel->first();
+                            if( $item ) $this->largerBox( $item );
+
+						echo
+						'</div>',
+						'<nav class="nav-growpop">',
+							'<div>',
+								'<a class="fp-prev" href="#fp-prev"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>',
+								'<a class="fp-next" href="#fp-next"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>',
+							'</div>',
+						'</nav>',
+					'</div><!-- Slider End -->',
+					//<!-- Slide Small Start -->
+					'<div class="col-sm-6 small-section">';
+
+                        $item = $this->carousel->first();
+                        if( $item ) $this->middleBox( $item );
+
+                        echo
+						'<div class="row">',
+							'<div class="fp-small">';
+
+                                $item = $this->carousel->first();
+                                if( $item ) $this->smallBox( $item );
+
+                                $item = $this->carousel->first();
+                                if( $item ) $this->smallBox( $item );
+
+                            echo
+							'</div>',
+						'</div>',
+					'</div>',
+                    //<!-- Slide Small End -->
+				'</div>',
+			'</div>',
+		'</div>',
+	'</section>';
+	//<!-- Featured Slide End -->
+
+    }
+
+    private function largerBox( data_news_article $item )
+    {
+
+        echo
+        '<div class="img-thumb">',
+            '<a href="', $item->link(), '">',
+                '<div class="fbt-resize" style="background-image: url(', constant::IMAGES_DOMAIN, $item->image1, ')"></div>',
+            '</a>',
+            '<div class="img-credits">',
+                '<a class="post-category" href="', $item->category->link(), '">', $item->category->category, '</a>',
+                '<a href="', $item->link(), '"><h3>', $item->title, '</h3></a>',
+                '<div class="post-info">',
+                    '<span>', $item->dateForDisplay( $item->date ), '</span>',
+                    //'<span><a href="#">Mark Spenser</a></span>',
+                '</div>',
+            '</div>',
+        '</div>';
+
+    }
+
+    private function middleBox( data_news_article $item )
+    {
+
+        echo
+        '<div class="img-thumb first">',
+            '<a href="', $item->link(), '">',
+                '<div class="fbt-resize" style="background-image: url(', constant::IMAGES_DOMAIN, $item->image1, ')"></div>',
+            '</a>',
+            '<div class="img-credits">',
+                '<a class="post-category" href="', $item->category->link(), '">', $item->category->category, '</a>',
+                '<a href="', $item->link(), '"><h3>', $item->title, '</h3></a>',
+                '<div class="post-info">',
+                    '<span>', $item->dateForDisplay( $item->date ), '</span>',
+                '</div>',
+            '</div>',
+        '</div>';
+
+    }
+
+    private function smallBox( data_news_article $item )
+    {
+
+        echo
+        '<div class="col-xs-6 last-small">',
+            '<div class="img-thumb">',
+                '<a href="', $item->link(), '">',
+                    '<div class="fbt-resize" style="background-image: url(', constant::IMAGES_DOMAIN, $item->image1, ')"></div>',
+                '</a>',
+                '<div class="img-credits">',
+                    '<a class="post-category" href="', $item->category->link(), '">', $item->category->category, '</a>',
+                    '<a href="', $item->link(), '"><h3>', $item->title, '</h3></a>',
+                    '<div class="post-info">',
+                        '<span>', $item->dateForDisplay( $item->date ), '</span>',
+                    '</div>',
+                '</div>',
+            '</div>',
+        '</div>';
+
     }
 
 }
