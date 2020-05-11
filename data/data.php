@@ -50,7 +50,7 @@ abstract class data
 
 	public static function dateForLink( $in )
 	{
-        return date( 'Y-M-d', strtotime( $in ) );
+        return date( 'Y-m-d', strtotime( $in ) );
 	}
 
 }
