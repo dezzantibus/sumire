@@ -27,7 +27,7 @@ class data_news_category extends data
             if( isset( $data['homepage'] ) )     $this->homepage     = $data['homepage'];
             if( isset( $data['homepage_box'] ) ) $this->homepage_box = $data['homepage_box'];
 
-            if( isset( $data['homepage_articles'] ) ) $this->homepage_articles = $homepage_articles;
+            if( isset( $homepage_articles ) ) $this->homepage_articles = $homepage_articles;
         }
 
     }
