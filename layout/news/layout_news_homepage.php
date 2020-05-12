@@ -86,7 +86,7 @@ class layout_news_homepage extends layout_page
         // here we fill the ads box
         // most likely just picked from a dedicated class
 
-        $row->addChild( new layout_elements_fullwidth_gallery() );
+//        $row->addChild( new layout_elements_fullwidth_gallery() );
 
         /*
          * this outer wrapper we don't add for now. Maybe when we have more content
