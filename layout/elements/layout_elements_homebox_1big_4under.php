@@ -79,7 +79,6 @@ class layout_elements_homebox_1big_4under extends layout
         /** @var data_news_article $article */
         $article = $this->category->homepage_articles->first();
 
-
         echo
         '<div class="col-md-3 col-xs-6 padding-5">',
             '<div class="post-item clearfix">',
