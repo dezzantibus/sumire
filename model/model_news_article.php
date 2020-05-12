@@ -216,33 +216,32 @@ class model_news_article extends model
     }
 
 
-    /*
-        static public function getHomepageList()
+    static public function getHomepageList( $news_category_id )
+    {
+
+        //$result = cache_category::returnHomeCategories();
+
+        if( empty( $result ) )
         {
 
-            //$result = cache_category::returnHomeCategories();
+            $sql = 'SELECT * FROM news_article WHERE homepage = 1 ORDER BY id DESC LIMIT 6';
 
-            if( empty( $result ) )
+            $query = db::prepare( $sql );
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
             {
-
-                $sql = 'SELECT * FROM news_category WHERE homepage > 0 ORDER BY `homepage` ASC';
-
-                $query = db::prepare( $sql );
-                $query->execute();
-
-                $result = new data_array();
-                while( $row = $query->fetch() )
-                {
-                    $result->add( new data_news_category( $row ) );
-                }
-
-                //cache_category::saveHomeCategories( $result );
-
+                $result->add( new data_news_category( $row ) );
             }
 
-            return $result;
+            //cache_category::saveHomeCategories( $result );
 
         }
+
+        return $result;
+
+    }
 
 
         /*

@@ -13,7 +13,10 @@ class data_news_category extends data
 
     public $homepage_box;
 
-    function __construct( $data=null )
+    /** @var  data_array */
+    public $homepage_articles;
+
+    function __construct( $data=null, $homepage_articles=null )
     {
 
         if( isset( $data ) )
@@ -23,6 +26,8 @@ class data_news_category extends data
             if( isset( $data['order'] ) )        $this->order        = $data['order'];
             if( isset( $data['homepage'] ) )     $this->homepage     = $data['homepage'];
             if( isset( $data['homepage_box'] ) ) $this->homepage_box = $data['homepage_box'];
+
+            if( isset( $data['homepage_articles'] ) ) $this->homepage_articles = $data['homepage_articles'];
         }
 
     }

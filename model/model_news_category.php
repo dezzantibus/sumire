@@ -118,7 +118,7 @@ class model_news_category extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_news_category( $row ) );
+                $result->add( new data_news_category( $row, model_news_article::getHomepageList( $row['id'] ) ) );
             }
 
             //cache_category::saveHomeCategories( $result );

@@ -165,4 +165,14 @@ class layout_elements_homebox_1big_4side extends layout
         ';
     }
 
+    private function bigBox()
+    {
+
+    }
+
+    private function smallBox()
+    {
+
+    }
+
 }

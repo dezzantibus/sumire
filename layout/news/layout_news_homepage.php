@@ -7,7 +7,8 @@ class layout_news_homepage extends layout_page
     (
         data_array $latest,
         data_array $categories,
-        data_array $carousel
+        data_array $carousel,
+        data_array $homepage_news
     )
     {
 
@@ -53,6 +54,14 @@ class layout_news_homepage extends layout_page
         );
         $content = $row->addChild( new layout_html_div( $params ) );
 
+        /** @var $home_box data_news_category */
+        while( $home_box = $homepage_news->first() )
+        {
+            $type = $home_box->homepage_box;
+            $content->addChild( new $type( $home_box ) );
+        }
+
+/*
         $content->addChild( new layout_elements_homebox_2_categories_equal() );
         $content->addChild( new layout_elements_homebox_gallery_static() );
         $content->addChild( new layout_elements_homebox_1big_4side() );
@@ -64,7 +73,7 @@ class layout_news_homepage extends layout_page
         $content->addChild( new layout_elements_homebox_2_categories_different() );
         $content->addChild( new layout_elements_homebox_rows_of_1() );
         $content->addChild( new layout_elements_homebox_rows_of_3() );
-
+*/
 
         $outer_wrapper->addChild( new layout_elements_sidebar_1() );
 
