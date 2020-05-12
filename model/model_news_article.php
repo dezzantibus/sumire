@@ -232,7 +232,7 @@ class model_news_article extends model
             $result = new data_array();
             while( $row = $query->fetch() )
             {
-                $result->add( new data_news_category( $row ) );
+                $result->add( new data_news_article( $row ) );
             }
 
             //cache_category::saveHomeCategories( $result );
