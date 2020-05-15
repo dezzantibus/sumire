@@ -27,10 +27,10 @@ class layout_elements_homebox_1big_4under extends layout
             '<div class="row">',
                 '<div class="gallery-img">';
 
-                    $this->smallBox();
-                    $this->smallBox();
-                    $this->smallBox();
-                    $this->smallBox();
+                    if( !$this->category->homepage_articles->isEmpty() ) $this->smallBox();
+                    if( !$this->category->homepage_articles->isEmpty() ) $this->smallBox();
+                    if( !$this->category->homepage_articles->isEmpty() ) $this->smallBox();
+                    if( !$this->category->homepage_articles->isEmpty() ) $this->smallBox();
 
                 echo
                 '</div>',

@@ -21,11 +21,11 @@ class layout_elements_homebox_rows_of_1 extends layout
                 '<h2><span class="color-5">', $this->category->category, '</span></h2>',
             '</div>';
 
-            $this->element();
-            $this->element();
-            $this->element();
-            $this->element();
-            $this->element();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->element();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->element();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->element();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->element();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->element();
 
         echo '</div>';
         //<!-- Large List End -->
