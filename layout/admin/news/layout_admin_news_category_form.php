@@ -66,6 +66,7 @@ class layout_admin_news_category_form extends layout_admin_page
         $homepage_layout->add( array( 'label' => 'Static gallery', 'value' => 'layout_elements_homebox_gallery_static' ) );
         $homepage_layout->add( array( 'label' => 'Stacked elements', 'value' => 'layout_elements_homebox_rows_of_1' ) );
         $homepage_layout->add( array( 'label' => '2 rows of 3 elements', 'value' => 'layout_elements_homebox_rows_of_3' ) );
+        $homepage_layout->add( array( 'label' => '2 large elements and 6 small under', 'value' => 'layout_elements_homebox_2big_6under' ) );
 
         $form->addChild( new layout_admin_form_radio(
             'homepage_box',

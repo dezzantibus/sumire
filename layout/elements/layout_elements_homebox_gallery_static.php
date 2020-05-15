@@ -3,9 +3,12 @@
 class layout_elements_homebox_gallery_static extends layout
 {
 
-    function __construct()
-    {
+    /** @var  data_news_category */
+    private $category;
 
+    function __construct( data_news_category $category )
+    {
+        $this->category = $category;
     }
 
     function render()
