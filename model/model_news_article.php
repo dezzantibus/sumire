@@ -224,9 +224,10 @@ class model_news_article extends model
         if( empty( $result ) )
         {
 
-            $sql = 'SELECT * FROM news_article WHERE homepage = 1 ORDER BY id DESC LIMIT 6';
+            $sql = 'SELECT * FROM news_article WHERE homepage = 1 AND news_category_id = :news_category_id ORDER BY id DESC LIMIT 6';
 
             $query = db::prepare( $sql );
+            $query->bindInt( ':news_category_id', $news_category_id );
             $query->execute();
 
             $result = new data_array();
