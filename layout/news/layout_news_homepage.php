@@ -57,8 +57,11 @@ class layout_news_homepage extends layout_page
         /** @var $home_box data_news_category */
         while( $home_box = $homepage_news->first() )
         {
-            $type = $home_box->homepage_box;
-            $content->addChild( new $type( $home_box ) );
+            if( !$home_box->homepage_articles->isEmpty() )
+            {
+                $type = $home_box->homepage_box;
+                $content->addChild( new $type( $home_box ) );
+            }
         }
 
 /*
