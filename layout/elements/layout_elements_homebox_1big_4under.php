@@ -21,7 +21,7 @@ class layout_elements_homebox_1big_4under extends layout
                 '<h2><span class="color-8">', $this->category->category, '</span></h2>',
             '</div>';
 
-            $this->bigBox();
+            if( !$this->category->homepage_articles->isEmpty() ) $this->bigBox();
 
             echo
             '<div class="row">',
