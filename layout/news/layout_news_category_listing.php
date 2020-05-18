@@ -18,10 +18,30 @@ class layout_news_category_listing extends layout
         echo
         '<div class="row">';
 
-            while( !$this->articles->isEmpty() )
-            {
-                $this->itemBox();
-            }
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+
+        echo
+        '</div><div class="row">';
+
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+
+        echo
+        '</div><div class="row">';
+
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+
+        echo
+        '</div><div class="row">';
+
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
+            if( !$this->articles->isEmpty() ) $this->itemBox();
 
         echo
         '</div>';
