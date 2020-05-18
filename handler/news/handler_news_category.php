@@ -11,6 +11,7 @@ class handler_news_category extends handler
         // Render page
         $page = new layout_news_category(
             model_news_article::getLatest(),
+            model_news_category::getFullList(),
             $category,
             model_news_article::getForCategory( $category->id, $_GET['page'] )
         );

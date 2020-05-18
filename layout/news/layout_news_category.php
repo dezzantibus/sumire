@@ -6,6 +6,7 @@ class layout_news_category extends layout_page
     public function __construct
     (
         data_array $latest,
+        data_array $categories,
         data_news_category $category,
         data_array $articles
     )
