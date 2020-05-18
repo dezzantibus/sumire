@@ -57,7 +57,7 @@ class layout_news_article_content extends layout
                 '<div class="clearfix"></div>',
 
                 '<div class="post-text-content clearfix">',
-                    '<p>', stre_replace( "\n", '<br />', str_replace( "\n\n", '</p><p>', $this->article->text ) ), '</p>',
+                    '<p>', str_replace( "\n", '<br />', str_replace( "\n\n", '</p><p>', $this->article->text ) ), '</p>',
                 '</div>',
                 //<!-- post-text-content -->
 
