@@ -7,8 +7,7 @@ class layout_news_article extends layout_page
     (
         data_array $latest,
         data_array $categories,
-        data_news_category $category,
-        data_array $articles
+        data_news_article $article
     )
     {
 
@@ -47,7 +46,7 @@ class layout_news_article extends layout_page
         );
         $row = $main_wrapper->addChild( new layout_html_div( $params ) );
 
-        $content = $row->addChild( new layout_article_content( $params ) );
+        $content = $row->addChild( new layout_news_article_content( $article ) );
 
         $outer_wrapper->addChild( new layout_elements_sidebar_1() );
 
