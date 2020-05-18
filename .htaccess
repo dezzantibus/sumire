@@ -71,13 +71,13 @@
 #    RewriteCond %{HTTP_HOST} ^www.sumire.it$
 
     RewriteCond %{HTTP_HOST} ^news.sumire.it$
-    RewriteRule ^(.*)/(.*)/(.*)$ index.php?category=$1&article=$3 [QSA,L]
+    RewriteRule ^(.+)/(.+)/(.+)$ index.php?category=$1&article=$3 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^news.sumire.it$
-    RewriteRule ^(.*)/(.*)$ index.php?category=$1&page=$2 [QSA,L]
+    RewriteRule ^(.+)/(.+)$ index.php?category=$1&page=$2 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^news.sumire.it$
-    RewriteRule ^(.*)$ index.php?category=$1 [QSA,L]
+    RewriteRule ^(.+)$ index.php?category=$1 [QSA,L]
 
 #    RewriteCond %{HTTP_HOST} ^blog.sumire.it$
 
