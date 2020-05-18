@@ -112,6 +112,20 @@ class model_news_article extends model
 
     }
 
+    static public function getByTitle( $title )
+    {
+
+        $sql = 'SELECT * FROM news_article WHERE title = :title';
+
+        $query = db::prepare( $sql );
+        $query->bindString( ':title', $title )->execute();
+
+        $row = $query->fetch();
+
+        return new data_news_article( $row );
+
+    }
+
     static public function getFullList( $page, $order='id DESC' )
     {
 

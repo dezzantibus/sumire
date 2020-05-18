@@ -7,11 +7,10 @@ class handler_news_article extends handler
     {
 
         // Render page
-        $page = new layout_news_homepage(
+        $page = new layout_news_article(
             model_news_article::getLatest(),
             model_news_category::getFullList(),
-            model_news_article::getCarouselList(),
-            model_news_category::getHomepageList()
+            model_news_article::getByTitle( $_GET['article'] )
         );
         $page->render();
 
