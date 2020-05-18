@@ -1,6 +1,6 @@
 <?php
 
-class layout_news_category extends layout_page
+class layout_news_article extends layout_page
 {
 
     public function __construct
