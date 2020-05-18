@@ -47,9 +47,18 @@ class router
 
         if( isset( $_GET['article'] )  ) return new handler_news_article;
 
-        if( isset( $_GET['category'] )  ) return new handler_news_category;
+
+        if( isset( $_GET['category'] )  )
+        {
+
+            if( $_GET['category'] == 'index.php' ) return new handler_news_homepage();
+
+            return new handler_news_category;
+
+        }
 
         return new handler_news_homepage();
+
     }
 
     static function blog()

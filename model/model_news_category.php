@@ -78,7 +78,7 @@ class model_news_category extends model
         $sql = 'SELECT * FROM news_category WHERE category = :category';
 
         $query = db::prepare( $sql );
-        $query->bindInt( ':category', $category )->execute();
+        $query->bindString( ':category', $category )->execute();
 
         $row = $query->fetch();
 
