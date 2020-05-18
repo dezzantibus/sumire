@@ -1,22 +1,19 @@
 <?php
 
-class layout_news_homepage extends layout_page
+class layout_news_category extends layout_page
 {
 
     public function __construct
     (
         data_array $latest,
-        data_array $categories,
-        data_array $carousel,
-        data_array $homepage_news
+        data_news_category $category,
+        data_array $articles
     )
     {
 
         $this->title = 'すみれ';
 
         $this->addChild( new layout_header( $latest, $categories ) );
-
-        $this->addChild( new layout_elements_slide_1( $carousel ) );
 
         $params = array(
             'id'    => 'main-content',
@@ -50,33 +47,12 @@ class layout_news_homepage extends layout_page
         $row = $main_wrapper->addChild( new layout_html_div( $params ) );
 
         $params = array(
-            'class' => 'fbt-col-lg-9 col-md-12'
+            'class' => 'fbt-col-lg-9 col-md-8 col-sm-6 post-wrapper'
         );
         $content = $row->addChild( new layout_html_div( $params ) );
 
-        /** @var $home_box data_news_category */
-        while( $home_box = $homepage_news->first() )
-        {
-            if( !$home_box->homepage_articles->isEmpty() )
-            {
-                $type = $home_box->homepage_box;
-                $content->addChild( new $type( $home_box ) );
-            }
-        }
-
-/*
-        $content->addChild( new layout_elements_homebox_2_categories_equal() );
-        $content->addChild( new layout_elements_homebox_gallery_static() );
-        $content->addChild( new layout_elements_homebox_1big_4side() );
-        $content->addChild( new layout_elements_homebox_gallery_scrolling() );
-        $content->addChild( new layout_elements_homebox_1big_4under() );
-
-        // $content->addChild add advert
-
-        $content->addChild( new layout_elements_homebox_2_categories_different() );
-        $content->addChild( new layout_elements_homebox_rows_of_1() );
-        $content->addChild( new layout_elements_homebox_rows_of_3() );
-*/
+        $content->addChild( new layout_news_category_description( $category ) );
+        $content->addChild( new layout_news_category_listing( $articles ) );
 
         $outer_wrapper->addChild( new layout_elements_sidebar_1() );
 

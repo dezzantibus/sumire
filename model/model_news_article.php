@@ -244,6 +244,39 @@ class model_news_article extends model
 
     }
 
+    static public function getForCategory( $news_category_id, $page )
+    {
+
+        if( empty( $page ) ) $page = 1;
+
+        //$result = cache_category::returnHomeCategories();
+
+        if( empty( $result ) )
+        {
+
+            $start = ( $page - 1 ) * CONSTANT::NEWS_ARTICLES_PER_PAGE;
+            $end = ( $page * CONSTANT::NEWS_ARTICLES_PER_PAGE ) - 1;
+
+            $sql = "SELECT * FROM news_article WHERE homepage = 1 AND news_category_id = :news_category_id ORDER BY id DESC LIMIT $start, $end";
+
+            $query = db::prepare( $sql );
+            $query->bindInt( ':news_category_id', $news_category_id );
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $result->add( new data_news_article( $row ) );
+            }
+
+            //cache_category::saveHomeCategories( $result );
+
+        }
+
+        return $result;
+
+    }
+
 
         /*
         static public function getByRouting( $routing, $parent )

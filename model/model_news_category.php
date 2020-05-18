@@ -72,6 +72,20 @@ class model_news_category extends model
 
     }
 
+    static public function getByName( $category )
+    {
+
+        $sql = 'SELECT * FROM news_category WHERE category = :category';
+
+        $query = db::prepare( $sql );
+        $query->bindInt( ':category', $category )->execute();
+
+        $row = $query->fetch();
+
+        return new data_news_category( $row );
+
+    }
+
     static public function getFullList( $order='order' )
     {
 

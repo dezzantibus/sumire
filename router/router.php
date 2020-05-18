@@ -44,6 +44,11 @@ class router
 
     static function news()
     {
+
+        if( isset( $_GET['article'] )  ) return new handler_news_article;
+
+        if( isset( $_GET['category'] )  ) return new handler_news_category;
+
         return new handler_news_homepage();
     }
 
