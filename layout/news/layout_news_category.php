@@ -48,7 +48,7 @@ class layout_news_category extends layout_page
         $row = $main_wrapper->addChild( new layout_html_div( $params ) );
 
         $params = array(
-            'class' => 'fbt-col-lg-9 col-md-8 col-sm-6 post-wrapper'
+            'class' => 'fbt-col-lg-9 col-md-12 col-sm-6 post-wrapper'
         );
         $content = $row->addChild( new layout_html_div( $params ) );
 
