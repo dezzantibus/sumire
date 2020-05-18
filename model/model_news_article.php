@@ -254,8 +254,8 @@ class model_news_article extends model
         if( empty( $result ) )
         {
 
-            $start = ( $page - 1 ) * CONSTANT::NEWS_ARTICLES_PER_PAGE;
-            $end = ( $page * CONSTANT::NEWS_ARTICLES_PER_PAGE ) - 1;
+            $start = ( $page - 1 ) * constant::NEWS_ARTICLES_PER_PAGE;
+            $end = ( $page * constant::NEWS_ARTICLES_PER_PAGE ) - 1;
 
             $sql = "SELECT * FROM news_article WHERE homepage = 1 AND news_category_id = :news_category_id ORDER BY id DESC LIMIT $start, $end";
 
