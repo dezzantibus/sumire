@@ -16,7 +16,7 @@ class layout_elements_homebox_1big_4under extends layout
 
         //<!-- Horizontal Mag Gallery Start -->
         echo
-        '<div class="fbt-vc-inner hor glr">',
+        '<div class="fbt-vc-inner nude large clearfix">',
             '<div class="title-wrapper border-8">',
                 '<h2><span class="color-8">', $this->category->category, '</span></h2>',
             '</div>';
