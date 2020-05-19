@@ -19,34 +19,13 @@ class layout_header extends layout
     function render()
     {
         echo
-        '<div class="navbar-fixed-top"></div>',
-        // <!-- Headline Start -->
-        '<section id="newsticker">',
-            '<div class="headline-wrapper">',
-                '<div class="container">',
-                    '<div class="row">';
+        '<div class="navbar-fixed-top"></div>';
 
                         $this->render_ticker();
 
-                        echo '
-                        <!-- Search Form start ->
-                        <div class="col-md-3 hidden-sm hidden-xs">
-                            <div class="fa-icon-wrap">
-                                <a class="facebook" href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i aria-hidden="true" class="fa fa-facebook"></i></a>
-                                <a class="google+" href="#" data-toggle="tooltip" data-placement="left" title="Google+"><i aria-hidden="true" class="fa fa-google-plus"></i></a>
-                                <a class="twitter" href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i aria-hidden="true" class="fa fa-twitter"></i></a>
-                                <a class="linkedin" href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
-                                <a class="pinterest" href="#" data-toggle="tooltip" data-placement="left" title="Pinterest"><i aria-hidden="true" class="fa fa-pinterest-p"></i></a>
-                                <a class="youtube" href="#" data-toggle="tooltip" data-placement="left" title="Youtube"><i aria-hidden="true" class="fa fa-youtube"></i></a>
-                                <a class="soundcloud" href="#" data-toggle="tooltip" data-placement="left" title="Soundcloud"><i aria-hidden="true" class="fa fa-soundcloud"></i></a>
-                            </div>
-                        </div><!-- Search Form end -->
-                    </div>
-                </div>
-            </div>
-        </section><!-- Headline End -->
-        <!-- Header Start -->
-        <section class="header-wrapper clearfix">
+        echo
+        //<!-- Header Start -->
+        '<section class="header-wrapper clearfix">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-3">
@@ -73,55 +52,78 @@ class layout_header extends layout
     private function render_ticker()
     {
 
-        //<!-- Newsticker start -->
+        // <!-- Headline Start -->
         echo
-        '<div class="col-md-2 col-sm-3 col-xs-5">',
-            '<div class="headline-title color-6">',
-                '<h5>BREAKING NEWS</h5>',
+        '<section id="newsticker">',
+            '<div class="headline-wrapper">',
+                '<div class="container">',
+                    '<div class="row">',
+                        '<div class="col-md-2 col-sm-3 col-xs-5">',
+                            '<div class="headline-title color-6">',
+                                '<h5>BREAKING NEWS</h5>',
+                            '</div>',
+                        '</div>',
+                        '<div class="col-md-7 col-sm-9 col-xs-7 no-padding">',
+                            '<ul class="ticker clearfix">';
+
+                                $data = $this->ticker->getData();
+
+                                /** var $item data_news_article */
+                                foreach( $data as $item )
+                                {
+
+                                    echo
+                                    '<li>',
+                                        '<a href="', $item->link(), '">', $item->title, '</a>',
+                                    '</li>';
+
+                                }
+
+                            echo
+                            '</ul>',
+                        '</div>',
+
+                        //<!-- Search Form start ->
+/*                        '<div class="col-md-3 hidden-sm hidden-xs">',
+                            '<div class="fa-icon-wrap">',
+                                '<a class="facebook" href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i aria-hidden="true" class="fa fa-facebook"></i></a>',
+                                '<a class="google+" href="#" data-toggle="tooltip" data-placement="left" title="Google+"><i aria-hidden="true" class="fa fa-google-plus"></i></a>',
+                                '<a class="twitter" href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i aria-hidden="true" class="fa fa-twitter"></i></a>',
+                                '<a class="linkedin" href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i aria-hidden="true" class="fa fa-linkedin"></i></a>',
+                                '<a class="pinterest" href="#" data-toggle="tooltip" data-placement="left" title="Pinterest"><i aria-hidden="true" class="fa fa-pinterest-p"></i></a>',
+                                '<a class="youtube" href="#" data-toggle="tooltip" data-placement="left" title="Youtube"><i aria-hidden="true" class="fa fa-youtube"></i></a>',
+                                '<a class="soundcloud" href="#" data-toggle="tooltip" data-placement="left" title="Soundcloud"><i aria-hidden="true" class="fa fa-soundcloud"></i></a>',
+                            '</div>',
+                        '</div>',
+*/                        //<!-- Search Form end -->
+                    '</div>',
+                '</div>',
             '</div>',
-        '</div>',
-        '<div class="col-md-7 col-sm-9 col-xs-7 no-padding">',
-            '<ul class="ticker clearfix">';
+        '</section>';
 
-                $data = $this->ticker->getData();
-
-                /** var $item data_news_article */
-                foreach( $data as $item )
-                {
-
-                    echo
-                    '<li>',
-                        '<a href="', $item->link(), '">', $item->title, '</a>',
-                    '</li>';
-
-                }
-
-            echo
-            '</ul>',
-        '</div>';
-        //<!-- Newsticker end -->
+        //<!-- Headline End -->
 
     }
 
     private function render_menu()
     {
 
+        //<!-- Menu Navigation Start -->
         echo
-        '<!-- Menu Navigation Start -->
-        <div class="navbar navbar-default megamenu clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="navbar-header">
-                            <button type="button" data-toggle="collapse" data-target="#mainmenu" class="navbar-toggle">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="index.html"><img class="img-responsive" src="./img/logo-1.png" alt="logo"/></a>
-                        </div>
-                        <div id="mainmenu" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">';
+        '<div class="navbar navbar-default megamenu clearfix">',
+            '<div class="container">',
+                '<div class="row">',
+                    '<div class="col-md-12">',
+                        '<div class="navbar-header">',
+                            '<button type="button" data-toggle="collapse" data-target="#mainmenu" class="navbar-toggle">',
+                                '<span class="icon-bar"></span>',
+                                '<span class="icon-bar"></span>',
+                                '<span class="icon-bar"></span>',
+                            '</button>',
+                            '<a class="navbar-brand" href="/"><img class="img-responsive" src="/img/Logo-with-name.png" alt="logo"/></a>',
+                        '</div>',
+                        '<div id="mainmenu" class="navbar-collapse collapse">',
+                            '<ul class="nav navbar-nav">';
 
                             $data = $this->categories->getData();
 
@@ -136,17 +138,18 @@ class layout_header extends layout
 
                             }
 
-                            echo '
-                            </ul>
-                            <form class="navbar-form navbar-right" role="search">
-                                <input type="text" id="search" name="search" placeholder="Search...">
-                                <button type="submit" id="search-submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- Menu Navigation End -->';
+                            echo
+                            '</ul>',
+                            '<form class="navbar-form navbar-right" role="search">',
+                                '<input type="text" id="search" name="search" placeholder="Search...">',
+                                '<button type="submit" id="search-submit"><i class="fa fa-search"></i></button>',
+                            '</form>',
+                        '</div>',
+                    '</div>',
+                '</div>',
+            '</div>',
+        '</div>';
+        //<!-- Menu Navigation End -->
 
     }
 
