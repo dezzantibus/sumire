@@ -21,8 +21,6 @@ class layout_header extends layout
         echo
         '<div class="navbar-fixed-top"></div>';
 
-                        $this->render_ticker();
-
         echo
         //<!-- Header Start -->
         '<section class="header-wrapper clearfix">
@@ -44,6 +42,8 @@ class layout_header extends layout
             </div>
         </section><!-- Header End -->
         ';
+
+        $this->render_ticker();
 
         $this->render_menu();
 
