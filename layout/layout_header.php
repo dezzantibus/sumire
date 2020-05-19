@@ -29,7 +29,7 @@ class layout_header extends layout
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-3">
-                        <h1 class="logo"><a href="index.html"><img class="img-responsive" src="./img/logo-9.png" alt="logo"/></a></h1>
+                        <h1 class="logo"><a href="/"><img class="img-responsive" src="/img/Logo-with-name.png" alt="logo"/></a></h1>
                     </div>
                     <div class="col-md-1 hidden-sm"></div>
                     <div class="col-md-8 col-sm-9">
