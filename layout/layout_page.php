@@ -11,6 +11,16 @@ abstract class layout_page extends layout
         echo '<!DOCTYPE html>
 <html dir="ltr" lang="en-US" class="no-js">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L7F2TBMCZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2L7F2TBMCZ');
+    </script>
+
   <!-- Basic -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -20,6 +30,9 @@ abstract class layout_page extends layout
   <title>', $this->title , '</title>
 
   <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <script data-ad-client="ca-pub-0866520425041689" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css" media="screen">
