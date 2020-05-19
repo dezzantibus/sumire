@@ -16,9 +16,9 @@ abstract class layout_page extends layout
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag(\'js\', new Date());
 
-      gtag('config', 'G-2L7F2TBMCZ');
+      gtag(\'config\', \'G-2L7F2TBMCZ\');
     </script>
 
   <!-- Basic -->

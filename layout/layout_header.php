@@ -79,7 +79,10 @@ class layout_header extends layout
 
                                 }
 
-                            echo
+                                echo
+                                //'<li>',
+                                //    '<a href="#">', $item->title, '</a>',
+                                //'</li>';
                             '</ul>',
                         '</div>',
 
