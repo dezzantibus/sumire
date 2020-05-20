@@ -5,8 +5,9 @@ class layout_news_article extends layout_page
 
     public function __construct
     (
-        data_array $latest,
-        data_array $categories,
+        data_sidebar      $sidebar,
+        data_array        $latest,
+        data_array        $categories,
         data_news_article $article
     )
     {
@@ -48,7 +49,7 @@ class layout_news_article extends layout_page
 
         $content = $row->addChild( new layout_news_article_content( $article ) );
 
-        $outer_wrapper->addChild( new layout_elements_sidebar_1() );
+        $outer_wrapper->addChild( new layout_elements_sidebar_1( $sidebar ) );
 
 
         $params = array(

@@ -5,10 +5,11 @@ class layout_news_category extends layout_page
 
     public function __construct
     (
-        data_array $latest,
-        data_array $categories,
+        data_sidebar       $sidebar,
+        data_array         $latest,
+        data_array         $categories,
         data_news_category $category,
-        data_array $articles
+        data_array         $articles
     )
     {
 
@@ -55,7 +56,7 @@ class layout_news_category extends layout_page
         $content->addChild( new layout_news_category_description( $category ) );
         $content->addChild( new layout_news_category_listing( $articles ) );
 
-        $outer_wrapper->addChild( new layout_elements_sidebar_1() );
+        $outer_wrapper->addChild( new layout_elements_sidebar_1( $sidebar ) );
 
 
         $params = array(

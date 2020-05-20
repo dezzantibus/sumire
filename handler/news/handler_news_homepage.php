@@ -8,6 +8,7 @@ class handler_news_homepage extends handler
 
         // Render page
         $page = new layout_news_homepage(
+            $this->sidebarData(),
             model_news_article::getLatest(),
             model_news_category::getFullList(),
             model_news_article::getCarouselList(),

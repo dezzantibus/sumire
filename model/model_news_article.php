@@ -162,7 +162,7 @@ class model_news_article extends model
 
     }
 
-    static public function getLatest( $category=null )
+    static public function getLatest( $category=null, $limit=10 )
     {
 
         //$result = cache_category::returnHomeCategories();
@@ -176,7 +176,7 @@ class model_news_article extends model
                 $where = ' WHERE news_category_id = :category ';
             }
 
-            $sql = "SELECT * FROM news_article $where ORDER BY id DESC LIMIT 10";
+            $sql = "SELECT * FROM news_article $where ORDER BY id DESC LIMIT $limit";
 
             $query = db::prepare( $sql );
 

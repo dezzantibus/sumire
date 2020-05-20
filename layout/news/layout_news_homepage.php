@@ -5,10 +5,11 @@ class layout_news_homepage extends layout_page
 
     public function __construct
     (
-        data_array $latest,
-        data_array $categories,
-        data_array $carousel,
-        data_array $homepage_news
+        data_sidebar $sidebar,
+        data_array   $latest,
+        data_array   $categories,
+        data_array   $carousel,
+        data_array   $homepage_news
     )
     {
 
@@ -78,7 +79,7 @@ class layout_news_homepage extends layout_page
         $content->addChild( new layout_elements_homebox_rows_of_3() );
 */
 
-        $outer_wrapper->addChild( new layout_elements_sidebar_1() );
+        $outer_wrapper->addChild( new layout_elements_sidebar_1( $sidebar ) );
 
 
         $params = array(
