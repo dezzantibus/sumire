@@ -291,34 +291,11 @@ class model_news_article extends model
 
     }
 
-
-        /*
-        static public function getByRouting( $routing, $parent )
-        {
-
-            $category = model_category::getByRouting( $parent );
-
-            $sql = '
-                SELECT *
-                FROM article
-                WHERE routing = :routing
-                    AND category_id = :category_id
-            ';
-
-            $query = db::prepare( $sql );
-            $query
-                ->bindString( ':routing',     $routing )
-                ->bindInt   ( ':category_id', $category->id )
-                ->execute();
-
-            $row = $query->fetch();
-
-            $journalist = model_journalist::getById( $row['id'] );
-
-            return new data_article( $row, $category, $journalist );
-
-        }
-
-        */
+    static public function recordHit( $id )
+    {
+        $sql = "INSERT INTO news_hit (news_article_id) VALUES ($id)";
+        $query = db::prepare( $sql );
+        $query->execute();
+    }
 
 }
