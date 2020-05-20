@@ -71,7 +71,7 @@ class data_news_article extends data
     public function link()
     {
 
-        return '/'. $this->category->category . '/' . $this->dateForLink( $this->date ) . '/' . $this->title;
+        return 'http://news.sumire.it/'. $this->category->category . '/' . $this->dateForLink( $this->date ) . '/' . $this->title;
     }
 
 }
