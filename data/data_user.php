@@ -9,6 +9,8 @@ class data_user extends data
 
     public $password;
 
+    public $level;
+
     public $nick;
 
     public $first_name;
@@ -29,6 +31,8 @@ class data_user extends data
 
     public $youtube;
 
+    public $tiktok;
+
     function __construct( $data=null )
     {
 
@@ -47,6 +51,7 @@ class data_user extends data
             if( isset( $data['twitter'] ) )    $this->twitter    = $data['twitter'];
             if( isset( $data['instagram'] ) )  $this->instagram  = $data['instagram'];
             if( isset( $data['youtube'] ) )    $this->youtube    = $data['youtube'];
+            if( isset( $data['tiktok'] ) )     $this->tiktok     = $data['tiktok'];
         }
 
     }

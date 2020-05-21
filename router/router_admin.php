@@ -8,10 +8,12 @@ class router_admin
 
         switch( $_GET['page'] )
         {
-            case 'news'   : return self::news();
-            case 'blog'   : return self::blog();
-            case 'recipe' : return self::recipe();
-            default     : return new handler_admin_homepage();
+            case 'news'     : return self::news();
+            case 'blog'     : return self::blog();
+            case 'recipe'   : return self::recipe();
+            case 'login'    : return new handler_admin_login();
+            case 'register' : return new handler_admin_register();
+            default         : return new handler_admin_homepage();
         }
 
     }
