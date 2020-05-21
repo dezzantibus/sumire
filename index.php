@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/tools/class_finder.php';
 
 spl_autoload_register( 'class_finder::getClassFile' );
@@ -8,10 +10,22 @@ spl_autoload_register( 'class_finder::getClassFile' );
  * This will have to load the user data every time a page is loaded
  * or fill the session class with empty classes
  */
-// these are hard-coded until we have a registration form and login procedure
-session::$user = new data_user();
-session::$user->id = 1;
-session::$user->blog = 'rie';
+
+if( empty( $_SESSION['user_id'] ) && empty( $_COOKIE['user_id'] ) )
+{
+    session::$user = null;
+}
+else
+{
+
+    if( empty( $_SESSION['user_id'] ) )
+    {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+    }
+
+    session::$user = model_user::getById( $_SESSION['user_id'] );
+
+}
 
 /** @var handler $page */
 $page = router::run();
