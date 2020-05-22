@@ -57,7 +57,7 @@ class handler_admin_news_article_save extends handler_action
             if( !empty( $this->files['image3'] ) ) $article->image1 = file::saveFromPost( $this->files['image3'], $path );
             if( !empty( $this->files['image4'] ) ) $article->image1 = file::saveFromPost( $this->files['image4'], $path );
 
-            $article->text = str_replace( "\n", '<br />', str_replace( "\n\n", '</p><p>', $article->text ) );
+            $article->text = str_replace( "\r\n", '<br />', str_replace( "\r\n\r\n", '</p><p>', $article->text ) );
 
             if( empty( $article->id ) )
             {
