@@ -11,13 +11,15 @@ class model_news_article extends model
                 (
                 `news_category_id`, `user_id`, `carousel`, `homepage`, `title`, `subtitle`, `short`, `text`,
                 `image1`, `image2`, `image3`, `image4`,
-                `caption1`, `caption2`, `caption3`, `caption4`
+                `caption1`, `caption2`, `caption3`, `caption4`,
+                `source`
                 )
             VALUES
                 (
                 :news_category_id,  :user_id,  :carousel,  :homepage,  :title,  :subtitle,  :short,  :text,
                 :image1,  :image2, :image3,  :image4,
-                :caption1,  :caption2,  :caption3,  :caption4
+                :caption1,  :caption2,  :caption3,  :caption4,
+                :source
                 )
         ';
 
@@ -39,6 +41,7 @@ class model_news_article extends model
             ->bindString( ':caption2',         $data->caption2 )
             ->bindString( ':caption3',         $data->caption3 )
             ->bindString( ':caption4',         $data->caption4 )
+            ->bindString( ':source',           $data->source )
             ->execute();
 
         return db::lastInsertId();
@@ -56,7 +59,8 @@ class model_news_article extends model
                 `title`            = :title,
                 `subtitle`         = :subtitle,
                 `short`            = :short,
-                `text`             = :text
+                `text`             = :text,
+                `source`           = :source
         ';
 
         if( !empty($data->image1) ) $sql .= ', `image1` = :image1';
@@ -75,6 +79,7 @@ class model_news_article extends model
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':short',            $data->short )
             ->bindString( ':text',             $data->text )
+            ->bindString( ':source',           $data->source )
             ->bindInt   ( ':id',               $data->id );
 
         if( !empty($data->image1) ) $query->bindString( ':image1', $data->image1 );

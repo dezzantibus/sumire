@@ -33,6 +33,8 @@ class data_news_article extends data
     public $caption3;
     public $caption4;
 
+    public $source;
+
     /** @var data_news_category  */
     public $category;
 
@@ -59,6 +61,7 @@ class data_news_article extends data
             if( isset( $data['caption2'] ) )         $this->caption2         = $data['caption2'];
             if( isset( $data['caption3'] ) )         $this->caption3         = $data['caption3'];
             if( isset( $data['caption4'] ) )         $this->caption4         = $data['caption4'];
+            if( isset( $data['source'] ) )           $this->source           = $data['source'];
         }
 
         if( !empty( $this->news_category_id ) )
