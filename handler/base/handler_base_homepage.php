@@ -6,6 +6,8 @@ class handler_base_homepage extends handler
     public function run()
     {
 
+        header("Location: http://news.sumire.it/");
+
         /*
 
         stuff copy/pasted
