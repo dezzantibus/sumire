@@ -27,7 +27,7 @@ class layout_admin_login extends layout_admin_page
         );
         $login_header = $login->addChild( new layout_html_div( $params ) );
 
-        $login_header->addChild( new layout_html_h5( 'Login' ) );
+        $login_header->addChild( new layout_html_h2( 'ログインする' ) );
 
         $form = $login->addChild( new layout_admin_form(
             '/login',
@@ -51,6 +51,13 @@ class layout_admin_login extends layout_admin_page
 
 
         $register = $page_wrapper->addChild( new layout_admin_page_content_frame() );
+
+        $params = array(
+            'class' => 'ibox-title'
+        );
+        $register_header = $register->addChild( new layout_html_div( $params ) );
+
+        $register_header->addChild( new layout_html_h2( '登録' ) );
 
         $form = $register->addChild( new layout_admin_form(
             '/register',
