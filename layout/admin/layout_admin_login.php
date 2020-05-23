@@ -22,6 +22,13 @@ class layout_admin_login extends layout_admin_page
 
         $login = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
+        $params = array(
+            'class' => 'ibox-title'
+        );
+        $login_header = $login->addChild( new layout_html_div( $params ) );
+
+        $login_header->addChild( new layout_html_h5( 'Login' ) );
+
         $form = $login->addChild( new layout_admin_form(
             '/login',
             'form-horizontal',
