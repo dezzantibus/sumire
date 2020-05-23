@@ -100,7 +100,7 @@ class layout_elements_sidebar_1 extends layout
         </div><!-- Advertisement End -->';
     }
 
-    private function tabs_element_news( data_news_article $article )
+    private function tabs_element_news_small( data_news_article $article )
     {
 
         echo
@@ -128,6 +128,30 @@ class layout_elements_sidebar_1 extends layout
 
     }
 
+    private function tabs_element_news_large( data_news_article $article )
+    {
+
+        echo
+        '<div class="post-item big clearfix">',
+            '<div class="img-thumb">',
+                '<a href="', $article->link(), '">',
+                    '<div class="fbt-resize" style="background-image: url(', constant::IMAGES_DOMAIN, $article->image1, ')"></div>',
+                '</a>',
+                '<div class="img-credits">',
+                    '<a href="', $article->link(), '">',
+                        '<h3>', $article->title, '</h3>',
+                    '</a>',
+                    '<div class="post-info clearfix">',
+                        //'<span><a href="#">Mark Spenser</a></span>',
+                        //'<span>-</span>',
+                        '<span>', $article->dateForDisplay( $article->date ), '</span>',
+                    '</div>',
+                '</div>',
+            '</div>',
+        '</div>';
+
+    }
+
     private function tabs()
     {
 
@@ -135,8 +159,8 @@ class layout_elements_sidebar_1 extends layout
         '<!-- Sidebar Tabs Start -->
         <div class="widget clearfix">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#recent">Recent</a></li>
-                <li><a data-toggle="tab" href="#menu1">Hot</a></li>
+                <li class="active"><a data-toggle="tab" href="#recent">最近のニュース</a></li>
+                <li><a data-toggle="tab" href="#popular">人気のニュース</a></li>
                 <li><a data-toggle="tab" href="#menu2">Reviews</a></li>
             </ul>
             <div class="tab-content">
@@ -147,97 +171,26 @@ class layout_elements_sidebar_1 extends layout
 
                     while( !$this->data->recent_news->isEmpty() )
                     {
-                        $this->tabs_element_news( $this->data->recent_news->first() );
+                        $this->tabs_element_news_small( $this->data->recent_news->first() );
                     }
 
                     echo
                     '</div><!-- Sidebar Small List End -->
                 </div>
                 <!-- Tab 2 -->
-                <div id="menu1" class="tab-pane fade">
+                <div id="popular" class="tab-pane fade">
                     <!-- Sidebar Vertical Mag 5 Start -->
-                    <div class="fbt-vc-inner">
-                        <div class="post-item big clearfix">
-                            <div class="img-thumb">
-                                <a href="single.html">
-                                    <div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div>
-                                </a>
-                                <div class="img-credits">
-                                    <a href="single.html">
-                                        <h3>Duis sed aliquam. Aliquam felis pulvinar in eu libero dapibus, donec ligula elit amet.</h3>
-                                    </a>
-                                    <div class="post-info clearfix">
-                                        <span><a href="#">Mark Spenser</a></span>
-                                        <span>-</span>
-                                        <span>Mar 18, 2016</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-item small">
-                            <div class="row">
-                                <div class="col-sm-4 col-xs-3">
-                                    <div class="img-thumb">
-                                        <a href="single.html">
-                                            <div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-8 col-xs-9 no-padding-left">
-                                    <div class="post-content">
-                                        <a href="single.html">
-                                            <h3>Aliquam metus mauris, litora orci ligula.</h3>
-                                        </a>
-                                        <div class="post-info clearfix">
-                                            <span>Mar 13, 2016</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-item small">
-                            <div class="row">
-                                <div class="col-sm-4 col-xs-3">
-                                    <div class="img-thumb">
-                                        <a href="single.html">
-                                            <div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-8 col-xs-9 no-padding-left">
-                                    <div class="post-content">
-                                        <a href="single.html">
-                                            <h3>Dolor ut a est maecenas, neque odio dui leo lacus varius.</h3>
-                                        </a>
-                                        <div class="post-info clearfix">
-                                            <span>Mar 8, 2016</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-item small">
-                            <div class="row">
-                                <div class="col-sm-4 col-xs-3">
-                                    <div class="img-thumb">
-                                        <a href="single.html">
-                                            <div class="fbt-resize" style="background-image: url(http://placekitten.com/640/427)"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-8 col-xs-9 no-padding-left">
-                                    <div class="post-content">
-                                        <a href="single.html">
-                                            <h3>Etiam duis nunc dui ad sagittis, mauris at rem, in nunc.</h3>
-                                        </a>
-                                        <div class="post-info clearfix">
-                                            <span>Feb 23, 2016</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Sidebar Vertical Mag 5 End -->
+                    <div class="fbt-vc-inner">';
+
+                        $this->tabs_element_news_large( $this->data->popular_news->first() );
+
+                        while( !$this->data->popular_news->isEmpty() )
+                        {
+                            $this->tabs_element_news_small( $this->data->popular_news->first() );
+                        }
+
+                    echo
+                    '</div><!-- Sidebar Vertical Mag 5 End -->
                 </div>
                 <!-- Tab 3 -->
                 <div id="menu2" class="tab-pane fade">

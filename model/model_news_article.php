@@ -303,4 +303,39 @@ class model_news_article extends model
         $query->execute();
     }
 
+    static public function getPopular( $number=4 )
+    {
+
+        //$result = cache_category::returnHomeCategories();
+
+        if( empty( $result ) )
+        {
+
+            $sql = "
+                SELECT a.*, COUNT(h.datetime) hits
+                FROM news_article a
+                    INNER JOIN news_hit h
+                        ON h.news_article_id = a.id
+                WHERE `datetime` > NOW() - INTERVAL 7 DAY
+				GROUP BY h.news_article_id
+                ORDER BY hits DESC, a.`date` DESC LIMIT $number
+            ";
+
+            $query = db::prepare( $sql );
+            $query->execute();
+
+            $result = new data_array();
+            while( $row = $query->fetch() )
+            {
+                $result->add( new data_news_article( $row ) );
+            }
+
+            //cache_category::saveHomeCategories( $result );
+
+        }
+
+        return $result;
+
+    }
+
 }

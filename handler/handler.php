@@ -20,6 +20,8 @@ abstract class handler
 
         $sidebar->recent_news = model_news_article::getLatest( null, 5 );
 
+        $sidebar->popular_news = model_news_article::getPopular();
+
         return $sidebar;
 
     }
