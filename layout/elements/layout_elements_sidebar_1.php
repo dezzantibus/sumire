@@ -17,7 +17,7 @@ class layout_elements_sidebar_1 extends layout
         <div class="fbt-col-lg-3 col-md-4 col-sm-6 sidebar">
             <div class="theiaStickySidebar">';
 
-                $this->social_counter();
+//                $this->social_counter();
 
                 $this->advertisement();
 

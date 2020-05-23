@@ -8,7 +8,7 @@ class handler_admin_homepage extends handler
 
         if( empty( session::$user ) )
         {
-            $page = new layout_admin_login();
+            $page = new layout_admin_login( new data_user );
             $page->render();
             exit;
         }
