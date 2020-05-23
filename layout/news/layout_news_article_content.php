@@ -23,8 +23,14 @@ class layout_news_article_content extends layout
                     '<div class="img-credits">',
                         '<div class="col-md-8 col-md-offset-2">',
                             '<a class="post-category" href="#">', $this->article->category->category, '</a>',
-                            '<div class="post-title"><h1>', $this->article->title, '</h1></div>',
-                            '<div class="post-description"><p>', $this->article->subtitle, '</p></div>',
+                            '<div class="post-title"><h1>', $this->article->title, '</h1></div>';
+
+                            if( !empty( $this->article->subtitle ) )
+                            {
+                                echo '<div class="post-description"><p>', $this->article->subtitle, '</p></div>';
+                            }
+
+                            echo
                             '<div class="post-info clearfix">',
 //                                '<span><a href="#"><i class="fa fa-pencil-square-o"></i> John Doe</a></span>',
 //                                '<span class="sepr">-</span>',
@@ -61,7 +67,7 @@ class layout_news_article_content extends layout
 
                     if( !empty( $this->article->source ) )
                     {
-                        echo '<p><a href="">ソース</a>';
+                        echo '<p><a href="', $this->article->source, '">ソース</a>';
                     }
 
                 echo

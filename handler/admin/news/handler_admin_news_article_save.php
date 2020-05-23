@@ -25,7 +25,6 @@ class handler_admin_news_article_save extends handler_action
         }
 
         if( !$this->checkRequired( $this->data['title'] ) )    message::addError( 'The title is required',    'title' );
-        if( !$this->checkRequired( $this->data['subtitle'] ) ) message::addError( 'The subtitle is required', 'subtitle' );
         if( !$this->checkRequired( $this->data['short'] ) ) $this->data['short'] = substr( strip_tags( $this->data['text'] ), 0, 200 );
         if( !$this->checkRequired( $this->data['text'] ) ) message::addError( 'The text is required', 'text' );
 
