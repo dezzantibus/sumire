@@ -67,7 +67,7 @@ class layout_news_article_content extends layout
 
                     if( !empty( $this->article->source ) )
                     {
-                        echo '<p><a href="', $this->article->source, '">ソース</a>';
+                        echo '<p><a href="', $this->article->source, '" target="_blank" rel="nofollow">ソース</a>';
                     }
 
                 echo
