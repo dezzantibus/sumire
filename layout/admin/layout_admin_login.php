@@ -21,17 +21,7 @@ class layout_admin_login extends layout_admin_page
 
         $page_wrapper->addChild( new layout_admin_header( 'Login/Register' ) );
 
-        $params = array(
-            'class' => 'wrapper wrapper-content'
-        );
-        $wrapper = $page_wrapper->addChild( new layout_html_div( $params ) );
-
-        $params = array(
-            'class' => 'row'
-        );
-        $login = $wrapper->addChild( new layout_html_div( $params ) );
-
-        $login->addChild( new layout_html_h4( 'Login' ) );
+        $login = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $login->addChild( new layout_admin_form(
             '/login',
