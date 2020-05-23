@@ -18,7 +18,6 @@ class layout_admin_login extends layout_admin_page
         );
         $page_wrapper = $this->addChild( new layout_html_div( $params ) );
 
-
         $page_wrapper->addChild( new layout_admin_header( 'Login/Register' ) );
 
         $login = $page_wrapper->addChild( new layout_admin_page_content_frame() );
@@ -44,12 +43,7 @@ class layout_admin_login extends layout_admin_page
         ) );
 
 
-        $params = array(
-            'class' => 'row'
-        );
-        $register = $wrapper->addChild( new layout_html_div( $params ) );
-
-        $login->addChild( new layout_html_h4( 'Register' ) );
+        $register = $page_wrapper->addChild( new layout_admin_page_content_frame() );
 
         $form = $register->addChild( new layout_admin_form(
             '/register',
