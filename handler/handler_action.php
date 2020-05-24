@@ -25,6 +25,11 @@ abstract class handler_action
         return is_numeric( $value );
     }
 
+    protected function checkMatch( $value1, $value2 )
+    {
+        return $value1 == $value2;
+    }
+
     protected function checkRequired( $value )
     {
 

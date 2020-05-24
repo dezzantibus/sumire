@@ -69,7 +69,7 @@ class layout_admin_login extends layout_admin_page
             'email',
             'Email',
             $user->email,
-            $messages['email']['message']
+            $messages['email_reg']['message']
         ) );
 
         $form->addChild( new layout_admin_form_text(
@@ -83,7 +83,7 @@ class layout_admin_login extends layout_admin_page
             'password',
             'Password',
             null,
-            $messages['password']['message']
+            $messages['password_reg']['message']
         ) );
 
         $form->addChild( new layout_admin_form_password(

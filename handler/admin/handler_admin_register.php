@@ -7,69 +7,64 @@ class handler_admin_register extends handler_action
     {
 
 
-        die( 'REGISTER DA FARE' );
+        if( !$this->checkRequired( $this->data['email'] ) )   message::addError( 'The email is required', 'email_reg' );
 
-        if( empty( $this->data['carousel'] ) )
+        if( !$this->checkRequired( $this->data['email_r'] ) )
         {
-            $this->data['carousel'] = 0;
+            message::addError( 'Repeat email is required', 'email_r' );
         }
-        else
+        elseif( $this->checkMatch( $this->data['email'], $this->data['email_r'] ) )
         {
-            $this->data['carousel'] = 1;
-        }
-
-        if( empty( $this->data['homepage'] ) )
-        {
-            $this->data['homepage'] = 0;
-        }
-        else
-        {
-            $this->data['homepage'] = 1;
+            message::addError( 'The emails don\'t match', 'email_r' );
         }
 
-        if( !$this->checkRequired( $this->data['title'] ) )    message::addError( 'The title is required',    'title' );
-        if( !$this->checkRequired( $this->data['subtitle'] ) ) message::addError( 'The subtitle is required', 'subtitle' );
-        if( !$this->checkRequired( $this->data['short'] ) ) $this->data['short'] = substr( strip_tags( $this->data['text'] ), 0, 200 );
-        if( !$this->checkRequired( $this->data['text'] ) ) message::addError( 'The text is required', 'text' );
+        if( !$this->checkRequired( $this->data['password'] ) )   message::addError( 'The password is required', 'password_reg' );
 
-        $article = new data_news_article( $this->data );
+        if( !$this->checkRequired( $this->data['password_r'] ) )
+        {
+            message::addError( 'Repeat password is required', 'password_r' );
+        }
+        elseif( $this->checkMatch( $this->data['password'], $this->data['password_r'] ) )
+        {
+            message::addError( 'The passwords don\'t match', 'email_r' );
+        }
+
+        /**
+         * need to check for existing email, blog and nick
+         */
+
+        $user = new data_user( $this->data );
+        $user->password = model_user::hash( $user->password );
 
         if( message::containsErrors() )
         {
 
-            $page = new layout_admin_news_article_form(
-                $article,
-                model_news_category::getFullList( 'category' )
-            );
+            $page = new layout_admin_login( $user );
             $page->render();
+            exit;
 
         }
         else
         {
 
-            $category = model_news_category::getById( $article->news_category_id );
-
-            $path = 'news/' . $category->category . '/' . date('Y-m-d') . '/' . $article->title;
+            $path = 'users/' . substr( $user->nick, 0, 1 ) . '/' . substr( $user->nick, 1, 1 ) . '/' . $user->nick;
             $path = str_replace( ' ', '', $path );
             $path = str_replace( '　', '', $path );
             $path = str_replace( '#', '', $path );
             $path = str_replace( '&', '', $path );
 
-            if( !empty( $this->files['image1'] ) ) $article->image1 = file::saveFromPost( $this->files['image1'], $path );
-            if( !empty( $this->files['image2'] ) ) $article->image1 = file::saveFromPost( $this->files['image2'], $path );
-            if( !empty( $this->files['image3'] ) ) $article->image1 = file::saveFromPost( $this->files['image3'], $path );
-            if( !empty( $this->files['image4'] ) ) $article->image1 = file::saveFromPost( $this->files['image4'], $path );
+            if( !empty( $this->files['avatar'] ) ) $user->avatar = file::saveFromPost( $this->files['avatar'], $path );
 
-            if( empty( $article->id ) )
+            if( empty( $user->id ) )
             {
-                model_news_article::create( $article );
+                model_user::create( $user );
             }
             else
             {
-                model_news_article::update( $article );
+                model_user::update( $user );
             }
 
-            header("Location: /news/article");
+            header("Location: /");
 
         }
 

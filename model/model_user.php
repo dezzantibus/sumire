@@ -121,7 +121,7 @@ class model_user extends model
 
     }
 
-    static private function hash( $value )
+    static public function hash( $value )
     {
         return hash( 'sha256', '=rie=' . $value . '=zante=' );
     }
