@@ -50,7 +50,10 @@ abstract class layout_page extends layout
   <![endif]-->
 
 </head>
-<body>';
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v7.0&appId=163662910477169"></script>
+';
 
     }
 

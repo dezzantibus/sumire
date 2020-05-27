@@ -74,6 +74,8 @@ class layout_news_article_content extends layout
                 '</div>',
                 //<!-- post-text-content -->
 
+                '<div class="fb-comments" data-href="', $this->article->link(), '" data-numposts="5" data-width=""></div>',
+
                 //<!-- Post Share Bottom Start -->
                 '<div class="post-share bottom clearfix">',
                     '<ul>',
