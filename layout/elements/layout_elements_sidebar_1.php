@@ -84,20 +84,26 @@ class layout_elements_sidebar_1 extends layout
     {
         //<!-- Advertisement Start -->
         echo
-        '<div class="widget advertisement">
-            <div class="desktop-ad">
-                <span>- Advertisement -</span>
-                <a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>
-            </div>
-            <div class="tablet-ad">
-                <span>- Advertisement -</span>
-                <a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>
-            </div>
-            <div class="mobile-ad">
-                <span>- Advertisement -</span>
-                <a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>
-            </div>
-        </div><!-- Advertisement End -->';
+        '<div class="widget advertisement">';
+
+            banner::square();
+
+            /*
+            '<div class="desktop-ad">',
+                '<span>- Advertisement -</span>',
+                '<a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>',
+            '</div>',
+            '<div class="tablet-ad">',
+                '<span>- Advertisement -</span>',
+                '<a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>',
+            '</div>',
+            '<div class="mobile-ad">',
+                '<span>- Advertisement -</span>',
+                '<a href="#" target="_blank"><img src="img/300x250.jpg" alt=""></a>',
+            '</div>',
+            */
+        '</div>';
+        //<!-- Advertisement End -->';
     }
 
     private function tabs_element_news_small( data_news_article $article )

@@ -50,6 +50,7 @@ class layout_news_article_content extends layout
                 //<!-- img-crop -->
 
                 //<!-- Post Share Start -->
+                /*
                 '<div class="post-share clearfix">',
                     '<ul>',
                         '<li><a class="facebook df-share" data-sharetip="Share on Facebook!" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> <span class="social-text">Facebook</span></a></li>',
@@ -58,6 +59,7 @@ class layout_news_article_content extends layout
                         '<li><a class="pinterest df-pinterest" data-sharetip="Pin it" href="#" target="_blank"><i class="fa fa-pinterest-p"></i> <span class="social-text">Pinterest</span></a></li>',
                     '</ul>',
                 '</div>',
+                */
                 //<!-- Post Share End -->
 
                 '<div class="clearfix"></div>',
@@ -74,9 +76,16 @@ class layout_news_article_content extends layout
                 '</div>',
                 //<!-- post-text-content -->
 
+                '<div class="post-text-content clearfix">';
+
+                    banner::article();
+
+                echo
+                '</div>',
                 '<div class="fb-comments" data-href="', $this->article->link(), '" data-numposts="5" data-width=""></div>',
 
                 //<!-- Post Share Bottom Start -->
+                /*
                 '<div class="post-share bottom clearfix">',
                     '<ul>',
                         '<li><a class="facebook df-share" data-sharetip="Share on Facebook!" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i> <span class="social-text">Facebook</span></a></li>',
@@ -85,6 +94,7 @@ class layout_news_article_content extends layout
                         '<li><a class="pinterest df-pinterest" data-sharetip="Pin it" href="#" target="_blank"><i class="fa fa-pinterest-p"></i> <span class="social-text">Pinterest</span></a></li>',
                     '</ul>',
                 '</div>',
+                */
                 //<!-- Post Share Bottom End -->
 
 
