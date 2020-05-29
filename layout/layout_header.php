@@ -19,29 +19,33 @@ class layout_header extends layout
     function render()
     {
         echo
-        '<div class="navbar-fixed-top"></div>';
+        '<div class="navbar-fixed-top"></div>',
 
-        echo
         //<!-- Header Start -->
-        '<section class="header-wrapper clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3">
-                        <h1 class="logo"><a href="/"><img class="img-responsive" src="/img/Logo-with-name.png" alt="logo"/></a></h1>
-                    </div>
-                    <div class="col-md-1 hidden-sm"></div>
-                    <div class="col-md-8 col-sm-9">
-                        <div class="ad-space ads-768">
-                            <a href="#" target="_blank"><img src="./img/728x90.jpg" alt="header-ad"/></a>
-                        </div>
-                        <div class="ad-space ads-468">
-                            <a href="#" target="_blank"><img src="./img/468x60.jpg" alt="header-ad"/></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- Header End -->
-        ';
+        '<section class="header-wrapper clearfix">',
+            '<div class="container">',
+                '<div class="row">',
+                    '<div class="col-md-3 col-sm-3">',
+                        '<h1 class="logo"><a href="/"><img class="img-responsive" src="/img/Logo-with-name.png" alt="logo"/></a></h1>',
+                    '</div>',
+                    '<div class="col-md-1 hidden-sm"></div>',
+                    '<div class="col-md-8 col-sm-9">';
+//                        '<div class="ad-space ads-768">',
+//                            '<a href="#" target="_blank"><img src="./img/728x90.jpg" alt="header-ad"/></a>',
+//                        '</div>',
+//                        '<div class="ad-space ads-468">',
+//                            '<a href="#" target="_blank"><img src="./img/468x60.jpg" alt="header-ad"/></a>',
+//                        '</div>',
+
+                        banner::wide();
+
+                    echo
+                    '</div>',
+                '</div>',
+            '</div>',
+        '</section>',
+        //<!-- Header End -->
+
 
         $this->render_ticker();
 
