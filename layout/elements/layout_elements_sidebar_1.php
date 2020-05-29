@@ -27,7 +27,7 @@ class layout_elements_sidebar_1 extends layout
 
                 $this->advertisement();
 
-                $this->popularPosts();
+//                $this->popularPosts();
 
             echo
             '</div>',

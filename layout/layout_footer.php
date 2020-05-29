@@ -10,6 +10,7 @@ class layout_footer extends layout
 
     function render()
     {
+        /*
         echo '
 	<!-- Footer Sidebar Start -->
 	<section class="footer-wrapper clearfix">
@@ -209,6 +210,8 @@ class layout_footer extends layout
 		</div>
 	</section><!-- Footer Sidebar End -->
         ';
+
+        */
     }
 
 }
