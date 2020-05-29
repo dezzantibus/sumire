@@ -5,6 +5,8 @@ abstract class layout_page extends layout
 
     protected $title;
 
+    protected $metatags;
+
     protected function renderTop()
     {
 
@@ -23,11 +25,11 @@ abstract class layout_page extends layout
 
   <!-- Basic -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="keywords" content="Responsive, HTML5, Template" />
-  <meta name="description" content="Responsive HTML5 Template" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>',
 
-  <title>', $this->title , '</title>
+$this->metatags,
+
+  '<title>', $this->title , '</title>
 
   <link rel="shortcut icon" href="/img/favicon.ico">
 

@@ -12,7 +12,16 @@ class layout_news_article extends layout_page
     )
     {
 
-        $this->title = 'すみれ';
+        $this->title = $article->title . ' - すみれ';
+
+        $this->metatags =   '<meta name="keywords" content="' . $article->title . '" />' .
+                            '<meta name="description" content="' . $article->title . '" />' .
+                            '<meta property="og:title" content="' . $article->title . '">' .
+                            '<meta property="og:description" content="' . $article->short . '">' .
+                            '<meta property="og:image" content="' . constant::IMAGES_DOMAIN . $article->image1 . '">' .
+                            '<meta property="og:url" content="' . $article->link() . '">' .
+                            '<meta name="twitter:card" content="' . constant::IMAGES_DOMAIN . $article->image1 . '">' .
+                            '<meta property="og:site_name" content="すみれ">';
 
         $this->addChild( new layout_header( $latest, $categories ) );
 
