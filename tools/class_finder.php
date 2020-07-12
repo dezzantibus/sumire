@@ -111,9 +111,10 @@ class class_finder
         {
             switch( $frags[2] )
             {
-                case 'news': require_once __DIR__ . '/../handler/admin/news/' . $name . '.php'; break;
-                case 'blog': require_once __DIR__ . '/../handler/admin/blog/' . $name . '.php'; break;
-                default    : require_once __DIR__ . '/../handler/admin/'      . $name . '.php';
+                case 'news':   require_once __DIR__ . '/../handler/admin/news/'   . $name . '.php'; break;
+                case 'recipe': require_once __DIR__ . '/../handler/admin/recipe/' . $name . '.php'; break;
+                case 'blog':   require_once __DIR__ . '/../handler/admin/blog/'   . $name . '.php'; break;
+                default    :   require_once __DIR__ . '/../handler/admin/'        . $name . '.php';
             }
         }
         else
