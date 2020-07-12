@@ -8,14 +8,15 @@ class model_recipe_category extends model
 
         $sql = '
             INSERT INTO recipe_category
-                ( `category`, `order`, `homepage`, `homepage_box` )
+                ( `category`, `category_eng`, `order`, `homepage`, `homepage_box` )
             VALUES
-                ( :category,  :order,  :homepage,  :homepage_box )
+                ( :category,  :category_eng,  :order,  :homepage,  :homepage_box )
         ';
 
         $query = db::prepare( $sql );
         $query
             ->bindString( ':category',     $data->category )
+            ->bindString( ':category_eng', $data->category_eng )
             ->bindInt   ( ':order',        $data->order )
             ->bindInt   ( ':homepage',     $data->homepage )
             ->bindString( ':homepage_box', $data->homepage_box )
@@ -31,6 +32,7 @@ class model_recipe_category extends model
         $sql = '
             UPDATE recipe_category
             SET `category`     = :category,
+                `category_eng` = :category_eng,
                 `order`        = :order,
                 `homepage`     = :homepage,
                 `homepage_box` = :homepage_box
@@ -40,6 +42,7 @@ class model_recipe_category extends model
         $query = db::prepare( $sql );
         $query
             ->bindString( ':category',     $data->category )
+            ->bindString( ':category_eng', $data->category_eng )
             ->bindInt   ( ':order',        $data->order )
             ->bindInt   ( ':homepage',     $data->homepage )
             ->bindString( ':homepage_box', $data->homepage_box )

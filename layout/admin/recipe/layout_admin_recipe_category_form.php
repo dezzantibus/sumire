@@ -46,6 +46,13 @@ class layout_admin_recipe_category_form extends layout_admin_page
         ) );
 
         $form->addChild( new layout_admin_form_text(
+            'category_eng',
+            'Category name (english)',
+            $category->category_eng,
+            $messages['category_eng']['message']
+        ) );
+
+        $form->addChild( new layout_admin_form_text(
             'order',
             'Menu order',
             $category->order,
