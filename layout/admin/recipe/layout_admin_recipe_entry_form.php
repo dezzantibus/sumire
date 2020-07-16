@@ -3,7 +3,7 @@
 class layout_admin_recipe_entry_form extends layout_admin_page
 {
 
-    public function __construct( data_recipe_entry $entry, data_array $categories )
+    public function __construct( data_recipe_entry $entry, data_array $categories, data_array $ingredient_list )
     {
 
         $this->title = 'Sumire - admin - Recipes';
@@ -95,8 +95,45 @@ class layout_admin_recipe_entry_form extends layout_admin_page
             $messages['image']['message']
         ) );
 
+        $ingredient_dropdown = new data_array();
+        while( !$ingredient_list->isEmpty() )
+        {
+            $ingredient = $ingredient_list->first();
+            $ingredient_dropdown->add( array( 'label' => $ingredient->japanese . ' ' . $ingredient->english, 'value' => $ingredient->id ) );
+        }
+
+
         if( empty( $entry->id ))
         {
+            /**
+             * if this is a new recipe, we add a default of 10 ingredients
+             * and save only the ones with a quantity. We'll see if these are enough or if we need more
+             * We need to remember that these IDs are temporary because here we are inserting
+             */
+            for( $ing_num=0; $ing_num<10; $ing_num++ )
+            {
+
+                $input = 'ingredient[' . $ing_num . ']["recipe_ingredient_id"]';
+
+                $form->addChild( new layout_admin_form_dropdown(
+                    $input,
+                    'Ingredient ' . $ing_num,
+                    $ingredient_dropdown,
+                    null,
+                    null
+                ) );
+
+                $input = 'ingredient[' . $ing_num . ']["quantity"]';
+
+                $form->addChild( new layout_admin_form_text(
+                    $input,
+                    'Quantity',
+                    null,
+                    null
+                ) );
+
+            }
+
             /**
              * if this is a new recipe, we add a default of 10 steps
              * and save only the ones with a description. We'll see if these are enough or if we need more
@@ -128,6 +165,89 @@ class layout_admin_recipe_entry_form extends layout_admin_page
         }
         else
         {
+            /**
+             * if this is an existing recipe, we add a couple of ingredients at the end
+             * and save only the ones with a description.
+             * We need to remember that the IDs of the new ingredients are temporary
+             * because we are inserting them, while the existing ones are
+             * being updated
+             */
+
+            $count = 0;
+
+            /** @var  $ingredient data_recipe_ingredient */
+            while( $ingredient = $entry->ingredients->first() )
+            {
+
+                $count++;
+
+                $input = 'step[' . $count . ']["recipe_ingredient_id"]';
+
+                $form->addChild( new layout_admin_form_dropdown(
+                    $input,
+                    'Ingredient ' . $count,
+                    $ingredient_dropdown,
+                    $ingredient->id,
+                    $messages[$input]['message']
+                ) );
+
+                $input = 'ingredient[' . $ingredient->id . ']["quantity"]';
+
+                $form->addChild( new layout_admin_form_text(
+                    $input,
+                    'Quantity',
+                    $ingredient->quantity,
+                    $messages[$input]['message']
+                ) );
+
+            }
+
+            /**
+             * And here we add the two extra empty ones for addition purposes
+             */
+
+            $count++;
+
+            $input = 'ingredient[0]["recipe_ingredient_id"]';
+
+            $form->addChild( new layout_admin_form_dropdown(
+                $input,
+                'Ingredient ' . $count,
+                $ingredient_dropdown,
+                null,
+                $messages[$input]['message']
+            ) );
+
+            $input = 'ingredient[0]["quantity"]';
+
+            $form->addChild( new layout_admin_form_text(
+                $input,
+                'Quantity',
+                null,
+                $messages[$input]['message']
+            ) );
+
+            $count++;
+
+            $input = 'ingredient[1]["recipe_ingredient_id"]';
+
+            $form->addChild( new layout_admin_form_dropdown(
+                $input,
+                'Ingredient ' . $count,
+                $ingredient_dropdown,
+                null,
+                $messages[$input]['message']
+            ) );
+
+            $input = 'ingredient[1]["quantity"]';
+
+            $form->addChild( new layout_admin_form_text(
+                $input,
+                'Quantity',
+                null,
+                $messages[$input]['message']
+            ) );
+
             /**
              * if this is an existing recipe, we add a couple of steps at the end
              * and save only the ones with a description.
@@ -163,6 +283,9 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     $messages[$input]['message']
                 ) );
 
+                $input = 'step[' . $step->id . ']["id"]';
+                $form->addChild( new layout_admin_form_hidden( $input, $step->id ) );
+
             }
 
             /**
@@ -181,7 +304,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                 20
             ) );
 
-            $input = 'step[1]["image"]';
+            $input = 'step[0]["image"]';
 
             $form->addChild( new layout_admin_form_file(
                 $input,
@@ -192,7 +315,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
             $count++;
 
-            $input = 'step[0]["description"]';
+            $input = 'step[1]["description"]';
 
             $form->addChild( new layout_admin_form_textarea(
                 $input,

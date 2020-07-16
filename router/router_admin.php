@@ -88,7 +88,7 @@ class router_admin
                 {
                     case 'new'    :
                     case 'edit'   : return new handler_admin_recipe_entry_form();
-                    case 'save'   : return new handler_admin_recipe_entrye_save();
+                    case 'save'   : return new handler_admin_recipe_entry_save();
                     case 'delete' : return new handler_admin_recipe_entry_delete();
                     default       : return new handler_admin_recipe_entry_list();
                 }

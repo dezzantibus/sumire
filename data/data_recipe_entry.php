@@ -24,7 +24,10 @@ class data_recipe_entry extends data
     /** @var data_array  */
     public $steps;
 
-    function __construct( $data=null, $steps=null )
+    /** @var data_array  */
+    public $ingredients;
+
+    function __construct( $data=null, $steps=null, $ingredients=null )
     {
 
         if( isset( $data ) )
@@ -41,6 +44,8 @@ class data_recipe_entry extends data
             if( isset( $data['image'] ) )              $this->image              = $data['image'];
 
             if( isset( $steps ) ) $this->steps = $steps;
+
+            if( isset( $ingredients ) ) $this->ingredients = $ingredients;
 
         }
 
