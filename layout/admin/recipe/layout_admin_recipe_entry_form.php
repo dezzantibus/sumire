@@ -43,7 +43,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
         while( !$categories->isEmpty() )
         {
             $category = $categories->first();
-            $category_dropdown->add( array( 'label' => $category->category, 'value' => $category->id ) );
+            $category_dropdown->add( array( 'label' => $category->category_eng, 'value' => $category->id ) );
         }
 
         $form->addChild( new layout_admin_form_dropdown(
