@@ -99,7 +99,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
         while( !$ingredient_list->isEmpty() )
         {
             $ingredient = $ingredient_list->first();
-            $ingredient_dropdown->add( array( 'label' => $ingredient->japanese . ' ' . $ingredient->english, 'value' => $ingredient->id ) );
+            $ingredient_dropdown->add( array( 'label' => $ingredient->japanese . ' - ' . $ingredient->english, 'value' => $ingredient->id ) );
         }
 
 
