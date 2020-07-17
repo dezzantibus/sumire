@@ -26,7 +26,7 @@ class layout_admin_recipe_entry_list extends layout_admin_page
         {
             $article = $articles->first();
             $page_box->addChild( new layout_admin_list_element(
-                $article->title,
+                $article->name,
                 '/recipe/entry/edit/' . $article->id,
                 '/recipe/entry/delete/' . $article->id
             ) );
