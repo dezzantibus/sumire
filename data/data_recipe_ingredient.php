@@ -9,7 +9,7 @@ class data_recipe_ingredient extends data
 
     public $quantity;
 
-    function __construct( $data=null, $steps=null, $ingredients=null )
+    function __construct( $data=null )
     {
 
         if( isset( $data ) )

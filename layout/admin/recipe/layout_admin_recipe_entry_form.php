@@ -113,7 +113,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
             for( $ing_num=0; $ing_num<10; $ing_num++ )
             {
 
-                $input = 'ingredient[' . $ing_num . '][\'recipe_ingredient_id\']';
+                $input = 'ingredient[' . $ing_num . '][recipe_ingredient_id]';
 
                 $form->addChild( new layout_admin_form_dropdown(
                     $input,
@@ -123,7 +123,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     null
                 ) );
 
-                $input = 'ingredient[' . $ing_num . '][\'quantity\']';
+                $input = 'ingredient[' . $ing_num . '][quantity]';
 
                 $form->addChild( new layout_admin_form_text(
                     $input,
@@ -142,7 +142,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
             for( $step_num=0; $step_num<10; $step_num++ )
             {
 
-                $input = 'step[' . $step_num . '][\'description\']';
+                $input = 'step[' . $step_num . '][description]';
 
                 $form->addChild( new layout_admin_form_textarea(
                     $input,
@@ -152,7 +152,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     20
                 ) );
 
-                $input = 'step[' . $step_num . '][\'image\']';
+                $input = 'step[' . $step_num . '][image]';
 
                 $form->addChild( new layout_admin_form_file(
                     $input,
@@ -181,7 +181,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
                 $count++;
 
-                $input = 'step[' . $count . '][\'recipe_ingredient_id\']';
+                $input = 'step[' . $count . '][recipe_ingredient_id]';
 
                 $form->addChild( new layout_admin_form_dropdown(
                     $input,
@@ -191,7 +191,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     $messages[$input]['message']
                 ) );
 
-                $input = 'ingredient[' . $count . '][\'quantity\']';
+                $input = 'ingredient[' . $count . '][quantity]';
 
                 $form->addChild( new layout_admin_form_text(
                     $input,
@@ -208,7 +208,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
             $count++;
 
-            $input = 'ingredient[0][\'recipe_ingredient_id\']';
+            $input = 'ingredient[0][recipe_ingredient_id]';
 
             $form->addChild( new layout_admin_form_dropdown(
                 $input,
@@ -218,7 +218,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                 $messages[$input]['message']
             ) );
 
-            $input = 'ingredient[0][\'quantity\']';
+            $input = 'ingredient[0][quantity]';
 
             $form->addChild( new layout_admin_form_text(
                 $input,
@@ -229,7 +229,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
             $count++;
 
-            $input = 'ingredient[1][\'recipe_ingredient_id\']';
+            $input = 'ingredient[1][recipe_ingredient_id]';
 
             $form->addChild( new layout_admin_form_dropdown(
                 $input,
@@ -239,7 +239,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                 $messages[$input]['message']
             ) );
 
-            $input = 'ingredient[1][\'quantity\']';
+            $input = 'ingredient[1][quantity]';
 
             $form->addChild( new layout_admin_form_text(
                 $input,
@@ -264,7 +264,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
                 $count++;
 
-                $input = 'step[' . $step->id . '][\'description\']';
+                $input = 'step[' . $step->id . '][description]';
 
                 $form->addChild( new layout_admin_form_textarea(
                     $input,
@@ -274,7 +274,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     20
                 ) );
 
-                $input = 'step[' . $step->id . '][\'image\']';
+                $input = 'step[' . $step->id . '][image]';
 
                 $form->addChild( new layout_admin_form_file(
                     $input,
@@ -283,7 +283,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                     $messages[$input]['message']
                 ) );
 
-                $input = 'step[' . $step->id . ']["id"]';
+                $input = 'step[' . $step->id . '][id]';
                 $form->addChild( new layout_admin_form_hidden( $input, $step->id ) );
 
             }
@@ -294,7 +294,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
             $count++;
 
-            $input = 'step[0][\'description\']';
+            $input = 'step[0][description]';
 
             $form->addChild( new layout_admin_form_textarea(
                 $input,
@@ -304,7 +304,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                 20
             ) );
 
-            $input = 'step[0]["image"]';
+            $input = 'step[0][image]';
 
             $form->addChild( new layout_admin_form_file(
                 $input,
@@ -315,7 +315,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
 
             $count++;
 
-            $input = 'step[1][\'description\']';
+            $input = 'step[1][description]';
 
             $form->addChild( new layout_admin_form_textarea(
                 $input,
@@ -325,7 +325,7 @@ class layout_admin_recipe_entry_form extends layout_admin_page
                 20
             ) );
 
-            $input = 'step[1]["image"]';
+            $input = 'step[1][image]';
 
             $form->addChild( new layout_admin_form_file(
                 $input,
