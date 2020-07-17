@@ -60,6 +60,8 @@ class handler_admin_recipe_entry_save extends handler_action
             {
                 if( !empty( $step['description'] ) )
                 {
+                    $step['recipe_entry_id'] = $recipe->id;
+
                     if( $id < 100 )
                     {
                         // new step
