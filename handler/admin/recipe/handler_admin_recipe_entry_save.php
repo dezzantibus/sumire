@@ -36,7 +36,7 @@ class handler_admin_recipe_entry_save extends handler_action
 
             if( empty( $recipe->id ) )
             {
-                model_recipe_entry::create( $recipe );
+                $recipe->id = model_recipe_entry::create( $recipe );
             }
             else
             {
@@ -48,21 +48,28 @@ class handler_admin_recipe_entry_save extends handler_action
 
             foreach( $this->data['ingredient'] as $ingredient )
             {
-                model_recipe_ingredient::create( new data_recipe_ingredient( $ingredient ) );
+                if( !empty( $ingredient['quantity'] ) )
+                {
+                    $ingredient['recipe_entry_id'] = $recipe->id;
+                    model_recipe_ingredient::create( new data_recipe_ingredient( $ingredient ) );
+                }
             }
 
             // save steps
             foreach( $this->data['step'] as $id => $step )
             {
-                if( $id < 100 )
+                if( !empty( $step['description'] ) )
                 {
-                    // new step
-                    model_recipe_step::create( new data_recipe_step( $step ) );
-                }
-                else
-                {
-                    // update step
-                    model_recipe_step::update( new data_recipe_step( $step ) );
+                    if( $id < 100 )
+                    {
+                        // new step
+                        model_recipe_step::create( new data_recipe_step( $step ) );
+                    }
+                    else
+                    {
+                        // update step
+                        model_recipe_step::update( new data_recipe_step( $step ) );
+                    }
                 }
             }
 

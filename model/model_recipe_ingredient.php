@@ -27,7 +27,7 @@ class model_recipe_ingredient extends model
         $query
             ->bindInt   ( ':recipe_entry_id',      $data->recipe_entry_id )
             ->bindInt   ( ':recipe_ingredient_id', $data->recipe_ingredient_id )
-            ->bindInt   ( ':quantity',             $data->quantity )
+            ->bindString( ':quantity',             $data->quantity )
             ->execute();
 
         return db::lastInsertId();
