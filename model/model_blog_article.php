@@ -9,15 +9,17 @@ class model_blog_article extends model
         $sql = '
             INSERT INTO blog_article
                 (
-                `blog_category_id`, `user_id`, `homepage`, `title`, `subtitle`, `text`,
-                `image1`, `image2`, `image3`, `image4`,
-                `caption1`, `caption2`, `caption3`, `caption4`
+                `blog_category_id`, `user_id`, `homepage`,
+                `published`, `title`, `subtitle`, `text`,
+                `image1`, `image2`, `image3`, `image4`, `image5`,
+                `image6`, `image7`, `image8`, `image9`, `image10`
                 )
             VALUES
                 (
-                :blog_category_id,  :user_id,  :homepage,  :title,  :subtitle,  :text,
-                :image1,  :image2, :image3,  :image4,
-                :caption1,  :caption2,  :caption3,  :caption4
+                :blog_category_id,  :user_id,  :homepage,
+                :published,  :title,  :subtitle,  :text,
+                :image1,  :image2,  :image3,  :image4,  :image5,
+                :image6,  :image7,  :image8,  :image9,  :image10
                 )
         ';
 
@@ -26,17 +28,21 @@ class model_blog_article extends model
             ->bindInt   ( ':blog_category_id', $data->blog_category_id )
             ->bindInt   ( ':user_id',          $data->user_id )
             ->bindInt   ( ':homepage',         $data->homepage )
+            ->bindInt   ( ':published',        $data->published )
             ->bindString( ':title',            $data->title )
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':text',             $data->text )
+            ->bindString( ':cover',            $data->cover )
             ->bindString( ':image1',           $data->image1 )
             ->bindString( ':image2',           $data->image2 )
             ->bindString( ':image3',           $data->image3 )
             ->bindString( ':image4',           $data->image4 )
-            ->bindString( ':caption1',         $data->caption1 )
-            ->bindString( ':caption2',         $data->caption2 )
-            ->bindString( ':caption3',         $data->caption3 )
-            ->bindString( ':caption4',         $data->caption4 )
+            ->bindString( ':image5',           $data->image5 )
+            ->bindString( ':image6',           $data->image6 )
+            ->bindString( ':image7',           $data->image7 )
+            ->bindString( ':image8',           $data->image8 )
+            ->bindString( ':image9',           $data->image9 )
+            ->bindString( ':image10',          $data->image10 )
             ->execute();
 
         return db::lastInsertId();

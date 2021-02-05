@@ -65,6 +65,17 @@ class layout_admin_blog_article_form extends layout_admin_page
             $messages['homepage']['message']
         ) );
 
+        $published = new data_array();
+        $published->add( array( 'label' => '', 'value' => '1' ) );
+
+        $form->addChild( new layout_admin_form_checkbox(
+            'published',
+            'Published',
+            $published,
+            $article->published,
+            $messages['homepage']['message']
+        ) );
+
         $form->addChild( new layout_admin_form_text(
             'title',
             'Title',
@@ -88,11 +99,21 @@ class layout_admin_blog_article_form extends layout_admin_page
         ) );
 
         $form->addChild( new layout_admin_form_file(
-            'image1',
-            'Image',
+            'cover',
+            'Cover',
             null,
-            $messages['image1']['message']
+            $messages['cover']['message']
         ) );
+
+        for( $i=1; $i<=10; $i++ )
+        {
+            $form->addChild( new layout_admin_form_file(
+                'image' . $i,
+                'Image ' . $i,
+                null,
+                $messages[ 'image' . $i ]['message']
+            ) );
+        }
 
         $page_wrapper->addChild( new layout_admin_footer() );
 
