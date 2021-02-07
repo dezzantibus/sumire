@@ -105,7 +105,12 @@ class model_blog_article extends model
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id',      $id );
-        $query->bindInt( ':user_id', $user_id );
+
+        if( !empty( $user_id ) )
+        {
+            $query->bindInt( ':user_id', $user_id );
+        }
+
         $query->execute();
 
     }
