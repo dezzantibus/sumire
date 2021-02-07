@@ -25,6 +25,11 @@ class model_blog_article extends model
                 )
         ';
 
+        if( empty( $data->published ) )
+        {
+            $data->published = 0;
+        }
+
         $query = db::prepare( $sql );
         $query
             ->bindInt   ( ':blog_category_id', $data->blog_category_id )
