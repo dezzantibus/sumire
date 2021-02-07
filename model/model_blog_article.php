@@ -25,10 +25,19 @@ class model_blog_article extends model
                 )
         ';
 
-        if( empty( $data->published ) )
-        {
-            $data->published = 0;
-        }
+        if( empty( $data->published ) ) $data->published = 0;
+
+        if( empty( $data->cover ) )   $data->cover = NULL;
+        if( empty( $data->image1 ) )  $data->image1 = NULL;
+        if( empty( $data->image2 ) )  $data->image2 = NULL;
+        if( empty( $data->image3 ) )  $data->image3 = NULL;
+        if( empty( $data->image4 ) )  $data->image4 = NULL;
+        if( empty( $data->image5 ) )  $data->image5 = NULL;
+        if( empty( $data->image6 ) )  $data->image6 = NULL;
+        if( empty( $data->image7 ) )  $data->image7 = NULL;
+        if( empty( $data->image8 ) )  $data->image8 = NULL;
+        if( empty( $data->image9 ) )  $data->image9 = NULL;
+        if( empty( $data->image10 ) ) $data->image10 = NULL;
 
         $query = db::prepare( $sql );
         $query
