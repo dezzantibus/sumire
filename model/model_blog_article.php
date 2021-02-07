@@ -94,7 +94,14 @@ class model_blog_article extends model
     static public function delete( $id, $user_id )
     {
 
-        $sql = 'DELETE FROM blog_article WHERE id = :id AND user_id = :user_id';
+        if( empty( $user_id ) )
+        {
+            $sql = 'DELETE FROM blog_article WHERE id = :id';
+        }
+        else
+        {
+            $sql = 'DELETE FROM blog_article WHERE id = :id AND user_id = :user_id';
+        }
 
         $query = db::prepare( $sql );
         $query->bindInt( ':id',      $id );

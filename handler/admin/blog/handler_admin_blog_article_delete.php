@@ -7,7 +7,7 @@ class handler_admin_blog_article_delete extends handler_action
     {
 
         model_blog_article::delete( $_GET['id'], session::$user->id );
-        header("Location: /blog/category");
+        header("Location: /blog/article");
 
     }
 
