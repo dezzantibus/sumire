@@ -57,7 +57,6 @@ class model_blog_article extends model
         $sql = '
             UPDATE blog_article
             SET `blog_category_id` = :blog_category_id,
-                `carousel`         = :carousel,
                 `homepage`         = :homepage,
                 `title`            = :title,
                 `subtitle`         = :subtitle,
@@ -69,7 +68,6 @@ class model_blog_article extends model
         $query = db::prepare( $sql );
         $query
             ->bindInt   ( ':blog_category_id', $data->blog_category_id )
-            ->bindInt   ( ':carousel',         $data->carousel )
             ->bindInt   ( ':homepage',         $data->homepage )
             ->bindString( ':title',            $data->title )
             ->bindString( ':subtitle',         $data->subtitle )
