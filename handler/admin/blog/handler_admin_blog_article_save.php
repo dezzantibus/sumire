@@ -45,17 +45,17 @@ class handler_admin_blog_article_save extends handler_action
 
             $path = 'blog/' . $blog . '/' . date('Y-m-d') . '/' . $article->title;
 
-            if( !empty( $this->files['cover'] ) )   $article->cover   = file::saveFromPost( $this->files['cover'], $path );
-            if( !empty( $this->files['image1'] ) )  $article->image1  = file::saveFromPost( $this->files['image1'], $path );
-            if( !empty( $this->files['image2'] ) )  $article->image2  = file::saveFromPost( $this->files['image2'], $path );
-            if( !empty( $this->files['image3'] ) )  $article->image3  = file::saveFromPost( $this->files['image3'], $path );
-            if( !empty( $this->files['image4'] ) )  $article->image4  = file::saveFromPost( $this->files['image4'], $path );
-            if( !empty( $this->files['image5'] ) )  $article->image5  = file::saveFromPost( $this->files['image5'], $path );
-            if( !empty( $this->files['image6'] ) )  $article->image6  = file::saveFromPost( $this->files['image6'], $path );
-            if( !empty( $this->files['image7'] ) )  $article->image7  = file::saveFromPost( $this->files['image7'], $path );
-            if( !empty( $this->files['image8'] ) )  $article->image8  = file::saveFromPost( $this->files['image8'], $path );
-            if( !empty( $this->files['image9'] ) )  $article->image9  = file::saveFromPost( $this->files['image9'], $path );
-            if( !empty( $this->files['image10'] ) ) $article->image10 = file::saveFromPost( $this->files['image10'], $path );
+            if( !empty( $this->files['cover'] ) )   $article->cover   = file::saveFromPost( $this->files['cover'],   $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image1'] ) )  $article->image1  = file::saveFromPost( $this->files['image1'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image2'] ) )  $article->image2  = file::saveFromPost( $this->files['image2'],  $path, 'images.vivereadicomano.com');
+            if( !empty( $this->files['image3'] ) )  $article->image3  = file::saveFromPost( $this->files['image3'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image4'] ) )  $article->image4  = file::saveFromPost( $this->files['image4'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image5'] ) )  $article->image5  = file::saveFromPost( $this->files['image5'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image6'] ) )  $article->image6  = file::saveFromPost( $this->files['image6'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image7'] ) )  $article->image7  = file::saveFromPost( $this->files['image7'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image8'] ) )  $article->image8  = file::saveFromPost( $this->files['image8'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image9'] ) )  $article->image9  = file::saveFromPost( $this->files['image9'],  $path, 'images.vivereadicomano.com' );
+            if( !empty( $this->files['image10'] ) ) $article->image10 = file::saveFromPost( $this->files['image10'], $path, 'images.vivereadicomano.com' );
 
             if( empty( $article->id ) )
             {

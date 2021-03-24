@@ -34,7 +34,7 @@ class file
 
     */
 
-    static public function saveFromPost( $input, $path )
+    static public function saveFromPost( $input, $path, $bucket=null )
     {
 
         if( empty( $input['tmp_name'] ) )
@@ -42,12 +42,17 @@ class file
             return false;
         }
 
+        if( empty( $bucket ) )
+        {
+            $bucket = constant::BUCKET;
+        }
+
         $localFile  = $input['tmp_name'];
         $remoteFile = $path . '/' . $input['name'];
 
         $s3 = new S3( environment::AWS_KEY, environment::AWS_SECRET );
 
-        $s3->putObjectFile( $localFile, constant::BUCKET, $remoteFile, S3::ACL_PUBLIC_READ, array(), 'image/jpeg' );
+        $s3->putObjectFile( $localFile, $bucket, $remoteFile, S3::ACL_PUBLIC_READ, array(), 'image/jpeg' );
 
         return $remoteFile;
 
