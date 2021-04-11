@@ -52,6 +52,15 @@ class handler_admin_blog_article_save extends handler_action
                 $blog = session::$user->blog;
             }
 
+            if( empty( $article->date ) )
+            {
+                $date = date('Y-m-d');
+            }
+            else
+            {
+                $date = date('Y-m-d', $article->date);
+            }
+
             $path = 'blog/' . $blog . '/' . date('Y-m-d', $article->date) . '/' . $article->title;
 
             $bucket = 'images.vivereintoscana.it';

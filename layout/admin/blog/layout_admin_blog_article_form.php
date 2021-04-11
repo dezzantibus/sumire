@@ -38,6 +38,7 @@ class layout_admin_blog_article_form extends layout_admin_page
 
         $form->addChild( new layout_admin_form_hidden( 'id',      $article->id ) );
         $form->addChild( new layout_admin_form_hidden( 'user_id', session::$user->id ) );
+        $form->addChild( new layout_admin_form_hidden( 'date',    $article->date ) );
 
         $category_dropdown = new data_array();
         while( !$categories->isEmpty() )
