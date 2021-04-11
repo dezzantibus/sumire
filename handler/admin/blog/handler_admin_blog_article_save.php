@@ -15,6 +15,15 @@ class handler_admin_blog_article_save extends handler_action
             $this->data['homepage'] = 1;
         }
 
+        if( empty( $this->data['published'] ) )
+        {
+            $this->data['published'] = 0;
+        }
+        else
+        {
+            $this->data['published'] = 1;
+        }
+
         if( !$this->checkRequired( $this->data['title'] ) )    message::addError( 'The title is required',    'title' );
         if( !$this->checkRequired( $this->data['subtitle'] ) ) message::addError( 'The subtitle is required', 'subtitle' );
         if( !$this->checkRequired( $this->data['text'] ) )     message::addError( 'The text is required', 'text' );

@@ -72,9 +72,9 @@ class model_blog_article extends model
             UPDATE blog_article
             SET `blog_category_id` = :blog_category_id,
                 `homepage`         = :homepage,
+                `published`        = :published,
                 `title`            = :title,
                 `subtitle`         = :subtitle,
-                `short`            = :short,
                 `text`             = :text
             WHERE id = :id
         ';
@@ -83,6 +83,7 @@ class model_blog_article extends model
         $query
             ->bindInt   ( ':blog_category_id', $data->blog_category_id )
             ->bindInt   ( ':homepage',         $data->homepage )
+            ->bindInt   ( ':published',        $data->published )
             ->bindString( ':title',            $data->title )
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':text',             $data->text )
