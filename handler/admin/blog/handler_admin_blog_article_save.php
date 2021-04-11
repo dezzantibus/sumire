@@ -58,7 +58,7 @@ class handler_admin_blog_article_save extends handler_action
             }
             else
             {
-                $date = date('Y-m-d', $article->date);
+                $date = date('Y-m-d', strtotime( $article->date ) );
             }
 
             $path = 'blog/' . $blog . '/' . $date . '/' . $article->title;
