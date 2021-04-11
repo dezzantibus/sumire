@@ -75,7 +75,18 @@ class model_blog_article extends model
                 `published`        = :published,
                 `title`            = :title,
                 `subtitle`         = :subtitle,
-                `text`             = :text
+                `text`             = :text,
+                `cover`            = :cover,
+                `image1`           = :image1,
+                `image2`           = :image2,
+                `image3`           = :image3,
+                `image4`           = :image4,
+                `image5`           = :image5,
+                `image6`           = :image6,
+                `image7`           = :image7,
+                `image8`           = :image8,
+                `image9`           = :image9,
+                `image10`          = :image10
             WHERE id = :id
         ';
 
@@ -88,6 +99,17 @@ class model_blog_article extends model
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':text',             $data->text )
             ->bindInt   ( ':id',               $data->id )
+            ->bindString( ':cover',            $data->cover )
+            ->bindString( ':image1',           $data->image1 )
+            ->bindString( ':image2',           $data->image2 )
+            ->bindString( ':image3',           $data->image3 )
+            ->bindString( ':image4',           $data->image4 )
+            ->bindString( ':image5',           $data->image5 )
+            ->bindString( ':image6',           $data->image6 )
+            ->bindString( ':image7',           $data->image7 )
+            ->bindString( ':image8',           $data->image8 )
+            ->bindString( ':image9',           $data->image9 )
+            ->bindString( ':image10',          $data->image10 )
             ->execute();
 
     }
