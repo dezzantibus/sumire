@@ -75,20 +75,21 @@ class model_blog_article extends model
                 `published`        = :published,
                 `title`            = :title,
                 `subtitle`         = :subtitle,
-                `text`             = :text,
-                `cover`            = :cover,
-                `image1`           = :image1,
-                `image2`           = :image2,
-                `image3`           = :image3,
-                `image4`           = :image4,
-                `image5`           = :image5,
-                `image6`           = :image6,
-                `image7`           = :image7,
-                `image8`           = :image8,
-                `image9`           = :image9,
-                `image10`          = :image10
-            WHERE id = :id
         ';
+
+        if( !empty( $data->cover ) )   $sql .= ' `cover`   = :cover, ';
+        if( !empty( $data->image1 ) )  $sql .= ' `image1`  = :image1, ';
+        if( !empty( $data->image2 ) )  $sql .= ' `image2`  = :image2, ';
+        if( !empty( $data->image3 ) )  $sql .= ' `image3`  = :image3, ';
+        if( !empty( $data->image4 ) )  $sql .= ' `image4`  = :image4, ';
+        if( !empty( $data->image5 ) )  $sql .= ' `image5`  = :image5, ';
+        if( !empty( $data->image6 ) )  $sql .= ' `image6`  = :image6, ';
+        if( !empty( $data->image7 ) )  $sql .= ' `image7`  = :image7, ';
+        if( !empty( $data->image8 ) )  $sql .= ' `image8`  = :image8, ';
+        if( !empty( $data->image9 ) )  $sql .= ' `image9`  = :image9, ';
+        if( !empty( $data->image10 ) ) $sql .= ' `image10` = :image10, ';
+
+        $sql .= '`text` = :text WHERE id = :id';
 
         $query = db::prepare( $sql );
         $query
@@ -98,19 +99,22 @@ class model_blog_article extends model
             ->bindString( ':title',            $data->title )
             ->bindString( ':subtitle',         $data->subtitle )
             ->bindString( ':text',             $data->text )
-            ->bindInt   ( ':id',               $data->id )
-            ->bindString( ':cover',            $data->cover )
-            ->bindString( ':image1',           $data->image1 )
-            ->bindString( ':image2',           $data->image2 )
-            ->bindString( ':image3',           $data->image3 )
-            ->bindString( ':image4',           $data->image4 )
-            ->bindString( ':image5',           $data->image5 )
-            ->bindString( ':image6',           $data->image6 )
-            ->bindString( ':image7',           $data->image7 )
-            ->bindString( ':image8',           $data->image8 )
-            ->bindString( ':image9',           $data->image9 )
-            ->bindString( ':image10',          $data->image10 )
-            ->execute();
+            ->bindInt   ( ':id',               $data->id );
+
+        if( !empty( $data->cover ) )   $query->bindString( ':cover',   $data->cover );
+        if( !empty( $data->image1 ) )  $query->bindString( ':image1',  $data->image1 );
+        if( !empty( $data->image2 ) )  $query->bindString( ':image2',  $data->image2 );
+        if( !empty( $data->image3 ) )  $query->bindString( ':image3',  $data->image3 );
+        if( !empty( $data->image4 ) )  $query->bindString( ':image4',  $data->image4 );
+        if( !empty( $data->image5 ) )  $query->bindString( ':image5',  $data->image5 );
+        if( !empty( $data->image6 ) )  $query->bindString( ':image6',  $data->image6 );
+        if( !empty( $data->image7 ) )  $query->bindString( ':image7',  $data->image7 );
+        if( !empty( $data->image8 ) )  $query->bindString( ':image8',  $data->image8 );
+        if( !empty( $data->image9 ) )  $query->bindString( ':image9',  $data->image9 );
+        if( !empty( $data->image10 ) ) $query->bindString( ':image10', $data->image10 );
+
+        $query->execute();
+
 
     }
 
