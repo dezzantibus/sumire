@@ -61,7 +61,7 @@ class handler_admin_blog_article_save extends handler_action
                 $date = date('Y-m-d', $article->date);
             }
 
-            $path = 'blog/' . $blog . '/' . date('Y-m-d', $article->date) . '/' . $article->title;
+            $path = 'blog/' . $blog . '/' . $date . '/' . $article->title;
 
             $bucket = 'images.vivereintoscana.it';
 
