@@ -65,6 +65,7 @@
     RewriteRule ^(.*)/(.*)$ index.php?page=$1&sub=$2 [QSA,L]
 
     RewriteCond %{HTTP_HOST} ^admin.sumire.it$
+    RewriteCond %{HTTP_HOST} ^admin.vivereadicomano.com$
     RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
 
 #    RewriteCond %{HTTP_HOST} ^sumire.it$

@@ -18,6 +18,7 @@ class router
             case 'utente.sumire.it':  return self::user();
             case 'ricette.sumire.it': return self::recipe();
             case 'admin.sumire.it':   return router_admin::run();
+            case 'admin.vivereadicomano.com':   return router_admin::run();
 
             // development
             case 'www.sumire.local':
